@@ -1,0 +1,803 @@
+{% load static %}
+{% load socialaccount %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>DevOps</title>
+  <!-- plugins:css -->
+  <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+  <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+  <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'js/select.dataTables.min.css' %}">
+  <!-- End plugin css for this page -->
+  <!-- inject:css -->
+  <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
+  <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+  <!-- End plugin css for this page -->
+  <link rel="shortcut icon" href="{% static 'images/favicon.png' %}" />
+</head>
+
+<body>
+  <div class="container-scroller">
+    <!-- partial:partials/_navbar.html -->
+    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+        <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img src="{% static 'images/logo.png' %}"
+            class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+            src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
+      </div>
+      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+          <span class="icon-menu"></span>
+        </button>
+
+        <ul class="navbar-nav navbar-nav-right">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'inicio' %}">
+              <i class="fa fa-home mx-0"></i>
+              <span class="count">Home</span>
+            </a>
+          </li>
+
+          <li class="nav-item nav-profile dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+              {% if user.is_authenticated %}
+              <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
+              {% else %}
+              <img src="{% static 'images/faces/face28.jpg' %}" alt="profile" />
+              {% endif %}
+            </a>
+            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
+              {% if user.is_authenticated %}
+              <a class="dropdown-item" href="{% url 'perfilusuario' %}">
+                <i class="ti-settings text-primary"></i>
+                Editar Perfil
+              </a>
+              {% endif %}
+              {% if user.is_authenticated %}
+              <a class="dropdown-item" href="{% url 'account_logout' %}">
+                <i class="ti-power-off text-primary"></i>
+                Cerrar Sesi&oacute;n
+              </a>
+              {% else %}
+              <a class="dropdown-item" href="{% url 'google_login' %}">
+                <i class="ti-power-off text-primary"></i>
+                Iniciar Sesi&oacute;n
+              </a>
+              {% endif %}
+            </div>
+          </li>
+
+        </ul>
+      </div>
+    </nav>
+    <!-- partial -->
+    <div class="container-fluid page-body-wrapper">
+      <!-- partial:partials/_sidebar.html -->
+      <nav class="sidebar sidebar-offcanvas" id="sidebar">
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'indexdash' %}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">DevOps</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'actividades' %}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Actividades</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Planificaci&oacute;n</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-plan">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Codificaci&oacute;n</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-codif">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Construcci&oacute;n</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-const">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Pruebas</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-prueb">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Liberaci&oacute;n</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-lib">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Despliegue</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-desp">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Operaciones</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-op">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionestareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionesherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false" aria-controls="ui-basic">
+              <i class="icon-layout menu-icon"></i>
+              <span class="menu-title">Monitoreo</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="ui-mon">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
+              </ul>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- partial -->
+      <div class="main-panel">
+        <div class="content-wrapper">
+          <div class="row">
+            <div class="col-md-12 grid-margin">
+              <div class="row">
+                <div class="col-12  mb-4 mb-xl-0"> <!--col-xl-8-->
+                  <h3 class="font-weight-bold">Bienvenido</h3>
+                  <p>
+                    Esta guía de implementación de entornos DevOps se enfoca en dos aspectos, el primero desde la
+                    perspectiva del proceso brinda las pautas de las <span
+                      class="text-primary font-weight-bold">tareas</span> que deben realizarse por cada <span
+                      class="text-primary font-weight-bold">Actividad</span>,
+                    estas actividades toman como referencia el perfil básico del estándar <span
+                      class="trigger-word">ISO/IEC 29110</span>.
+                    Por otro lado,
+                    desde la perspectiva de automatización del proceso, brinda un conjunto de <span
+                      class="text-primary font-weight-bold">herramientas</span> que pueden
+                    ser implementadas por cada Actividad para ayudar en su implementación.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal" id="myModal">
+              <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title h4" id="exampleModalXlLabel">
+                      <font style="vertical-align: inherit;">
+                        <font style="vertical-align: inherit;">ISO/IEC 29110</font>
+                      </font>
+                    </h5>                    
+                  </div>
+                  <div class="modal-body">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">
+                        <p>
+                          La Guía proporciona los procesos de Gestión de Proyecto e Implementación de Software, los
+                          cuales integran prácticas basadas en la selección de elementos estándares de la ISO/IEC
+                          12207:2008 – Ingeniería de Sistemas e Ingeniería de Software - Procesos del Ciclo de Vida del
+                          Software y la ISO/IEC 15289:2006 Ingeniería de Sistemas e Ingeniería de Software - Procesos
+                          del Ciclo de Vida del Software - Contenido de los productos de información (documentación) de
+                          los procesos del ciclo de vida del sistema y Software.
+                          <br>
+                          <img src="{% static 'images/procesos-iso.jpg' %}" alt="procesos-iso">
+                          <br>
+                          El propósito del proceso Gestión del Proyecto es establecer y llevar a cabo de manera
+                          sistemática las Tareas del proyecto de implementación de Software, las cuales permiten cumplir
+                          con los Objetivos del proyecto en calidad, tiempo y costo esperados. Cuenta con 4 actividades,
+                          en la figura siguiente se muestran:
+                          <br>
+                          <img src="{% static 'images/gestion-proyecto.jpg' %}" alt="gestion_proyecto">
+                          <br>
+                          El propósito del proceso Implementación de Software es la realización sistemática de las
+                          actividades de análisis, diseño, construcción, integración y pruebas para productos Software
+                          nuevos o modificados de acuerdo con los requisitos especificados. Cuenta con 6 actividades. en
+                          la figura siguiente se muestran:
+                          <br>
+                          <img src="{% static 'images/implementacion-software.jpg' %}" alt="implementacion_software">
+                          <br>
+                          <br>
+                          (ISO/IEC, 2011)
+                        </p>
+                      </font>
+                    </font>
+                  </div>
+                </div>
+              </div>
+            </div>            
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card ">
+                  <div class="card-body">
+                    <img src="{% static 'images/devops-on-white-2.png' %}" alt="ciclo_devops" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                  <div class="card-body">
+                    <h5 class="card-title">Descripción</h5>
+                    <p>
+                      Según (Sharma & Coyne, 2015), DevOps es un proceso empresarial, es decir, un conjunto de
+                      actividades
+                      o tareas que producen un resultado específico (servicio o producto) para los clientes, desde el
+                      desarrollo y comprobación hasta la producción.
+                      <br>
+                      <br>
+                      En 2016, (Lwakatare et al., 2016) lo definen como una
+                      mentalidad sustentada por un conjunto de prácticas para fomentar la colaboración multifuncional
+                      entre equipos, especialmente desarrollo y operaciones de TI, dentro de una organización de
+                      desarrollo de software, con el fin de operar sistemas resilientes y acelerar la entrega de
+                      cambios.
+                      <br>
+                      <br>
+                      En Atlassian definen DevOps como una filosofía cultural, un conjunto de prácticas y herramientas
+                      de
+                      software para automatizar e integrar los procesos que comparten el equipo de desarrollo de
+                      software
+                      y el de TI, centrándose en la comunicación y colaboración entre los equipos y la automatización de
+                      la tecnología (Atlassian, s. f.)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin stretch-card">
+                <div class="card tale-bg">
+                  <div class="card-body">
+                    <p>
+                      En resumen, DevOps es un proceso con actividades y pr&aacute;cticas que lo sustentan que abarcan
+                      tanto la gestión del desarrollo del software como la gestión en producción, incluyendo la
+                      operatividad y monitorización de los productos o servicios de software, todo eso con la ayuda de
+                      herramientas para lograr mayor eficiencia y rapidez. <br>
+                      A continuaci&oacute;n, se definir&aacute;n los conceptos mencionados anteriormente:
+                    </p>
+
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12 grid-margin transparent">
+                <div class="row">
+                  <div class="col-md-4 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="fs-30 mb-2">Proceso</p>
+                        <br>
+                        <p>Es un grupo de tareas y/o actividades relacionadas entre s&iacute; que persiguen cubrir las
+                          necesidades de los clientes. (ISO Calidad 2000, 2012)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4 stretch-card transparent">
+                    <div class="card card-light-blue">
+                      <div class="card-body">
+                        <p class="fs-30 mb-2">Actividad</p>
+                        <br>
+                        <p>Son un grupo de acciones que persiguen un mismo fin (ISO Calidad 2000, 2012)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-4 stretch-card transparent">
+                    <div class="card card-dark-blue">
+                      <div class="card-body">
+                        <p class="fs-30 mb-2">Pr&aacute;ctica</p>
+                        <br>
+                        <p>Es un ejercicio o realización de una acción de forma continuada y conforme a sus reglas
+                          (Definicion.com, 2021)</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-md-12 mb-4 stretch-card transparent">
+                    <div class="card card-light-blue">
+                      <div class="card-body">
+                        <p class="fs-30 mb-2">Herramienta</p>
+                        <br>
+                        <p>
+                          Son un conjunto de programas, aplicaciones o, simplemente instrucciones, que al utilizarlas
+                          permitirán al usuario realizar un trabajo determinado de la mejor manera posible en algún
+                          dispositivo informático (School, s. f.)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--<div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+                <div class="card position-relative">
+                    <div class="card-body">
+                        <div id="detailedReports" class=" position-static pt-2" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <div class="row">
+                                        <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
+                                            <div class="ml-xl-4 mt-3">
+                                                <p class="card-title">Detailed Reports</p>
+                                                <h1 class="text-primary">65%</h1>
+                                                <h3 class="font-weight-500 mb-xl-4 text-primary">North
+                                                    America</h3>
+                                                <p class="mb-2 mb-xl-0">The total number of sessions within
+                                                    the date range. It is the
+                                                    period time a user is actively engaged with your
+                                                    website, page or app, etc</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12 col-xl-9">
+                                            <div class="row">
+                                                <div class="col-md-6 border-right">
+                                                    <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                                        <table class="table table-borderless report-table">
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Planificaci&oacute;n</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Washington</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-warning"
+                                                                            role="progressbar"
+                                                                            style="width: 30%"
+                                                                            aria-valuenow="30"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">583
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Mississippi</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 95%"
+                                                                            aria-valuenow="95"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">924
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Codificaci&oacute;n</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Construcci&oacute;n</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Pruebas</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6 ">
+                                                    <div class="table-responsive mb-3 mb-md-0 mt-3">
+                                                        <table class="table table-borderless report-table">
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Liberaci&oacute;n</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Washington</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-warning"
+                                                                            role="progressbar"
+                                                                            style="width: 30%"
+                                                                            aria-valuenow="30"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">583
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Mississippi</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 95%"
+                                                                            aria-valuenow="95"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">924
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Despliegue</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Operaciones</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td colspan="2" class="text-muted" style="text-align: center;">Monitoreo</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Maryland</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-primary"
+                                                                            role="progressbar"
+                                                                            style="width: 40%"
+                                                                            aria-valuenow="40"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">560
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="text-muted">Alaska</td>
+                                                                <td class="w-100 px-0">
+                                                                    <div class="progress progress-md mx-4">
+                                                                        <div class="progress-bar bg-danger"
+                                                                            role="progressbar"
+                                                                            style="width: 75%"
+                                                                            aria-valuenow="75"
+                                                                            aria-valuemin="0"
+                                                                            aria-valuemax="100"></div>
+                                                                    </div>
+                                                                </td>
+                                                                <td>
+                                                                    <h5 class="font-weight-bold mb-0">793
+                                                                    </h5>
+                                                                </td>
+                                                            </tr>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>-->
+          </div>
+          <!-- content-wrapper ends -->
+          <!-- partial:partials/_footer.html -->
+          <footer class="footer">
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. Premium <a
+                  href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash.
+                All rights reserved.</span>
+              <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i
+                  class="ti-heart text-danger ml-1"></i></span>
+            </div>
+            <div class="d-sm-flex justify-content-center justify-content-sm-between">
+              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a
+                  href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
+            </div>
+          </footer>
+          <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+    <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
+    <!-- End custom js for this page-->
+</body>
+<script>
+  // Obtener elementos del DOM
+  var modal = document.getElementById("myModal");
+  var trigger = document.querySelector(".trigger-word");
+  var closeButton = document.querySelector(".close");
+
+  // Abrir el modal al hacer clic en la palabra
+  trigger.onclick = function () {
+    modal.style.display = "block";
+  }
+
+  // Cerrar el modal si se hace clic fuera del contenido
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  }
+</script>
+
+</html>

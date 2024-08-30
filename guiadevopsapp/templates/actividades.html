@@ -1,0 +1,511 @@
+{% load static %}
+{% load socialaccount %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DevOps</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/select.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+    <!-- End plugin css for this page -->
+    <link rel="shortcut icon" href="{% static 'images/logo-mini.png' %}" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo.png' %}" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inicio' %}">
+                            <i class="fa fa-home mx-0"></i>
+                            <span class="count">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            {% if user.is_authenticated %}
+                            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
+                            {% else %}
+                            <img src="{% static 'images/faces/face28.jpg' %}" alt="profile" />
+                            {% endif %}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'perfilusuario' %}">
+                                <i class="ti-settings text-primary"></i>
+                                Editar Perfil
+                            </a>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Cerrar Sesi&oacute;n
+                            </a>
+                            {% else %}
+                            <a class="dropdown-item" href="{% url 'google_login' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Iniciar Sesi&oacute;n
+                            </a>
+                            {% endif %}
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'indexdash' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">DevOps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'actividades' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Actividades</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-plan">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-codif">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Construcci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-const">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construcciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Pruebas</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-prueb">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-lib">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Despliegue</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-desp">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Operaciones</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-op">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionestareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionesherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Monitoreo</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-mon">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <h2>Actividades</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    
+                                    <p>Cada actividad tiene su propósito y acciones a cometer, sustentados por la información
+                                        proporcionada por (Amrita Pathak,
+                                        2022; Gómez, 2022; Juan Quijano, 2018; Kranio, 2020; Selgert, 2020; Sharma &
+                                        Coyne, 2015). Se describen a continuación en cada sección de actividades.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Tareas</h4>
+                                    <p>Se establece la relación entre las actividades de DevOps y las tareas
+                                        estipuladas en el perfil básico del estándar <span class="trigger-word">ISO/IEC
+                                            29110</span>.
+                                        <br>
+                                        La relación se definió bajo los criterios de lo que decía cada tarea junto con
+                                        el
+                                        propósito y acciones de cada actividad a la que hacía referencia.
+                                        Se encontró que las tareas del est&aacute;ndar ISO/IEC 29110 se relacionan con
+                                        las
+                                        actividades de DevOps y se mapearon en la actividad correspondiente.
+                                        <br>
+                                        Estas tareas se
+                                        muestran en la secci&oacute;n de Tareas en cada Actividad.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Pr&aacute;cticas</h4>
+                                    <p>
+                                        Se hizo una b&uacute;squeda en la literatura el compendio de pr&aacute;cticas
+                                        relacionada al &aacute;mbito DevOps y se encontraron varias. Estas se mapearon
+                                        en la
+                                        Actividad correspondiente por su incidencia directa a esta, bajo los criterios
+                                        de definici&oacute;n de las pr&aacute;cticas y su relación con el
+                                        prop&oacute;cito y
+                                        acciones de la Actividad. Estas pr&aacute;cticas se describen a
+                                        continuaci&oacute;n, en
+                                        la secci&oacute;n de Pr&aacute;cticas en cada Actividad.
+                                        <br>
+                                        <img src="{% static 'images/DevOps-practicas.jpg' %}" alt="devops_practicas">
+                                        <span
+                                            class="text-muted text-center text-sm-left d-block d-sm-inline-block">Fuente
+                                            propia</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Herramientas</h4>
+                                    <p>En cada una de ellas se usan herramientas, estas desempeñan un papel fundamental
+                                        en la automatizaci&oacute;n, la colaboraci&oacute;n y la gesti&oacute;n de todo
+                                        el proceso de
+                                        desarrollo y despliegue de software. Estas herramientas est&aacute;n diseñadas
+                                        para
+                                        ayudar a los equipos a implementar las pr&aacute;cticas y principios de DevOps
+                                        de
+                                        manera efectiva. Se analiza el tipo de herramientas com&uacute;nmente utilizadas
+                                        y se
+                                        categoriza seg&uacute;n su uso por cada actividad, igualmente se propusieron
+                                        ejemplos
+                                        de herramientas existentes en el mercado, pero se enfoc&oacute; m&aacute;s en el
+                                        tipo de
+                                        herramientas que en la herramienta misma ya que es muy com&uacute;n que
+                                        aparezcan
+                                        nuevas o se ampl&iacute;en en funcionalidades y eso causar&iacute;a que el
+                                        objetivo de la
+                                        investigaci&oacute;n no sea perdurable en el tiempo por la din&aacute;mica
+                                        cambiante del
+                                        mercado, tambi&eacute;n se enfoc&oacute; en la generalidad de la
+                                        categor&iacute;a usada, la cual
+                                        estar&aacute; descrita para mayor entendimiento. Estas herramientas se describen
+                                        en la secci&oacute;n de Herramientas en cada Actividad.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal" id="myModal">
+                        <div class="modal-dialog modal-dialog-scrollable modal-xl">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title h4" id="exampleModalXlLabel">
+                                        <font style="vertical-align: inherit;">
+                                            <font style="vertical-align: inherit;">ISO/IEC 29110</font>
+                                        </font>
+                                    </h5>
+                                </div>
+                                <div class="modal-body">
+                                    <font style="vertical-align: inherit;">
+                                        <font style="vertical-align: inherit;">
+                                            <p>
+                                                La Guía proporciona los procesos de Gestión de Proyecto e Implementación
+                                                de Software, los
+                                                cuales integran prácticas basadas en la selección de elementos
+                                                estándares de la ISO/IEC
+                                                12207:2008 – Ingeniería de Sistemas e Ingeniería de Software - Procesos
+                                                del Ciclo de Vida del
+                                                Software y la ISO/IEC 15289:2006 Ingeniería de Sistemas e Ingeniería de
+                                                Software - Procesos
+                                                del Ciclo de Vida del Software - Contenido de los productos de
+                                                información (documentación) de
+                                                los procesos del ciclo de vida del sistema y Software.
+                                                <br>
+                                                <img src="{% static 'images/procesos-iso.jpg' %}" alt="procesos-iso">
+                                                <br>
+                                                El propósito del proceso Gestión del Proyecto es establecer y llevar a
+                                                cabo de manera
+                                                sistemática las Tareas del proyecto de implementación de Software, las
+                                                cuales permiten cumplir
+                                                con los Objetivos del proyecto en calidad, tiempo y costo esperados.
+                                                Cuenta con 4 actividades,
+                                                en la figura siguiente se muestran:
+                                                <br>
+                                                <img src="{% static 'images/gestion-proyecto.jpg' %}"
+                                                    alt="gestion_proyecto">
+
+                                                <br>
+                                                El propósito del proceso Implementación de Software es la realización
+                                                sistemática de las
+                                                actividades de análisis, diseño, construcción, integración y pruebas
+                                                para productos Software
+                                                nuevos o modificados de acuerdo con los requisitos especificados. Cuenta
+                                                con 6 actividades. en
+                                                la figura siguiente se muestran:
+                                                <br>
+                                                <br>
+                                                (ISO/IEC, 2011)
+                                            </p>
+                                        </font>
+                                    </font>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">IMPORTANTE</h4>
+                                    <p class="nota">Esta guía web le permite llevar un registro de las tareas y las
+                                        categor&iacute;as de
+                                        herramientas que usa usted en cada actividad de DevOps con el objetivo de tener
+                                        la visibilidad del nivel de ejecuci&oacute;n que tienen del proceso seg&uacute;n
+                                        las pautas establecidas en este documento.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
+                                template</a> from BootstrapDash.
+                            All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            with <i class="ti-heart text-danger ml-1"></i></span>
+                    </div>
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a
+                                href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+    <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
+    <!-- End custom js for this page-->
+</body>
+<script>
+    // Obtener elementos del DOM
+    var modal = document.getElementById("myModal");
+    var trigger = document.querySelector(".trigger-word");
+    var closeButton = document.querySelector(".close");
+
+    // Abrir el modal al hacer clic en la palabra
+    trigger.onclick = function () {
+        modal.style.display = "block";
+    }
+
+    // Cerrar el modal si se hace clic fuera del contenido
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+</html>

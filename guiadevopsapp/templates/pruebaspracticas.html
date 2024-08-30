@@ -1,0 +1,587 @@
+{% load static %}
+{% load socialaccount %}
+{% load i18n %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>DevOps</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'js/select.dataTables.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'vendors/mdi/css/materialdesignicons.min.css' %}">
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+    <!-- End plugin css for this page -->
+    <link rel="shortcut icon" href="{% static 'images/logo-mini.png' %}" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo.png' %}" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inicio' %}">
+                            <i class="fa fa-home mx-0"></i>
+                            <span class="count">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            {% if user.is_authenticated %}
+                            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
+                            {% else %}
+                            <img src="{% static 'images/faces/face28.jpg' %}" alt="profile" />
+                            {% endif %}
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'perfilusuario' %}">
+                                <i class="ti-settings text-primary"></i>
+                                Editar Perfil
+                            </a>
+                            {% endif %}
+                            {% if user.is_authenticated %}
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Cerrar Sesi&oacute;n
+                            </a>
+                            {% else %}
+                            <a class="dropdown-item" href="{% url 'google_login' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Iniciar Sesi&oacute;n
+                            </a>
+                            {% endif %}
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'indexdash' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">DevOps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'actividades' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Actividades</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-plan">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-codif">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Construcci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-const">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construcciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Pruebas</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-prueb">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-lib">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Despliegue</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-desp">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Operaciones</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-op">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionestareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionesherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Monitoreo</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-mon">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card ">
+                                <div class="card-body">
+                                    <h2>Pruebas</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="card-title">Descripción</h4>
+                                    <p>
+                                        Las prácticas en DevOps se consideran capacidades empresariales según (Forsgren
+                                        et al., 2018) y son un reflejo de la idea de automatización y mejora continuas,
+                                        y muchas de ellas se centran en una o en varias fases del ciclo de vida DevOps
+                                        (NetApp, s. f.).
+                                        <br>
+                                        <br>
+                                        (Amaro et al., 2023) expresa que el uso de los términos prácticas y capacidades
+                                        va a depender del contexto y la perspectiva, la capacidad es la habilidad para
+                                        hacer algo, acumuladas o desarrolladas por sus miembros a lo largo del tiempo y
+                                        la práctica es la acción realizada, tiene el enfoque práctico.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Pr&aacute;cticas de la Actividad</h4>
+                                    <p>En la literatura se encontraron un compendio de prácticas relacionada al ámbito
+                                        DevOps. Como se puede apreciar existen muchas prácticas o capacidades y
+                                        est&aacute;n
+                                        categorizadas como: técnicas, culturales, de medición, de beneficios de
+                                        negocio (Kim et al., 2016).
+                                        A continuaci&oacute;n, se se mostrar&aacute;n algunas de ellas:</p>
+                                    <div class="table-responsive col-lg-12">
+                                        <table class="table table-striped">
+                                            <thead>
+                                                <tr>
+                                                    <th>
+                                                        Pr&aacute;cticas
+                                                    </th>
+                                                    <th>
+                                                        Referencias
+                                                    </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>Colaboración</td>
+                                                    <td class="text-wrap">
+                                                        (Dynatrace, 2021; Luz et al., 2018; Mohan et al., 2018; Qumer
+                                                        Gill
+                                                        et al., 2018; Amaro et al., 2023)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Comunicación</td>
+                                                    <td class="text-wrap">
+                                                        (Dynatrace, 2021; Mohan et al., 2018; Qumer Gill et al., 2018;
+                                                        Amaro
+                                                        et al., 2023)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Automatización</td>
+                                                    <td class="text-wrap">
+                                                        (Luz et al., 2018; Mohan et al., 2018; Amaro et al., 2023)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Pruebas continuas</td>
+                                                    <td class="text-wrap">
+                                                        (Dynatrace, 2021; Ferry et al., 2019; Fitzgerald &
+                                                        Stol, 2017; Guseila et al., 2019; Jennings & Gannod, 2019; Luz
+                                                        et
+                                                        al., 2018; Mascheroni & Irrazábal, 2018; Qumer Gill et al.,
+                                                        2018;
+                                                        Rocha et al., 2023, 2023; Tonello, 2022c)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Análisis estático de código</td>
+                                                    <td class="text-wrap">
+                                                        (Fitzgerald & Stol, 2017; Tonello, 2022b)
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Descripci&oacute;n de las pr&aacute;cticas</h4>
+                                    <nav class="navbar-dropdown">
+                                        <ul>
+                                            <li class="nav-item" style="list-style: none;">
+                                                <a class="nav-link" data-toggle="collapse" href="#ui-c"
+                                                    aria-expanded="false" aria-controls="ui-basic">
+                                                    <h4 class="menu-title">Colaboraci&oacute;n <i
+                                                            class="fa fa-eye mx-0"></i></h4>
+                                                    <i class="menu-arrow"></i>
+                                                </a>
+                                                <div class="collapse" id="ui-c">
+                                                    <p>
+                                                        La cultura colaborativa es fundamental para la adopción exitosa
+                                                        de DevOps. Se enfoca en eliminar los silos entre los equipos de
+                                                        desarrollo y operaciones, integrando tareas de operaciones como
+                                                        parte del desarrollo diario. Esto promueve que las
+                                                        implementaciones, gestión de infraestructuras y monitoreo sean
+                                                        realizadas fluidamente por los equipos de desarrollo.
+                                                        <br>
+                                                        Sin DevOps, es común que el desarrollo de software avance
+                                                        rápidamente sin considerar las operaciones, lo que lleva a
+                                                        retrasos y conflictos cuando los equipos de operaciones reciben
+                                                        un producto mínimo viable sin el contexto adecuado. Fomentar una
+                                                        cultura colaborativa desde el inicio del desarrollo reduce estos
+                                                        problemas, ya que todos los equipos trabajan juntos desde el
+                                                        principio, haciendo que la entrega de software sea más ágil y
+                                                        eficiente.
+                                                        <br>
+                                                        Además, esta cultura empodera a los desarrolladores al eliminar
+                                                        la necesidad de esperar por el equipo de operaciones para tareas
+                                                        como la creación de servidores o la ejecución de scripts. Todos
+                                                        en el equipo deben estar capacitados para realizar estas tareas,
+                                                        lo que aumenta la eficiencia y refuerza la responsabilidad
+                                                        compartida.
+                                                        <br>
+                                                        Otra característica clave es el pensamiento de producto, donde
+                                                        tanto desarrollo como operaciones ven el software como un
+                                                        producto continuo.
+                                                        <br>
+                                                        Debe existir una responsabilidad compartida sin
+                                                        culpas para resolver problemas en producción, evitando la
+                                                        estrategia de eludir responsabilidades y enfocándose en la
+                                                        resolución conjunta de problemas. Este enfoque fortalece la
+                                                        colaboración y es esencial para la adopción efectiva de DevOps.
+                                                        <br>
+                                                        Entonces, la cultura colaborativa no solo es el pilar central
+                                                        de DevOps, sino también el aspecto más desafiante de implementar
+                                                        correctamente. Sin una cultura sólida, los esfuerzos de DevOps
+                                                        pueden quedar reducidos a simples automatizaciones sin lograr
+                                                        sus beneficios completos.
+                                                        <br>
+                                                        (Luz et al., 2018)
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item" style="list-style: none;">
+                                                <a class="nav-link" data-toggle="collapse" href="#ui-com"
+                                                    aria-expanded="false" aria-controls="ui-basic">
+                                                    <h4 class="menu-title">Comunicaci&oacute;n <i
+                                                            class="fa fa-eye mx-0"></i></h4>
+                                                    <i class="menu-arrow"></i>
+                                                </a>
+                                                <div class="collapse" id="ui-com">
+                                                    <p>
+                                                        Como parte de la cultura colaborativa, la comunicación es un
+                                                        aspecto fundamental de DevOps, ya que
+                                                        permite a los equipos de desarrollo y operaciones trabajar
+                                                        juntos de manera efectiva.
+                                                        <br>
+                                                        Los equipos deben comunicarse directamente,
+                                                        evitando sistemas de tickets que ralentizan la interacción, y
+                                                        utilizando herramientas como Slack para facilitar la
+                                                        comunicación.
+                                                        <br>
+                                                        (Luz et al., 2018)
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item" style="list-style: none;">
+                                                <a class="nav-link" data-toggle="collapse" href="#ui-aut"
+                                                    aria-expanded="false" aria-controls="ui-basic">
+                                                    <h4 class="menu-title">Automatizaci&oacute;n <i
+                                                            class="fa fa-eye mx-0"></i></h4>
+                                                    <i class="menu-arrow"></i>
+                                                </a>
+                                                <div class="collapse" id="ui-aut">
+                                                    <p>
+                                                        La automatización es un elemento fundamental en la estrategia
+                                                        DevOps de cualquier empresa. En esencia, la automatización
+                                                        minimiza el trabajo manual, acelera los procesos de entrega a lo
+                                                        largo de todo el ciclo de vida del desarrollo de software (SDLC)
+                                                        y facilita la escalabilidad de las prácticas DevOps.
+                                                        <br>
+                                                        Históricamente, procesos como pruebas, monitoreo, identificación
+                                                        y corrección de errores incluían algo de automatización, pero
+                                                        dependían en gran medida de la intervención manual. Este enfoque
+                                                        funcionaba bien para equipos pequeños que manejaban aplicaciones
+                                                        monolíticas. Sin embargo, con la llegada de aplicaciones
+                                                        modernas basadas en microservicios y la presión adicional que la
+                                                        transformación digital impone sobre TI, la automatización se
+                                                        vuelve esencial. Esta permite mantener la velocidad y calidad
+                                                        mediante procesos consistentes en cada etapa del ciclo de vida
+                                                        DevOps, lo que facilita el envío frecuente de código a
+                                                        producción y garantiza la creación de software consistente,
+                                                        confiable y seguro, liberando tiempo valioso para que los
+                                                        equipos de DevOps se concentren en la innovación.
+                                                        <br>
+                                                        (Dynatrace, 2021)
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item" style="list-style: none;">
+                                                <a class="nav-link" data-toggle="collapse" href="#ui-pc"
+                                                    aria-expanded="false" aria-controls="ui-basic">
+                                                    <h4 class="menu-title">Pruebas continuas <i
+                                                            class="fa fa-eye mx-0"></i></h4>
+                                                    <i class="menu-arrow"></i>
+                                                </a>
+                                                <div class="collapse" id="ui-pc">
+                                                    <p>
+                                                        Implica ejecutar automáticamente pruebas de software de manera
+                                                        continua a lo largo de todo el ciclo de desarrollo, en lugar de
+                                                        realizarlas manualmente. Es fundamental contar con conjuntos de
+                                                        pruebas eficaces que sean confiables, es decir, capaces de
+                                                        detectar fallas reales y solo permitir que el código que cumple
+                                                        con los estándares de liberación pase las pruebas. Es importante
+                                                        destacar que los desarrolladores deben asumir la principal
+                                                        responsabilidad en la creación y mantenimiento de estos
+                                                        conjuntos de pruebas automatizados. (Forsgren et al., 2018)
+                                                    </p>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item" style="list-style: none;">
+                                                <a class="nav-link" data-toggle="collapse" href="#ui-pc"
+                                                    aria-expanded="false" aria-controls="ui-basic">
+                                                    <h4 class="menu-title">An&aacute;lisis est&aacute;tico de
+                                                        c&oacute;digo <i class="fa fa-eye mx-0"></i></h4>
+                                                    <i class="menu-arrow"></i>
+                                                </a>
+                                                <div class="collapse" id="ui-pc">
+                                                    <p>
+                                                        Se realiza para identificar rápidamente posibles errores o usos
+                                                        inusuales del código (Adobe, 2021). Este proceso destaca
+                                                        problemas de sintaxis y de estilo en el código fuente,
+                                                        dependiendo del lenguaje de programación utilizado. Se puede
+                                                        ejecutar un linter en el código para detectar y corregir errores
+                                                        sutiles de programación o prácticas de codificación no
+                                                        convencionales que podrían causar fallos. El linting puede
+                                                        identificar problemas como el uso de variables no inicializadas
+                                                        o no definidas, llamadas a funciones no definidas, paréntesis
+                                                        faltantes, y problemas más sutiles como intentos de redefinir
+                                                        tipos o funciones integradas. A diferencia del formato, que solo
+                                                        reestructura la apariencia del código, el linting analiza cómo
+                                                        se ejecuta el código y detecta errores (Microsoft, 2024).
+                                                    </p>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- content-wrapper ends -->
+                <!-- partial:partials/_footer.html -->
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin
+                                template</a> from BootstrapDash.
+                            All rights reserved.</span>
+                        <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made
+                            with <i class="ti-heart text-danger ml-1"></i></span>
+                    </div>
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a
+                                href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
+                    </div>
+                </footer>
+                <!-- partial -->
+            </div>
+            <!-- main-panel ends -->
+        </div>
+        <!-- page-body-wrapper ends -->
+    </div>
+    <!-- container-scroller -->
+
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net/jquery.dataTables.js' %}"></script>
+    <script src="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+    <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="{% static 'js/dashboard.js' %}"></script>
+    <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
+    <!-- End custom js for this page-->
+</body>
+
+</html>
