@@ -159,7 +159,7 @@ def planificaciontareas(request):
         'cantidadFalsos': cantidadFalsos,
         'total': total,
         }
-    return render(request, 'planificacionTareas.html',context)
+    return render(request, 'planificaciontareas.html',context)
 
 @login_required(login_url="/accounts/google/login/")
 def planificacionherramientas(request):
