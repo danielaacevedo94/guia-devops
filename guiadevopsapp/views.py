@@ -599,11 +599,10 @@ def liberaciontareas(request):
     liberacion = Liberaciontareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        liberacion=model_to_dict(liberacion)
+        liberacion = model_to_dict(liberacion)
     except :
         liberacion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in liberacion.items():
@@ -616,10 +615,10 @@ def liberaciontareas(request):
         
 
     form = Liberaciontareasform()
-    
+
     try:
         liberacion_instance = Liberaciontareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
-    except Liberaciontareasmodel.DoesNotExist:
+    except Pruebastareasmodel.DoesNotExist:
         liberacion_instance = None
 
     if request.method == 'POST':
@@ -627,14 +626,15 @@ def liberaciontareas(request):
         form = Liberaciontareasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            liberacion_form = form.save(commit=False)
+            liberacion_form.userId = social_user_id
+            liberacion_form.save()
             return redirect('liberaciontareas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Liberaciontareasform(instance = liberacion_instance)
+        form = Liberaciontareasform(instance=liberacion_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -661,11 +661,10 @@ def liberacionherramientas(request):
     liberacion = Liberacionherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        liberacion=model_to_dict(liberacion)
+        liberacion = model_to_dict(liberacion)
     except :
         liberacion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in liberacion.items():
@@ -677,11 +676,11 @@ def liberacionherramientas(request):
                 false_counts[key] = false_counts.get(key, 0) + 1
         
 
-    form = Liberacionherramientasform()
-    
+    form = Liberaciontareasform()
+
     try:
         liberacion_instance = Liberacionherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
-    except Liberacionherramientasmodel.DoesNotExist:
+    except Pruebasherramientasmodel.DoesNotExist:
         liberacion_instance = None
 
     if request.method == 'POST':
@@ -689,14 +688,15 @@ def liberacionherramientas(request):
         form = Liberacionherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            liberacion_form = form.save(commit=False)
+            liberacion_form.userId = social_user_id
+            liberacion_form.save()
             return redirect('liberacionherramientas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Liberacionherramientasform(instance = liberacion_instance)
+        form = Liberacionherramientasform(instance=liberacion_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
