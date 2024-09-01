@@ -20,17 +20,17 @@ class Planificaciontareasform(forms.ModelForm):
 class Planificacionherramientasform(forms.ModelForm):
     class Meta:
         model = Planificacionherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Codificaciontareasform(forms.ModelForm):
     class Meta:
         model = Codificaciontareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Codificacionherramientasform(forms.ModelForm):
     class Meta:
         model = Codificacionherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Usuarioform(forms.ModelForm):
     class Meta:
@@ -40,59 +40,59 @@ class Usuarioform(forms.ModelForm):
 class Construcciontareasform(forms.ModelForm):
     class Meta:
         model = Construcciontareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Construccionherramientasform(forms.ModelForm):
     class Meta:
         model = Construccionherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Pruebastareasform(forms.ModelForm):
     class Meta:
         model = Pruebastareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Pruebasherramientasform(forms.ModelForm):
     class Meta:
         model = Pruebasherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Liberaciontareasform(forms.ModelForm):
     class Meta:
         model = Liberaciontareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Liberacionherramientasform(forms.ModelForm):
     class Meta:
         model = Liberacionherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Desplieguetareasform(forms.ModelForm):
     class Meta:
         model = Desplieguetareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Despliegueherramientasform(forms.ModelForm):
     class Meta:
         model = Despliegueherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Operacionestareasform(forms.ModelForm):
     class Meta:
         model = Operacionestareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Operacionesherramientasform(forms.ModelForm):
     class Meta:
         model = Operacionesherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Monitoreotareasform(forms.ModelForm):
     class Meta:
         model = Monitoreotareasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
 
 class Monitoreoherramientasform(forms.ModelForm):
     class Meta:
         model = Monitoreoherramientasmodel
-        exclude = ('fecha',)
+        exclude = ('fecha','userId')
