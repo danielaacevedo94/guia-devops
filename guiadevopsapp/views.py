@@ -215,14 +215,14 @@ def codificaciontareas(request):
     codificacion = Codificaciontareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        codificacion=model_to_dict(codificacion)
+        codificacion = model_to_dict(codificacion)
     except :
         codificacion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in codificacion.items():
+
         if isinstance(value,bool):
             if value:
                 true_counts[key] = true_counts.get(key, 0) + 1
@@ -231,7 +231,7 @@ def codificaciontareas(request):
         
 
     form = Codificaciontareasform()
-    
+
     try:
         codificacion_instance = Codificaciontareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Codificaciontareasmodel.DoesNotExist:
@@ -242,9 +242,10 @@ def codificaciontareas(request):
         form = Codificaciontareasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
-            return redirect('codificacion')
+            codificacion_form = form.save(commit=False)
+            codificacion_form.userId = social_user_id
+            codificacion_form.save()
+            return redirect('codificaciontareas')
         else:
             print('Form is invalid')
             print(form.errors)
@@ -276,14 +277,14 @@ def codificacionherramientas(request):
     codificacion = Codificacionherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        codificacion=model_to_dict(codificacion)
+        codificacion = model_to_dict(codificacion)
     except :
         codificacion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in codificacion.items():
+
         if isinstance(value,bool):
             if value:
                 true_counts[key] = true_counts.get(key, 0) + 1
@@ -292,7 +293,7 @@ def codificacionherramientas(request):
         
 
     form = Codificacionherramientasform()
-    
+
     try:
         codificacion_instance = Codificacionherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Codificacionherramientasmodel.DoesNotExist:
@@ -303,8 +304,9 @@ def codificacionherramientas(request):
         form = Codificacionherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            codificacion_form = form.save(commit=False)
+            codificacion_form.userId = social_user_id
+            codificacion_form.save()
             return redirect('codificacionherramientas')
         else:
             print('Form is invalid')
@@ -323,7 +325,7 @@ def codificacionherramientas(request):
         'cantidadFalsos': cantidadFalsos,
         'total': total,
         }
-    return render(request, 'Codificacionherramientas.html', context)
+    return render(request, 'codificacionherramientas.html', context)
 
 @login_required(login_url="/accounts/google/login/")
 def codificacionpracticas(request):
