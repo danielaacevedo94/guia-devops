@@ -983,15 +983,14 @@ def monitoreotareas(request):
     monitoreo = Monitoreotareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        monitoreo=model_to_dict(monitoreo)
+        monitoreo = model_to_dict(monitoreo)
     except :
         monitoreo = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in monitoreo.items():
-        # print(plan)
+
         if isinstance(value,bool):
             if value:
                 true_counts[key] = true_counts.get(key, 0) + 1
@@ -1000,27 +999,26 @@ def monitoreotareas(request):
         
 
     form = Monitoreotareasform()
-    
+
     try:
         monitoreo_instance = Monitoreotareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Monitoreotareasmodel.DoesNotExist:
         monitoreo_instance = None
 
     if request.method == 'POST':
-        #if planificacion_instance:
-           # form = planificacionForm(request.POST, instance=planificacion_instance)
-       # else:
+
         form = Monitoreotareasform(request.POST)
         
         if form.is_valid():
-            #form.instance.userId = social_user_id
-            form.save()
+            monitoreo_form = form.save(commit=False)
+            monitoreo_form.userId = social_user_id
+            monitoreo_form.save()
             return redirect('monitoreotareas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Monitoreotareasform(instance = monitoreo_instance)
+        form = Monitoreotareasform(instance=monitoreo_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -1047,15 +1045,14 @@ def monitoreoherramientas(request):
     monitoreo = Monitoreoherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        monitoreo=model_to_dict(monitoreo)
+        monitoreo = model_to_dict(monitoreo)
     except :
         monitoreo = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in monitoreo.items():
-        # print(plan)
+
         if isinstance(value,bool):
             if value:
                 true_counts[key] = true_counts.get(key, 0) + 1
@@ -1064,7 +1061,7 @@ def monitoreoherramientas(request):
         
 
     form = Monitoreoherramientasform()
-    
+
     try:
         monitoreo_instance = Monitoreoherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Monitoreoherramientasmodel.DoesNotExist:
@@ -1075,13 +1072,15 @@ def monitoreoherramientas(request):
         form = Monitoreoherramientasform(request.POST)
         
         if form.is_valid():
-            form.save()
+            monitoreo_form = form.save(commit=False)
+            monitoreo_form.userId = social_user_id
+            monitoreo_form.save()
             return redirect('monitoreoherramientas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Monitoreoherramientasform(instance = monitoreo_instance)
+        form = Monitoreoherramientasform(instance=monitoreo_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
