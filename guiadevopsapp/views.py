@@ -39,67 +39,6 @@ def actividades(request):
     return render(request, 'actividades.html')
 
 @login_required(login_url="/accounts/google/login/")
-def planificaciontareasVIEJO(request):
-
-    try:
-        social_account = SocialAccount.objects.get(user=request.user)
-        social_user_id = social_account.uid
-    except:
-        social_user_id = request.user.id
-    
-    planificacion = Planificaciontareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
-    
-    try:
-        planificacion = model_to_dict(planificacion)
-    except :
-        planificacion = {}
-    
-    true_counts = {}
-    false_counts = {}
-    for key, value in planificacion.items():
-
-        if isinstance(value,bool):
-            if value:
-                true_counts[key] = true_counts.get(key, 0) + 1
-            else:
-                false_counts[key] = false_counts.get(key, 0) + 1
-        
-
-    form = Planificaciontareasform()
-
-    try:
-        planificacion_instance = Planificaciontareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
-    except Planificaciontareasmodel.DoesNotExist:
-        planificacion_instance = None
-
-    if request.method == 'POST':
-
-        form = Planificaciontareasform(request.POST)
-        
-        if form.is_valid():
-
-            form.save()
-            return redirect('planificaciontareas')
-        else:
-            print('Form is invalid')
-            print(form.errors)
-    else:
-        form = Planificaciontareasform(instance=planificacion_instance)
-
-    cantidadVerdaderos = len(true_counts)
-    cantidadFalsos = len(false_counts)
-    total=63
-    context = {
-        'form': form,
-        'diccionarioVerdaderos': true_counts,
-        'diccionarioFalsos': false_counts,
-        'cantidadVerdaderos': cantidadVerdaderos,
-        'cantidadFalsos': cantidadFalsos,
-        'total': total,
-        }
-    return render(request, 'planificacionTareas.html',context)
-
-@login_required(login_url="/accounts/google/login/")
 def planificaciontareas(request):
 
     try:
@@ -200,8 +139,9 @@ def planificacionherramientas(request):
         form = Planificacionherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            planificacion_form = form.save(commit=False)
+            planificacion_form.userId = social_user_id
+            planificacion_form.save()
             return redirect('planificacionherramientas')
         else:
             print('Form is invalid')
@@ -220,7 +160,7 @@ def planificacionherramientas(request):
         'cantidadFalsos': cantidadFalsos,
         'total': total,
         }
-    return render(request, 'planificacionherramientas.html',context)    
+    return render(request, 'planificacionherramientas.html',context)
 
 @login_required(login_url="/accounts/google/login/")
 def planificacionpracticas(request):
