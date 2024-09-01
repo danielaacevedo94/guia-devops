@@ -471,11 +471,10 @@ def pruebastareas(request):
     pruebas = Pruebastareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        pruebas=model_to_dict(pruebas)
-    except:
+        pruebas = model_to_dict(pruebas)
+    except :
         pruebas = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in pruebas.items():
@@ -488,7 +487,7 @@ def pruebastareas(request):
         
 
     form = Pruebastareasform()
-    
+
     try:
         pruebas_instance = Pruebastareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Pruebastareasmodel.DoesNotExist:
@@ -499,14 +498,15 @@ def pruebastareas(request):
         form = Pruebastareasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            pruebas_form = form.save(commit=False)
+            pruebas_form.userId = social_user_id
+            pruebas_form.save()
             return redirect('pruebastareas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Pruebastareasform(instance = pruebas_instance)
+        form = Pruebastareasform(instance=pruebas_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -533,11 +533,10 @@ def pruebasherramientas(request):
     pruebas = Pruebasherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        pruebas=model_to_dict(pruebas)
-    except:
+        pruebas = model_to_dict(pruebas)
+    except :
         pruebas = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in pruebas.items():
@@ -550,7 +549,7 @@ def pruebasherramientas(request):
         
 
     form = Pruebasherramientasform()
-    
+
     try:
         pruebas_instance = Pruebasherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Pruebasherramientasmodel.DoesNotExist:
@@ -561,14 +560,15 @@ def pruebasherramientas(request):
         form = Pruebasherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            pruebas_form = form.save(commit=False)
+            pruebas_form.userId = social_user_id
+            pruebas_form.save()
             return redirect('pruebasherramientas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Pruebasherramientasform(instance = pruebas_instance)
+        form = Pruebasherramientasform(instance=pruebas_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
