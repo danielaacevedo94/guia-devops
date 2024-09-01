@@ -727,11 +727,10 @@ def desplieguetareas(request):
     despliegue = Desplieguetareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        despliegue=model_to_dict(despliegue)
+        despliegue = model_to_dict(despliegue)
     except :
         despliegue = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in despliegue.items():
@@ -744,7 +743,7 @@ def desplieguetareas(request):
         
 
     form = Desplieguetareasform()
-    
+
     try:
         despliegue_instance = Desplieguetareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Desplieguetareasmodel.DoesNotExist:
@@ -755,14 +754,15 @@ def desplieguetareas(request):
         form = Desplieguetareasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            despliegue_form = form.save(commit=False)
+            despliegue_form.userId = social_user_id
+            despliegue_form.save()
             return redirect('desplieguetareas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Desplieguetareasform(instance = despliegue_instance)
+        form = Desplieguetareasform(instance=despliegue_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -789,11 +789,10 @@ def despliegueherramientas(request):
     despliegue = Despliegueherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        despliegue=model_to_dict(despliegue)
+        despliegue = model_to_dict(despliegue)
     except :
         despliegue = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in despliegue.items():
@@ -806,7 +805,7 @@ def despliegueherramientas(request):
         
 
     form = Despliegueherramientasform()
-    
+
     try:
         despliegue_instance = Despliegueherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Despliegueherramientasmodel.DoesNotExist:
@@ -817,14 +816,15 @@ def despliegueherramientas(request):
         form = Despliegueherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            despliegue_form = form.save(commit=False)
+            despliegue_form.userId = social_user_id
+            despliegue_form.save()
             return redirect('despliegueherramientas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Despliegueherramientasform(instance = despliegue_instance)
+        form = Despliegueherramientasform(instance=despliegue_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -855,11 +855,10 @@ def operacionestareas(request):
     operaciones = Operacionestareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        operaciones=model_to_dict(operaciones)
+        operaciones = model_to_dict(operaciones)
     except :
         operaciones = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in operaciones.items():
@@ -872,7 +871,7 @@ def operacionestareas(request):
         
 
     form = Operacionestareasform()
-    
+
     try:
         operaciones_instance = Operacionestareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Operacionestareasmodel.DoesNotExist:
@@ -883,13 +882,15 @@ def operacionestareas(request):
         form = Operacionestareasform(request.POST)
         
         if form.is_valid():
-            form.save()
+            operaciones_form = form.save(commit=False)
+            operaciones_form.userId = social_user_id
+            operaciones_form.save()
             return redirect('operacionestareas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Operacionestareasform(instance = operaciones_instance)
+        form = Operacionestareasform(instance=operaciones_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
@@ -916,11 +917,10 @@ def operacionesherramientas(request):
     operaciones = Operacionesherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        operaciones=model_to_dict(operaciones)
+        operaciones = model_to_dict(operaciones)
     except :
         operaciones = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in operaciones.items():
@@ -933,7 +933,7 @@ def operacionesherramientas(request):
         
 
     form = Operacionesherramientasform()
-    
+
     try:
         operaciones_instance = Operacionesherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Operacionesherramientasmodel.DoesNotExist:
@@ -944,13 +944,15 @@ def operacionesherramientas(request):
         form = Operacionesherramientasform(request.POST)
         
         if form.is_valid():
-            form.save()
+            operaciones_form = form.save(commit=False)
+            operaciones_form.userId = social_user_id
+            operaciones_form.save()
             return redirect('operacionesherramientas')
         else:
             print('Form is invalid')
             print(form.errors)
     else:
-        form = Operacionesherramientasform(instance = operaciones_instance)
+        form = Operacionesherramientasform(instance=operaciones_instance)
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
