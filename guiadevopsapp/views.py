@@ -343,11 +343,10 @@ def construcciontareas(request):
     construccion = Construcciontareasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        construccion=model_to_dict(construccion)
+        construccion = model_to_dict(construccion)
     except :
         construccion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in construccion.items():
@@ -360,7 +359,7 @@ def construcciontareas(request):
         
 
     form = Construcciontareasform()
-    
+
     try:
         construccion_instance = Construcciontareasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Construcciontareasmodel.DoesNotExist:
@@ -371,8 +370,9 @@ def construcciontareas(request):
         form = Construcciontareasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            construccion_form = form.save(commit=False)
+            construccion_form.userId = social_user_id
+            construccion_form.save()
             return redirect('construcciontareas')
         else:
             print('Form is invalid')
@@ -405,11 +405,10 @@ def construccionherramientas(request):
     construccion = Construccionherramientasmodel.objects.all().filter(userId=social_user_id).order_by('-fecha').first()
     
     try:
-        construccion=model_to_dict(construccion)
+        construccion = model_to_dict(construccion)
     except :
         construccion = {}
     
-
     true_counts = {}
     false_counts = {}
     for key, value in construccion.items():
@@ -421,8 +420,8 @@ def construccionherramientas(request):
                 false_counts[key] = false_counts.get(key, 0) + 1
         
 
-    form = Construccionherramientasform()
-    
+    form = Construcciontareasform()
+
     try:
         construccion_instance = Construccionherramientasmodel.objects.filter(userId=social_user_id).order_by('-fecha').first()
     except Construccionherramientasmodel.DoesNotExist:
@@ -433,8 +432,9 @@ def construccionherramientas(request):
         form = Construccionherramientasform(request.POST)
         
         if form.is_valid():
-
-            form.save()
+            construccion_form = form.save(commit=False)
+            construccion_form.userId = social_user_id
+            construccion_form.save()
             return redirect('construccionherramientas')
         else:
             print('Form is invalid')
