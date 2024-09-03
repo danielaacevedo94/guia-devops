@@ -27,6 +27,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['52.89.95.129','devopsguide.lat','www.devopsguide.lat', '127.0.0.1:8000', '127.0.0.1']
 
+CSRF_TRUSTED_ORIGINS = ['https://devopsguide.lat', 'https://www.devopsguide.lat']
+
+
 
 # Application definition
 
