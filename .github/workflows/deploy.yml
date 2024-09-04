@@ -47,11 +47,10 @@ jobs:
 
     - name: Deploy to EC2
       run: |
-        ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.AWS_HOST }} << 'EOF'
+        ssh -o StrictHostKeyChecking=no ubuntu@${{ secrets.AWS_HOST }}
           cd gdevops/guia-devops/
           sudo su
           git pull origin main
           . .venv/bin/activate
           sudo pkill python
           python3 manage.py runserver 0.0.0.0:8000 > output.txt
-        EOF
