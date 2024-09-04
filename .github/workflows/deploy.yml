@@ -45,7 +45,7 @@ jobs:
         username: ubuntu
         key: ${{ secrets.AWS_KEY }}
         script: |
-          cd /path/to/your-repo
+          cd /gdevops/guia-devops/
           git pull origin main
           npm install
           pm2 restart all
