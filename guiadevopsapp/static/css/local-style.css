@@ -22,6 +22,14 @@ td label {
     font-style: italic;
 }
 
+.middlevertical {
+    vertical-align: middle;
+}
+
+.middlehorizontal {
+    text-align: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -95,9 +103,9 @@ img {
     /* Centrado verticalmente */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    /*width: 80%;*/
     /* Ancho del modal */
-    max-width: 500px;
+    /*max-width: 500px;*/
     /* Ancho máximo del modal */
     text-align: center;
 }
@@ -120,5 +128,12 @@ img {
 /* Estilo para la palabra que activa el modal */
 .trigger-word {
     color: blue;
+    cursor: pointer;
+}
+
+.trigger-word-cultura,
+.trigger-word-automatizacion,
+.trigger-word-medicion,
+.trigger-word-mejoracontinua {
     cursor: pointer;
 }

@@ -215,7 +215,8 @@
             <div class="collapse" id="ui-mon">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a>
+                </li>
                 <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
               </ul>
             </div>
@@ -245,212 +246,389 @@
                 </div>
               </div>
             </div>
-            
-            <div class="modal" id="myModal">
-              <div class="modal-dialog modal-dialog-scrollable modal-xl">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title h4" id="exampleModalXlLabel">
-                      <font style="vertical-align: inherit;">
-                        <font style="vertical-align: inherit;">ISO/IEC 29110</font>
-                      </font>
-                    </h5>                    
-                  </div>
-                  <div class="modal-body">
-                    <font style="vertical-align: inherit;">
-                      <font style="vertical-align: inherit;">
-                        <p>
-                          La Guía proporciona los procesos de Gestión de Proyecto e Implementación de Software, los
-                          cuales integran prácticas basadas en la selección de elementos estándares de la ISO/IEC
-                          12207:2008 – Ingeniería de Sistemas e Ingeniería de Software - Procesos del Ciclo de Vida del
-                          Software y la ISO/IEC 15289:2006 Ingeniería de Sistemas e Ingeniería de Software - Procesos
-                          del Ciclo de Vida del Software - Contenido de los productos de información (documentación) de
-                          los procesos del ciclo de vida del sistema y Software.
-                          <br>
-                          <img src="{% static 'images/procesos-iso.jpg' %}" alt="procesos-iso">
-                          <br>
-                          El propósito del proceso Gestión del Proyecto es establecer y llevar a cabo de manera
-                          sistemática las Tareas del proyecto de implementación de Software, las cuales permiten cumplir
-                          con los Objetivos del proyecto en calidad, tiempo y costo esperados. Cuenta con 4 actividades,
-                          en la figura siguiente se muestran:
-                          <br>
-                          <img src="{% static 'images/gestion-proyecto.jpg' %}" alt="gestion_proyecto">
-                          <br>
-                          El propósito del proceso Implementación de Software es la realización sistemática de las
-                          actividades de análisis, diseño, construcción, integración y pruebas para productos Software
-                          nuevos o modificados de acuerdo con los requisitos especificados. Cuenta con 6 actividades. en
-                          la figura siguiente se muestran:
-                          <br>
-                          <img src="{% static 'images/implementacion-software.jpg' %}" alt="implementacion_software">
-                          <br>
-                          <br>
-                          (ISO/IEC, 2011)
-                        </p>
-                      </font>
-                    </font>
-                  </div>
-                </div>
-              </div>
-            </div>            
-            <div class="row">
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card ">
-                  <div class="card-body">
-                    <img src="{% static 'images/devops-on-white-2.png' %}" alt="ciclo_devops" />
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-lg-12 grid-margin stretch-card">
-                <div class="card">
-                  <div class="card-body">
-                    <h5 class="card-title">Descripción</h5>
-                    <p>
-                      Según (Sharma & Coyne, 2015), DevOps es un proceso empresarial, es decir, un conjunto de
-                      actividades
-                      o tareas que producen un resultado específico (servicio o producto) para los clientes, desde el
-                      desarrollo y comprobación hasta la producción.
-                      <br>
-                      <br>
-                      En 2016, (Lwakatare et al., 2016) lo definen como una
-                      mentalidad sustentada por un conjunto de prácticas para fomentar la colaboración multifuncional
-                      entre equipos, especialmente desarrollo y operaciones de TI, dentro de una organización de
-                      desarrollo de software, con el fin de operar sistemas resilientes y acelerar la entrega de
-                      cambios.
-                      <br>
-                      <br>
-                      En Atlassian definen DevOps como una filosofía cultural, un conjunto de prácticas y herramientas
-                      de
-                      software para automatizar e integrar los procesos que comparten el equipo de desarrollo de
-                      software
-                      y el de TI, centrándose en la comunicación y colaboración entre los equipos y la automatización de
-                      la tecnología (Atlassian, 2023)
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin stretch-card">
-                <div class="card tale-bg">
-                  <div class="card-body">
-                    <p>
-                      En resumen, DevOps es un proceso con actividades y pr&aacute;cticas que lo sustentan que abarcan
-                      tanto la gestión del desarrollo del software como la gestión en producción, incluyendo la
-                      operatividad y monitorización de los productos o servicios de software, todo eso con la ayuda de
-                      herramientas para lograr mayor eficiencia y rapidez. <br>
-                      A continuaci&oacute;n, se definir&aacute;n los conceptos mencionados anteriormente:
-                    </p>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-md-12 grid-margin transparent">
-                <div class="row">
-                  <div class="col-md-4 mb-4 stretch-card transparent">
-                    <div class="card card-dark-blue">
-                      <div class="card-body">
-                        <p class="fs-30 mb-2">Proceso</p>
-                        <br>
-                        <p>Es un grupo de tareas y/o actividades relacionadas entre s&iacute; que persiguen cubrir las
-                          necesidades de los clientes. (ISO Calidad 2000, 2012)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-4 stretch-card transparent">
-                    <div class="card card-light-blue">
-                      <div class="card-body">
-                        <p class="fs-30 mb-2">Actividad</p>
-                        <br>
-                        <p>Son un grupo de acciones que persiguen un mismo fin (ISO Calidad 2000, 2012)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-4 mb-4 stretch-card transparent">
-                    <div class="card card-dark-blue">
-                      <div class="card-body">
-                        <p class="fs-30 mb-2">Pr&aacute;ctica</p>
-                        <br>
-                        <p>Es un ejercicio o realización de una acción de forma continuada y conforme a sus reglas
-                          (Definicion.com, 2021)</p>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-md-12 mb-4 stretch-card transparent">
-                    <div class="card card-light-blue">
-                      <div class="card-body">
-                        <p class="fs-30 mb-2">Herramienta</p>
-                        <br>
-                        <p>
-                          Son un conjunto de programas, aplicaciones o, simplemente instrucciones, que al utilizarlas
-                          permitirán al usuario realizar un trabajo determinado de la mejor manera posible en algún
-                          dispositivo informático (School, 2020)
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>            
           </div>
-          <!-- content-wrapper ends -->
-          <!-- partial:partials/_footer.html -->
-          <footer class="footer">
-            <div class="d-sm-flex justify-content-center justify-content-sm-between">
-              <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
-                All rights reserved.</span>
-              <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
-                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
-            </div>            
-          </footer>
-          <!-- partial -->
+
+          <div class="modal" id="myModal">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title h4" id="exampleModalXlLabel">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">ISO/IEC 29110</font>
+                    </font>
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                      <p>
+                        La Guía proporciona los procesos de Gestión de Proyecto e Implementación de Software, los
+                        cuales integran prácticas basadas en la selección de elementos estándares de la ISO/IEC
+                        12207:2008 – Ingeniería de Sistemas e Ingeniería de Software - Procesos del Ciclo de Vida del
+                        Software y la ISO/IEC 15289:2006 Ingeniería de Sistemas e Ingeniería de Software - Procesos
+                        del Ciclo de Vida del Software - Contenido de los productos de información (documentación) de
+                        los procesos del ciclo de vida del sistema y Software.
+                        <br>
+                        <img src="{% static 'images/procesos-iso.jpg' %}" alt="procesos-iso">
+                        <br>
+                        El propósito del proceso Gestión del Proyecto es establecer y llevar a cabo de manera
+                        sistemática las Tareas del proyecto de implementación de Software, las cuales permiten cumplir
+                        con los Objetivos del proyecto en calidad, tiempo y costo esperados. Cuenta con 4 actividades,
+                        en la figura siguiente se muestran:
+                        <br>
+                        <img src="{% static 'images/gestion-proyecto.jpg' %}" alt="gestion_proyecto">
+                        <br>
+                        El propósito del proceso Implementación de Software es la realización sistemática de las
+                        actividades de análisis, diseño, construcción, integración y pruebas para productos Software
+                        nuevos o modificados de acuerdo con los requisitos especificados. Cuenta con 6 actividades. en
+                        la figura siguiente se muestran:
+                        <br>
+                        <img src="{% static 'images/implementacion-software.jpg' %}" alt="implementacion_software">
+                        <br>
+                        <br>
+                        (ISO/IEC, 2011)
+                      </p>
+                    </font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card ">
+                <div class="card-body">
+                  <img class="mx-auto d-block" style="width: 50%;" src="{% static 'images/devops-on-white-2.png' %}"
+                    alt="ciclo_devops" />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Descripción</h5>
+                  <p>
+                    Según (Sharma & Coyne, 2015), DevOps es un proceso empresarial, es decir, un conjunto de
+                    actividades
+                    o tareas que producen un resultado específico (servicio o producto) para los clientes, desde el
+                    desarrollo y comprobación hasta la producción.
+                    <br>
+                    <br>
+                    En 2016, (Lwakatare et al., 2016) lo definen como una
+                    mentalidad sustentada por un conjunto de prácticas para fomentar la colaboración multifuncional
+                    entre equipos, especialmente desarrollo y operaciones de TI, dentro de una organización de
+                    desarrollo de software, con el fin de operar sistemas resilientes y acelerar la entrega de
+                    cambios.
+                    <br>
+                    <br>
+                    En Atlassian definen DevOps como una filosofía cultural, un conjunto de prácticas y herramientas
+                    de
+                    software para automatizar e integrar los procesos que comparten el equipo de desarrollo de
+                    software
+                    y el de TI, centrándose en la comunicación y colaboración entre los equipos y la automatización de
+                    la tecnología (Atlassian, 2023)
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+              <div class="card tale-bg">
+                <div class="card-body">
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Principios de DevOps</h4>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 mb-4 stretch-card transparent">
+              <div class="card tale-bg trigger-word-cultura">
+                <div class="card-body">
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Cultura</h4>
+                  <p>Es fundamental para la adopción exitosa de DevOps. Se enfoca en eliminar los silos entre los
+                    equipos de desarrollo y operaciones, integrando tareas de operaciones como parte del desarrollo
+                    diario.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 mb-4 stretch-card transparent">
+              <div class="card tale-bg trigger-word-automatizacion">
+                <div class="card-body">
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Automatizaci&oacute;n</h4>
+                  <p>Es fundamental en la estrategia DevOps de cualquier empresa, pues minimiza el trabajo manual,
+                    acelera los procesos de entrega a lo largo de todo el ciclo de vida del
+                    desarrollo de software y facilita la escalabilidad de las prácticas DevOps.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 mb-4 stretch-card transparent">
+              <div class="card tale-bg trigger-word-medicion">
+                <div class="card-body">
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Medici&oacute;n</h4>
+                  <p>La medición de cada etapa del flujo de trabajo de DevOps (desde el desarrollo y las pruebas hasta
+                    la
+                    implementación y las operaciones) brinda pistas fundamentales sobre el rendimiento de su software y
+                    la eficiencia y eficacia de sus procesos de DevOps.
+                    Se requieren datos confiables y mensurables para automatizar las pruebas, las confirmaciones y los
+                    lanzamientos.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-3 mb-4 stretch-card transparent">
+              <div class="card tale-bg trigger-word-mejoracontinua">
+                <div class="card-body">
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Mejora Continua</h4>
+                  <p>Consiste en centrarse en la experimentación, minimizar lo superfluo y optimizar la velocidad, los
+                    costes y la facilidad de entrega. Está vinculada a la entrega continua, lo que permite enviar
+                    actualizaciones de forma continuada para mejorar la eficiencia de los sistemas de
+                    software. Con la canalización constante de nuevas publicaciones, mejoran la eficiencia del
+                    desarrollo y aportan más
+                    valor a los clientes.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal" id="myModalCultura">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title h4" id="exampleModalXlLabel">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">Cultura</font>
+                    </font>
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                      <p>
+
+                      </p>
+                    </font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="myModalAutomatizacion">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title h4" id="exampleModalXlLabel">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">Automatizaci&oacute;n</font>
+                    </font>
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                      <p>
+
+                      </p>
+                    </font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="myModalMedicion">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title h4" id="exampleModalXlLabel">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">Medici&oacute;n</font>
+                    </font>
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                      <p>
+
+                      </p>
+                    </font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal" id="myModalMejoracontinua">
+            <div class="modal-dialog modal-dialog-scrollable modal-xl">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title h4" id="exampleModalXlLabel">
+                    <font style="vertical-align: inherit;">
+                      <font style="vertical-align: inherit;">Mejora Continua</font>
+                    </font>
+                  </h5>
+                </div>
+                <div class="modal-body">
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">
+                      <p>
+
+                      </p>
+                    </font>
+                  </font>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-md-12 grid-margin stretch-card">
+              <div class="card tale-bg">
+                <div class="card-body">
+                  <p>
+                    En resumen, DevOps es un proceso con actividades y pr&aacute;cticas que lo sustentan que abarcan
+                    tanto la gestión del desarrollo del software como la gestión en producción, incluyendo la
+                    operatividad y monitorización de los productos o servicios de software, todo eso con la ayuda de
+                    herramientas para lograr mayor eficiencia y rapidez. <br>
+                    A continuaci&oacute;n, se definir&aacute;n los conceptos mencionados anteriormente:
+                  </p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-12 grid-margin transparent">
+              <div class="row">
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body">
+                      <p class="fs-30 mb-2">Proceso</p>
+                      <br>
+                      <p>Es un grupo de tareas y/o actividades relacionadas entre s&iacute; que persiguen cubrir las
+                        necesidades de los clientes. (ISO Calidad 2000, 2012)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body">
+                      <p class="fs-30 mb-2">Actividad</p>
+                      <br>
+                      <p>Son un grupo de acciones que persiguen un mismo fin (ISO Calidad 2000, 2012)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4 mb-4 stretch-card transparent">
+                  <div class="card card-dark-blue">
+                    <div class="card-body">
+                      <p class="fs-30 mb-2">Pr&aacute;ctica</p>
+                      <br>
+                      <p>Es un ejercicio o realización de una acción de forma continuada y conforme a sus reglas
+                        (Definicion.com, 2021)</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12 mb-4 stretch-card transparent">
+                  <div class="card card-light-blue">
+                    <div class="card-body">
+                      <p class="fs-30 mb-2">Herramienta</p>
+                      <br>
+                      <p>
+                        Son un conjunto de programas, aplicaciones o, simplemente instrucciones, que al utilizarlas
+                        permitirán al usuario realizar un trabajo determinado de la mejor manera posible en algún
+                        dispositivo informático (School, 2020)
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- main-panel ends -->
+        <!-- content-wrapper ends -->
+        <!-- partial:partials/_footer.html -->
+        <footer class="footer">
+          <div class="d-sm-flex justify-content-center justify-content-sm-between">
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+              All rights reserved.</span>
+            <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
+                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+          </div>
+        </footer>
+        <!-- partial -->
       </div>
-      <!-- page-body-wrapper ends -->
+      <!-- main-panel ends -->
     </div>
-    <!-- container-scroller -->
+    <!-- page-body-wrapper ends -->
+  </div>
+  <!-- container-scroller -->
 
-    <!-- plugins:js -->
-    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
-    <!-- endinject -->
-    <!-- Plugin js for this page -->
-    <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
-    <script src="{% static 'vendors/datatables.net/jquery.dataTables.js' %}"></script>
-    <script src="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
-    <script src="{% static 'js/dataTables.select.min.js' %}"></script>
+  <!-- plugins:js -->
+  <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+  <!-- endinject -->
+  <!-- Plugin js for this page -->
+  <script src="{% static 'vendors/chart.js/Chart.min.js' %}"></script>
+  <script src="{% static 'vendors/datatables.net/jquery.dataTables.js' %}"></script>
+  <script src="{% static 'vendors/datatables.net-bs4/dataTables.bootstrap4.js' %}"></script>
+  <script src="{% static 'js/dataTables.select.min.js' %}"></script>
 
-    <!-- End plugin js for this page -->
-    <!-- inject:js -->
-    <script src="{% static 'js/off-canvas.js' %}"></script>
-    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
-    <script src="{% static 'js/template.js' %}"></script>
-    <script src="{% static 'js/settings.js' %}"></script>
-    <script src="{% static 'js/todolist.js' %}"></script>
-    <!-- endinject -->
-    <!-- Custom js for this page-->
-    <script src="{% static 'js/dashboard.js' %}"></script>
-    <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
-    <!-- End custom js for this page-->
+  <!-- End plugin js for this page -->
+  <!-- inject:js -->
+  <script src="{% static 'js/off-canvas.js' %}"></script>
+  <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+  <script src="{% static 'js/template.js' %}"></script>
+  <script src="{% static 'js/settings.js' %}"></script>
+  <script src="{% static 'js/todolist.js' %}"></script>
+  <!-- endinject -->
+  <!-- Custom js for this page-->
+  <script src="{% static 'js/dashboard.js' %}"></script>
+  <script src="{% static 'js/Chart.roundedBarCharts.js' %}"></script>
+  <!-- End custom js for this page-->
 </body>
 <script>
   // Obtener elementos del DOM
   var modal = document.getElementById("myModal");
+  var modalCultura = document.getElementById("myModalCultura");
+  var modalAutomatizacion = document.getElementById("myModalAutomatizacion");
+  var modalMedicion = document.getElementById("myModalMedicion");
+  var modalMejoracontinua = document.getElementById("myModalMejoracontinua");
   var trigger = document.querySelector(".trigger-word");
+  var triggerCultura = document.querySelector(".trigger-word-cultura");
+  var triggerAutomatizacion = document.querySelector(".trigger-word-automatizacion");
+  var triggerMedicion = document.querySelector(".trigger-word-medicion");
+  var triggerMejoracontinua = document.querySelector(".trigger-word-mejoracontinua");
   var closeButton = document.querySelector(".close");
 
   // Abrir el modal al hacer clic en la palabra
   trigger.onclick = function () {
     modal.style.display = "block";
   }
+  triggerCultura.onclick = function () {
+    modalCultura.style.display = "block";
+  }
+  triggerAutomatizacion.onclick = function () {
+    modalAutomatizacion.style.display = "block";
+  }
+  triggerMedicion.onclick = function () {
+    modalMedicion.style.display = "block";
+  }
+  triggerMejoracontinua.onclick = function () {
+    modalMejoracontinua.style.display = "block";
+  }
 
   // Cerrar el modal si se hace clic fuera del contenido
   window.onclick = function (event) {
-    if (event.target == modal) {
+    if (event.target == modal || event.target == modalCultura || event.target == modalAutomatizacion || event.target == modalMedicion || event.target == modalMejoracontinua) {
       modal.style.display = "none";
+      modalCultura.style.display = "none";
+      modalAutomatizacion.style.display = "none";
+      modalMedicion.style.display = "none";
+      modalMejoracontinua.style.display = "none";
     }
   }
 </script>
