@@ -71,14 +71,14 @@ td label {
     margin-bottom: 0px;
 }
 
-img {
+/*img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* O "contain" según lo que prefieras */
+    // O "contain" según lo que prefieras
     display: block;
-    /* Elimina el espacio blanco debajo de la imagen */
-}
+    // Elimina el espacio blanco debajo de la imagen
+}*/
 
 .modal {
     display: none;
