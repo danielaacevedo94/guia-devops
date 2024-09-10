@@ -127,6 +127,7 @@ class Codificacionherramientasmodel(models.Model):
     fecha = models.DateTimeField(default=datetime.now)
     toolCV = models.BooleanField(default=False, verbose_name="Control de Versiones (Git, GitHub, GitLab, Mercurial, Subversion (SVN), BitBucket Atlassian)")
     toolIDE = models.BooleanField(default=False, verbose_name="Entorno de Desarrollo Integrado (IDE) (Visual Studio Code, Eclipse, NetBeans, Android Studio)")
+    toolGA = models.BooleanField(default=False, verbose_name="Gestión de Artefactos (AWS CodeArtifact, Harbor, GitHub Packages, Azure Artifacts, Sonatype Nexus Repository, JFrog Artifactory)")
     class Meta:
         get_latest_by = ['fecha']
 
@@ -235,8 +236,8 @@ class Liberaciontareasmodel(models.Model):
 class Liberacionherramientasmodel(models.Model):
     userId = models.TextField()
     fecha = models.DateTimeField(default=datetime.now)
-    toolCI = models.BooleanField(default=False, verbose_name="Integración Continua (Jenkins, Travis CI, CircleCI, GitLab CI, Atlassian Bamboo, CodeShip, BitBucket Cloud Atlassian, Puppet Pipelines for Applications)")
-    toolGA = models.BooleanField(default=False, verbose_name="Gestión de Artefactos (Sonatype Nexus Repository, JFrog Artifactory, GitHub Packages, AWS CodeArtifact)")
+    toolCI = models.BooleanField(default=False, verbose_name="Integración Continua (GitLab CI/CD, GitHub Actions, BitBucket Cloud Atlassian, Puppet Pipelines for Applications, Atlassian Bamboo, CodeShip, Jenkins, CircleCI, Travis CI)")
+    toolGA = models.BooleanField(default=False, verbose_name="Gestión de Artefactos (AWS CodeArtifact, Harbor, GitHub Packages, Azure Artifacts, Sonatype Nexus Repository, JFrog Artifactory)")
     class Meta:
         get_latest_by = ['fecha']
 
@@ -273,11 +274,11 @@ class Desplieguetareasmodel(models.Model):
 class Despliegueherramientasmodel(models.Model):
     userId = models.TextField()
     fecha = models.DateTimeField(default=datetime.now)
-    toolCD = models.BooleanField(default=False, verbose_name="Despliegue Continuo (GitLab, CodeShip, BitBucket Pipelines, Puppet Pipelines for Applications, Atlassian Bamboo, AWS OpsWorks)")
+    toolCD = models.BooleanField(default=False, verbose_name="Despliegue Continuo (GitLab CI/CD, GitHub Actions, Bitbucket Pipelines, Puppet Pipelines for Applications, Atlassian Bamboo, CodeShip, AWS Opsworks)")
     toolGC = models.BooleanField(default=False, verbose_name="Gestión de la Configuración (Ansible, Puppet, Chef, AWS Opsworks, SaltStack)")
-    toolIaC = models.BooleanField(default=False, verbose_name="Infraestructura como Código (Chef, Terraform, Ansible, Pulumi, AWS CloudFormation, Azure ARM Templates, Google Cloud Deployment Manager)")
+    toolIaC = models.BooleanField(default=False, verbose_name="Infraestructura como Código (Terraform, Chef, Ansible, Pulumi, AWS CloudFormation, Azure ARM Templates, Google Cloud Deployment Manager)")
     toolC = models.BooleanField(default=False, verbose_name="Contenedorización (Docker, Podman)")
-    toolSN = models.BooleanField(default=False, verbose_name="Servicios en la Nube (Heroku, Microsoft Azure, AWS, Google Cloud Platform, Oracle Cloud, OpenShift)")
+    toolSN = models.BooleanField(default=False, verbose_name="Servicios en la Nube (AWS, Heroku, Microsoft Azure, Google Cloud Platform, Oracle Cloud, OpenShift)")
     class Meta:
         get_latest_by = ['fecha']
 
@@ -314,9 +315,9 @@ class Operacionestareasmodel(models.Model):
 class Operacionesherramientasmodel(models.Model):
     userId = models.TextField()
     fecha = models.DateTimeField(default=datetime.now)
-    toolOC = models.BooleanField(default=False, verbose_name="Orquestación de Contenedores (Kubernetes, MESOSPHERE DC/OS, Docker Enterprise (Swarm))")
+    toolOC = models.BooleanField(default=False, verbose_name="Orquestación de Contenedores (Kubernetes, Docker Swarm, MESOSPHERE DC/OS)")
     toolGC = models.BooleanField(default=False, verbose_name="Gestión de la Configuración (Ansible, Puppet, Chef, AWS Opsworks, SaltStack)")
-    toolIaC = models.BooleanField(default=False, verbose_name="Infraestructura como Código (Chef, Terraform, Ansible, Pulumi, AWS CloudFormation, Azure ARM Templates, Google Cloud Deployment Manager)")
+    toolIaC = models.BooleanField(default=False, verbose_name="Infraestructura como Código (Terraform, Chef, Ansible, Pulumi, AWS CloudFormation, Azure ARM Templates, Google Cloud Deployment Manager)")
     toolGS = models.BooleanField(default=False, verbose_name="Gestión de Servicios (Atlassian Jira Service Management)")
     toolGI = models.BooleanField(default=False, verbose_name="Gestión de Incidentes (Atlassian Jira Service Management, BigPanda, VictorOps, PagerDuty, OpsGenie)")
     class Meta:
@@ -361,7 +362,7 @@ class Monitoreoherramientasmodel(models.Model):
     toolMR = models.BooleanField(default=False, verbose_name="Monitoreo de Redes (ManageEngine OpManager, Nagios, New Relic, Microsoft SCOM, Sensu, DataDog, ExtraHop, SignalFX, SumoLogic)")
     toolAD = models.BooleanField(default=False, verbose_name="Análisis de Datos (ManageEngine OpManager , Splunk, ELK Stack, New Relic, Microsoft SCOM, DataDog, SignalFX, SumoLogic)")
     toolGL = models.BooleanField(default=False, verbose_name="Gestión de Logs (ManageEngine OpManager , Splunk, ELK Stack, New Relic, Microsoft SCOM, SumoLogic, Scalyr, Loggly)")
-    toolAPM = models.BooleanField(default=False, verbose_name="Monitoreo de Aplicaciones (New Relic, Microsoft SCOM, Sensu, DataDog, ExtraHop, SignalFX, Dynatrace, AppDynamics)")
+    toolAPM = models.BooleanField(default=False, verbose_name="Monitoreo de Aplicaciones (Prometheus, New Relic, Microsoft SCOM, Sensu, DataDog, ExtraHop, SignalFX, Dynatrace, AppDynamics)")
     toolUXM = models.BooleanField(default=False, verbose_name="Monitoreo de Experiencia de Usuario (ManageEngine OpManager, New Relic, ExtraHop, Dynatrace, AppDynamics)")
     class Meta:
         get_latest_by = ['fecha']

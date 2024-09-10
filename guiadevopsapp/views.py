@@ -152,7 +152,8 @@ def planificacionherramientas(request):
 
     cantidadVerdaderos = len(true_counts)
     cantidadFalsos = len(false_counts)
-    total=1
+    total=cantidadFalsos+cantidadVerdaderos
+    """total=1"""
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
