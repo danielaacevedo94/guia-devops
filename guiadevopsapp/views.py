@@ -32,6 +32,7 @@ def home(request):
 def inicio(request):
     return render(request, 'home.html')
 
+@login_required(login_url="/accounts/google/login/")
 def iniciodash(request):
     return render(request, 'indexdash.html')
 

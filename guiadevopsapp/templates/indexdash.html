@@ -520,28 +520,12 @@
   // Abrir el modal al hacer clic en la palabra
   trigger.onclick = function () {
     modal.style.display = "block";
-  }
-  triggerCultura.onclick = function () {
-    modalCultura.style.display = "block";
-  }
-  triggerAutomatizacion.onclick = function () {
-    modalAutomatizacion.style.display = "block";
-  }
-  triggerMedicion.onclick = function () {
-    modalMedicion.style.display = "block";
-  }
-  triggerMejoracontinua.onclick = function () {
-    modalMejoracontinua.style.display = "block";
-  }
+  }  
 
   // Cerrar el modal si se hace clic fuera del contenido
   window.onclick = function (event) {
-    if (event.target == modal || event.target == modalCultura || event.target == modalAutomatizacion || event.target == modalMedicion || event.target == modalMejoracontinua) {
+    if (event.target == modal) {
       modal.style.display = "none";
-      modalCultura.style.display = "none";
-      modalAutomatizacion.style.display = "none";
-      modalMedicion.style.display = "none";
-      modalMejoracontinua.style.display = "none";
     }
   }
 </script>
