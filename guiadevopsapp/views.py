@@ -153,7 +153,7 @@ def planificacionherramientas(request):
     cantidadVerdaderos = len(true_counts)
     cantidadFalsos = len(false_counts)
     total=cantidadFalsos+cantidadVerdaderos
-    """total=1"""
+    #total=1
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -318,7 +318,8 @@ def codificacionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=2
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=2
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -446,7 +447,8 @@ def construccionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=1
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=1
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -574,7 +576,8 @@ def pruebasherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=6
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=6
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -702,7 +705,8 @@ def liberacionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=2
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=2
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -830,7 +834,8 @@ def despliegueherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=5
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=5
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -958,7 +963,8 @@ def operacionesherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=5
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=5
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
@@ -1086,7 +1092,8 @@ def monitoreoherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=5
+    total=cantidadFalsos+cantidadVerdaderos
+    #total=5
     context = {
         'form': form,
         'diccionarioVerdaderos': true_counts,
