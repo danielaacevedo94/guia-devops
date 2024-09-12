@@ -152,7 +152,8 @@ def planificacionherramientas(request):
 
     cantidadVerdaderos = len(true_counts)
     cantidadFalsos = len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Planificacionherramientasmodel._meta.fields)-3
     #total=1
     context = {
         'form': form,
@@ -318,7 +319,8 @@ def codificacionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Codificacionherramientasmodel._meta.fields)-3
     #total=2
     context = {
         'form': form,
@@ -447,7 +449,8 @@ def construccionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Construccionherramientasmodel._meta.fields)-3
     #total=1
     context = {
         'form': form,
@@ -576,7 +579,9 @@ def pruebasherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    #total=Pruebasherramientasmodel.objects.all().filter(userId=social_user_id).count()-1
+    total=len(Pruebasherramientasmodel._meta.fields)-3
     #total=6
     context = {
         'form': form,
@@ -705,7 +710,8 @@ def liberacionherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Liberacionherramientasmodel._meta.fields)-3
     #total=2
     context = {
         'form': form,
@@ -834,7 +840,8 @@ def despliegueherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Despliegueherramientasmodel._meta.fields)-3
     #total=5
     context = {
         'form': form,
@@ -963,7 +970,8 @@ def operacionesherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Operacionesherramientasmodel._meta.fields)-3
     #total=5
     context = {
         'form': form,
@@ -1092,7 +1100,8 @@ def monitoreoherramientas(request):
     
     cantidadVerdaderos=len(true_counts)
     cantidadFalsos=len(false_counts)
-    total=cantidadFalsos+cantidadVerdaderos
+    #total=cantidadFalsos+cantidadVerdaderos
+    total=len(Monitoreoherramientasmodel._meta.fields)-3
     #total=5
     context = {
         'form': form,
