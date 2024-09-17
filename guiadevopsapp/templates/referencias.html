@@ -7,20 +7,18 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Pruebas - DevOps</title>
+  <title>Referencias - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
   <!-- endinject -->
-
+  <!-- Plugin css for this page -->
+  <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
-  <!-- End plugin css for this page -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
   <!-- End plugin css for this page -->
@@ -32,10 +30,10 @@
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.html"><img src="{% static 'images/logo.png' %}" class="mr-2"
-            alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="{% static 'images/logo-mini.png' %}"
-            alt="logo" /></a>
+        <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img src="{% static 'images/logo.png' %}"
+            class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+            src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -210,50 +208,50 @@
       <div class="main-panel">
         <div class="content-wrapper">
           <div class="row">
-            <div class="col-lg-6 grid-margin stretch-card">
+            <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Pruebas</h2>
+                  <h2>Referencias</h2>
 
                 </div>
               </div>
             </div>
-
-            <div class="col-lg-6 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2>Herramientas</h2>
-                </div>
-              </div>
-            </div>
-
 
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <h4 class="negrita">Descripción de la Actividad</h4>
                   <p>
-                    Busca comprobar que la calidad de lo construido sea la más alta, centrado su
-                    atención no solamente en comprobar que la funcionalidad responde correctamente a
-                    la descripción funcional del análisis, sino que también permite determinar cómo
-                    responde a distintos estímulos que producirán un error. (Perera et al., 2017).
+                    En esta actividad se realiza el desarrollo o mejora del software a construir,
+                    teniendo en cuenta los elementos de la planeación, e implementando prácticas que
+                    garanticen la organización del código, la trazabilidad de los cambios y su alta
+                    disponibilidad para todos los integrantes del equipo en cualquier momento.
+                    (Perera et al., 2017).
                     <br>
                     <br>
-                    (Sousa et al., 2019) indica que la calidad permite verificar el correcto
-                    funcionamiento del código a través de diferentes tipos de prueba.
+                    (Sousa et al., 2019) si bien está relacionado con codificar las funcionalidades
+                    planificadas, también busca que se haga de una forma controlada por una práctica
+                    que permita no solo mantener un repositorio central disponible para todos, sino
+                    que también este tenga la posibilidad de realizar la trazabilidad de cambios lo
+                    que concuerda con lo que menciona (Perera et al., 2017)
                     <br>
                     <br>
-                    Se asegura que el software cumpla con los requisitos y que no tenga errores
-                    verificando que las nuevas funcionalidades no afecten las existentes. (Badshah
-                    et al., 2020).
+                    Busca asegurar que el equipo de desarrollo sepa usar las herramientas de
+                    desarrollo, de control de versiones y de seguridad. Además de poder definir qué
+                    pruebas se harán a las funcionalidades codificadas y de ser posible construir
+                    las automatizaciones para la entrega y mantenimiento del software en operaciones
+                    (Badshah et al., 2020).
                     <br>
                     <br>
-                    <span class="negrita">Prop&oacute;sito:</span> Verificar el correcto funcionamiento del código. 
+                    <span class="negrita">Prop&oacute;sito:</span> Codificar las funcionalidades planificadas.
                     <br>
                     <br>
                     <span class="negrita">Objetivos:</span>
                   <ul>
-                    <li>Asegurar que tanto las nuevas funcionalidades como las antiguas se ejecutan correctamente.</li>
+                    <li>Asegurar que el equipo de desarrollo sepa usar las herramientas de desarrollo, de control de
+                      versiones y de seguridad.</li>
+                    <li>Definir qué pruebas se harán a las funcionalidades codificadas.</li>
+                    <li>Construir las automatizaciones para la entrega y mantenimiento del software en operaciones.</li>
                   </ul>
                   </p>
                 </div>
@@ -264,190 +262,72 @@
                 <div class="card-body">
                   <h4 class="negrita">Descripci&oacute;n de las categor&iacute;as de las herramientas de la Actividad
                   </h4>
-                  <p>En Pruebas, se utilizan herramientas especializadas que permiten realizar pruebas de acuerdo
-                    con el lenguaje de programación utilizado. Se pueden encontrar herramientas tanto para automatizar
-                    la prueba como para la creación y también para el análisis estático de código, con la característica
-                    de que dependerá del tipo de lenguaje de programación que se use, el tipo de prueba a ejecutar y
-                    hasta por el tipo de aplicación que se está desarrollando. A continuaci&oacute;n se decriben:</p>
+                  <p>Para la Codificaci&oacute;n se utilizan software de control de versiones, editores de código e IDEs
+                    de
+                    programación pues permite a los equipos escribir código, colaborar en el mismo, minimizando así, los
+                    conflictos y facilita la práctica de integración continua. A continuación, se describen estos:
+                    <br>
+                  </p>
                   <nav class="navbar-dropdown">
                     <ul>
                       <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-a" aria-expanded="false"
+                        <a class="nav-link" data-toggle="collapse" href="#ui-cv" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Automatizaci&oacute;n <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">Control de versiones <i class="fa fa-eye mx-0"></i></h4>
                         </a>
-                        <div class="collapse" id="ui-a">
+                        <div class="collapse" id="ui-cv">
                           <p>
-                            Las herramientas de automatización de pruebas están diseñadas para simplificar y acelerar el
-                            proceso de pruebas en software, con características clave que son comunes en la mayoría de
-                            estas herramientas. <br>
-                            Algunas de las características más importantes son:
+                            Los sistemas de control de versiones son herramientas que actúan como repositorios
+                            centralizados, facilitando que todos los miembros del equipo de desarrollo tengan acceso a
+                            los cambios (propiedad colectiva del código). Además, con ellas se logra lo siguiente:
                           <ul>
-                            <li>Automatización de Pruebas: Estas herramientas permiten la ejecución automática de casos
-                              de
-                              prueba, eliminando la necesidad de intervención manual y acelerando el ciclo de
-                              desarrollo.
-                              Esto es fundamental en pruebas de regresión, donde se necesita verificar repetidamente que
-                              los cambios no introduzcan errores.</li>
-                            <li>Integración con CI/CD: La mayoría de las herramientas de pruebas se integran
-                              perfectamente
-                              con pipelines de Integración Continua y Despliegue Continuo (CI/CD). Esto permite la
-                              ejecución automática de pruebas en cada commit de código, garantizando que el software se
-                              mantenga en un estado desplegable.</li>
-                            <li>Soporte Multiplataforma: Muchas de estas herramientas están diseñadas para trabajar en
-                              múltiples entornos, desde pruebas en aplicaciones web, móviles, hasta servicios API.
-                              Algunas
-                              incluso permiten pruebas en diferentes sistemas operativos y navegadores, lo que amplía su
-                              aplicabilidad.</li>
-                            <li>Facilidad de Uso y Desarrollo de Scripts: Aunque algunas herramientas requieren
-                              habilidades de codificación, muchas ofrecen interfaces de usuario intuitivas y lenguajes
-                              de
-                              scripting simplificados que facilitan la creación de scripts de prueba, incluso para
-                              aquellos con menos experiencia técnica.</li>
-                            <li>Soporte para Diversos Lenguajes de Programación: Estas herramientas suelen ofrecer
-                              soporte
-                              para múltiples lenguajes de programación, lo que permite a los desarrolladores y testers
-                              trabajar con las herramientas y frameworks que ya conocen. </li>
-                            <li>Escalabilidad y Personalización: Las herramientas más robustas permiten la
-                              personalización
-                              a través de plugins o configuraciones avanzadas, adaptándose a las necesidades específicas
-                              de cada proyecto. También son capaces de manejar grandes volúmenes de pruebas de manera
-                              eficiente</li>
+                            <li>Almacenan todos los cambios en un historial para permitir su trazabilidad.</li>
+                            <li>Se puede revertir rápidamente a una versión estable anterior en caso de error durante la
+                              integración.</li>
+                            <li>Permite una recuperación de fallas sin demoras significativas.</li>
                           </ul>
-                          (Bravin Wasike, 2023; Khomenko, 2022; Trantorinc, 2023)
-
-
+                          (Pastrana-Pardo et al., 2022)
                           </p>
                         </div>
                       </li>
                       <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-cp" aria-expanded="false"
+                        <a class="nav-link" data-toggle="collapse" href="#ui-ide" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Creaci&oacute;n de Pruebas <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">Entornos de desarrollo integrados (IDE) <i class="fa fa-eye mx-0"></i>
+                          </h4>
                         </a>
-                        <div class="collapse" id="ui-cp">
+                        <div class="collapse" id="ui-ide">
                           <p>
-                            Hace referencia al software con el que se pueden ejecutar las pruebas necesarias para
-                            obtener la calidad necesaria del producto de software y no solo facilitan la generación de
-                            casos de prueba, sino que también optimizan la gestión y el seguimiento del proceso de
-                            pruebas.
+                            Es una aplicación de software que ayuda a los programadores a desarrollar código de software
+                            de manera eficiente. Incluyen funcionalidades que van más allá de la edición de texto y
+                            proporcionan una interfaz central para herramientas de desarrollo comunes (AWS, 2023). Entre
+                            ellas incluyen:
                             <br>
-                            Algunas características generales que tienen son:
                           <ul>
-                            <li>Facilidad de Uso: Muchas herramientas de creación de pruebas están diseñadas para ser
-                              intuitivas, permitiendo que incluso usuarios sin experiencia técnica puedan crear y
-                              gestionar casos de prueba. Esto se logra a menudo mediante interfaces de usuario sencillas
-                              y
-                              soporte para escritura de pruebas en lenguaje natural.</li>
-                            <li>Gestión de Casos de Prueba: Estas herramientas suelen incluir funcionalidades para
-                              organizar, priorizar y reutilizar casos de prueba. También permiten crear conjuntos de
-                              pruebas que pueden ser ejecutados en diferentes entornos y condiciones, facilitando un
-                              enfoque estructurado y completo en la prueba del software.</li>
-                            <li>Integración con otras Herramientas: Para un flujo de trabajo eficiente, estas
-                              herramientas
-                              generalmente ofrecen integración con sistemas de seguimiento de errores, CI/CD y otras
-                              herramientas de automatización. Esto permite un proceso de prueba y despliegue más fluido,
-                              donde las pruebas creadas se pueden automatizar e integrar en pipelines de desarrollo.
+                            <li>Automatización de la edición de código: Permite realizar tareas repetitivas de edición
+                              de código automáticamente, como formateo o alineación de código, lo que ahorra tiempo y
+                              reduce errores humanos.</li>
+                            <li>Resaltado de sintaxis: Mejora la legibilidad del código al aplicar diferentes colores a
+                              palabras clave, variables y estructuras del lenguaje de programación, facilitando la
+                              identificación de errores y la comprensión del código.</li>
+                            <li>Finalización de código inteligente: Proporciona sugerencias de autocompletado basadas en
+                              el contexto y el análisis del código, acelerando el proceso de escritura y reduciendo los
+                              errores tipográficos.</li>
+                            <li>Refactorización del soporte: Permite reorganizar y modificar el código sin cambiar su
+                              comportamiento externo, ayudando a mejorar su estructura, legibilidad y mantenibilidad.
                             </li>
-                            <li>Colaboración y Gestión del Equipo: Muchas herramientas permiten la colaboración entre
-                              equipos, facilitando la gestión de pruebas en proyectos grandes. Los usuarios pueden
-                              compartir, revisar y actualizar casos de prueba de manera colaborativa, asegurando que
-                              todo el equipo esté alineado.</li>
-                            <li>Reportes y Análisis: Proveen informes detallados sobre el rendimiento de las pruebas,
-                              cubriendo métricas clave como la cobertura de prueba, defectos encontrados, y la
-                              efectividad
-                              de los casos de prueba. Esta capacidad de reportes es crucial para entender el progreso y
-                              la calidad del software a lo largo del ciclo de desarrollo.</li>
-                            <li>Escalabilidad y Flexibilidad: Estas herramientas están diseñadas para ser escalables,
-                              soportando desde pequeños proyectos hasta grandes implementaciones. Además, suelen ser
-                              flexibles en cuanto a los tipos de pruebas que se pueden crear, ya sea pruebas manuales,
-                              automatizadas, o híbridas.</li>
+                            <li>Automatización de la creación local: acilita la ejecución de tareas de desarrollo como
+                              compilación o pruebas en el entorno local del desarrollador, agilizando el flujo de
+                              trabajo​. </li>
+                            <li>Compilación: Traduce el código fuente en un ejecutable o en un formato que la máquina
+                              pueda entender, asegurando que el software funcione correctamente en diferentes entornos​.
+                            </li>
+                            <li>Pruebas: Ejecuta automáticamente pruebas unitarias, de integración, y funcionales para
+                              verificar que el software funciona como se espera antes de su despliegue.</li>
+                            <li>Depuración: Proporciona herramientas para identificar, rastrear y corregir errores en el
+                              código, mejorando la estabilidad y funcionalidad del software.</li>
                           </ul>
-                          (Sameeksha Medewar, 2024; Tasnim, 2023b; TestingXperts, 2020)
-                          </p>
-                        </div>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <h4 class="menu-title">Tipos de Pruebas</h4>
-                        <p>
-                          Existe una amplia gama de tipos de pruebas básicas que se adaptan a distintos proyectos y
-                          requisitos. Así que se determinan los tipos de pruebas esenciales (unitarias, funcionales, de
-                          rendimiento, de seguridad, etc.) que necesita, y también cualquier requisito especializado que
-                          exija su proyecto, incluidas las pruebas de API o de compatibilidad y la herramienta a usar
-                          para las pruebas dependerá de ello (Singureanu, 2024). En lo siguiente menciono de las más
-                          usadas
-                          tanto en entorno DevOps como en la ISO/IEC 29110.
-                        </p>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-aec" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">An&aacute;lisis est&aacute;tico de c&oacute;digo <i
-                              class="fa fa-eye mx-0"></i></h4>
-                        </a>
-                        <div class="collapse" id="ui-aec">
-                          <p>
-                            Es un proceso que se realiza para identificar rápidamente posibles errores o usos inusuales
-                            del código (Adobe, 2021). Este proceso destaca problemas de sintaxis y de estilo en el
-                            código fuente, dependiendo del lenguaje de programación utilizado. Se puede ejecutar un
-                            linter en el código para detectar y corregir errores sutiles de programación o prácticas de
-                            codificación no convencionales que podrían causar fallos.
-                            <br>
-                            El linting puede identificar lo siguiente:
-                          <ul>
-                            <li>problemas como el uso de variables no inicializadas o no definidas,</li>
-                            <li>llamadas a funciones no definidas,</li>
-                            <li>paréntesis faltantes,</li>
-                            <li>problemas más sutiles como intentos de redefinir tipos o funciones integradas,</li>
-                          </ul>
-                          A diferencia del formato, que solo reestructura la apariencia del
-                          código, el linting analiza cómo se ejecuta el código y detecta errores.
-                          <br>
-                          (Microsoft, 2024)
-                          </p>
-                        </div>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-pu" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">Pruebas Unitarias <i class="fa fa-eye mx-0"></i></h4>
-                        </a>
-                        <div class="collapse" id="ui-pu">
-                          <p>
-                            Las pruebas unitarias verifican la presencia de fallas en componentes de software
-                            individuales (Pecorelli et al., 2024). (Nguyen Tung et al., 2024) menciona que las pruebas
-                            unitarias son un método adecuado para asegurar la calidad del código fuente en las primeras
-                            fases del desarrollo. Sugiere también, que estas pruebas deben realizarse incluso antes de
-                            que el código fuente esté completamente terminado, ya que todavía hay muchos módulos y
-                            componentes por desarrollar.
-                          </p>
-                        </div>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-pi" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">Pruebas de Integraci&oacute;n <i class="fa fa-eye mx-0"></i></h4>
-                        </a>
-                        <div class="collapse" id="ui-pi">
-                          <p>
-                            Mientras que las pruebas unitarias se centran en probar la funcionalidad de componentes
-                            individuales, las pruebas de integración se centran en estas interacciones (Wild et al.,
-                            2024). Según la ISO/IEC/IEEE 24765 (ISO/IEC/IEEE, 2017), son pruebas en las que se combinan
-                            y prueban componentes de software, componentes de hardware o ambos para evaluar la
-                            interacción entre ellos.
-                          </p>
-                        </div>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-pr" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">Pruebas de Regresi&oacute;n <i class="fa fa-eye mx-0"></i></h4>
-                        </a>
-                        <div class="collapse" id="ui-pr">
-                          <p>
-                            Según la ISO/IEC/IEEE 24765 (ISO/IEC/IEEE, 2017), son pruebas necesarias para verificar que
-                            una modificación en un componente del sistema no ha impactado de manera negativa la
-                            funcionalidad, la confiabilidad o el rendimiento, y que no ha generado nuevos errores.
+                          (Mani, 2024; Swimm, 2023; Vladasel, 2022)
                           </p>
                         </div>
                       </li>
@@ -498,11 +378,9 @@
                       <button class="btn btn-success" type="submit">Guardar</button>
                     </form>
                   </div>
-
                 </div>
               </div>
             </div>
-
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -571,32 +449,4 @@
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
 </body>
-
-<script>
-
-  document.getElementById("id_userId").value = "{{user.socialaccount_set.all.0.uid}}";
-  document.getElementById("id_userId").readOnly = true;
-  document.getElementById("id_userId").style.display = "none";
-
-  var diccionarioFalsos = "{{diccionarioFalsos|safe}}";
-  diccionarioFalsos = diccionarioFalsos.replaceAll('\'', '\"');
-  var diccionarioVerdaderos = "{{diccionarioVerdaderos|safe}}";
-  diccionarioVerdaderos = diccionarioVerdaderos.replaceAll('\'', '\"');
-
-  var dictFalsos = JSON.parse(diccionarioFalsos);
-  var dictVerdaderos = JSON.parse(diccionarioVerdaderos);
-
-  var count = Object.keys(dictVerdaderos).length;
-
-  var llaves = Object.keys(dictVerdaderos);
-
-  for (var i = 0; i < count; i++) {
-    var checkedElement = document.getElementsByName(llaves[i]);
-    checkedElement[0].checked = true;
-  }
-
-  document.getElementById("barraHerramienta").style.width = ("{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}") + "%";
-
-</script>
-
 </html>

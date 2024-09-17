@@ -1116,3 +1116,7 @@ def monitoreoherramientas(request):
 @login_required(login_url="/accounts/google/login/")
 def monitoreopracticas(request):
     return render(request, 'monitoreopracticas.html')
+
+@login_required(login_url="/accounts/google/login/")
+def referencias(request):
+    return render(request, 'referencias.html')
