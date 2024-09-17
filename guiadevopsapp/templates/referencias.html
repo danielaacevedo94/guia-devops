@@ -202,6 +202,12 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="{% url 'referencias' %}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Referencias</span>
+              </a>
+          </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -256,161 +262,7 @@
                   </p>
                 </div>
               </div>
-            </div>
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="negrita">Descripci&oacute;n de las categor&iacute;as de las herramientas de la Actividad
-                  </h4>
-                  <p>Para la Codificaci&oacute;n se utilizan software de control de versiones, editores de código e IDEs
-                    de
-                    programación pues permite a los equipos escribir código, colaborar en el mismo, minimizando así, los
-                    conflictos y facilita la práctica de integración continua. A continuación, se describen estos:
-                    <br>
-                  </p>
-                  <nav class="navbar-dropdown">
-                    <ul>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-cv" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">Control de versiones <i class="fa fa-eye mx-0"></i></h4>
-                        </a>
-                        <div class="collapse" id="ui-cv">
-                          <p>
-                            Los sistemas de control de versiones son herramientas que actúan como repositorios
-                            centralizados, facilitando que todos los miembros del equipo de desarrollo tengan acceso a
-                            los cambios (propiedad colectiva del código). Además, con ellas se logra lo siguiente:
-                          <ul>
-                            <li>Almacenan todos los cambios en un historial para permitir su trazabilidad.</li>
-                            <li>Se puede revertir rápidamente a una versión estable anterior en caso de error durante la
-                              integración.</li>
-                            <li>Permite una recuperación de fallas sin demoras significativas.</li>
-                          </ul>
-                          (Pastrana-Pardo et al., 2022)
-                          </p>
-                        </div>
-                      </li>
-                      <li class="nav-item" style="list-style: none;">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-ide" aria-expanded="false"
-                          aria-controls="ui-basic">
-                          <h4 class="menu-title">Entornos de desarrollo integrados (IDE) <i class="fa fa-eye mx-0"></i>
-                          </h4>
-                        </a>
-                        <div class="collapse" id="ui-ide">
-                          <p>
-                            Es una aplicación de software que ayuda a los programadores a desarrollar código de software
-                            de manera eficiente. Incluyen funcionalidades que van más allá de la edición de texto y
-                            proporcionan una interfaz central para herramientas de desarrollo comunes (AWS, 2023). Entre
-                            ellas incluyen:
-                            <br>
-                          <ul>
-                            <li>Automatización de la edición de código: Permite realizar tareas repetitivas de edición
-                              de código automáticamente, como formateo o alineación de código, lo que ahorra tiempo y
-                              reduce errores humanos.</li>
-                            <li>Resaltado de sintaxis: Mejora la legibilidad del código al aplicar diferentes colores a
-                              palabras clave, variables y estructuras del lenguaje de programación, facilitando la
-                              identificación de errores y la comprensión del código.</li>
-                            <li>Finalización de código inteligente: Proporciona sugerencias de autocompletado basadas en
-                              el contexto y el análisis del código, acelerando el proceso de escritura y reduciendo los
-                              errores tipográficos.</li>
-                            <li>Refactorización del soporte: Permite reorganizar y modificar el código sin cambiar su
-                              comportamiento externo, ayudando a mejorar su estructura, legibilidad y mantenibilidad.
-                            </li>
-                            <li>Automatización de la creación local: acilita la ejecución de tareas de desarrollo como
-                              compilación o pruebas en el entorno local del desarrollador, agilizando el flujo de
-                              trabajo​. </li>
-                            <li>Compilación: Traduce el código fuente en un ejecutable o en un formato que la máquina
-                              pueda entender, asegurando que el software funcione correctamente en diferentes entornos​.
-                            </li>
-                            <li>Pruebas: Ejecuta automáticamente pruebas unitarias, de integración, y funcionales para
-                              verificar que el software funciona como se espera antes de su despliegue.</li>
-                            <li>Depuración: Proporciona herramientas para identificar, rastrear y corregir errores en el
-                              código, mejorando la estabilidad y funcionalidad del software.</li>
-                          </ul>
-                          (Mani, 2024; Swimm, 2023; Vladasel, 2022)
-                          </p>
-                        </div>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </div>
-            </div>
-            <div class="row">
-
-            </div>
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="negrita">Categor&iacute;as de herramientas</h4>
-                  <p>
-                    Las categor&iacute;as de herramientas con las sugerencias de algunas de ellas que inciden en la
-                    Actividad son las siguientes:
-                  </p>
-                  <div class="table-responsive col-lg-12">
-                    <form method="post">
-                      {% csrf_token %}
-                      <table class="table table-striped">
-                        <thead>
-                          <tr>
-                            <th>
-                              Herramientas
-                            </th>
-                            <th>
-                              Estado
-                            </th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {% for field in form %}
-                          <tr>
-                            <td class="text-wrap">{{ field.label_tag }}</td>
-                            <td>
-                              {{ field }}
-                              {% if field.errors %}
-                              <div class="error">{{ field.errors }}</div>
-                              {% endif %}
-                            </td>
-                          </tr>
-                          {% endfor %}
-                        </tbody>
-                      </table>
-                      <button class="btn btn-success" type="submit">Guardar</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Reporte</h4>
-
-                  <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
-                    <div>
-                      <div>
-                        <div class="row">
-                          <div class="col-md-12  d-flex flex-column justify-content-start">
-                            <div class="ml-xl-4 ">
-                              <div class="col-lg-12 stretch-card">
-                                <h2 class="col-lg-8 text-primary">
-                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de uso
-                                  de herramientas en la Actividad</h2>
-                                <h2 class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
-                              </div>
-                              <p class="mb-2 mb-xl-0">El total de categor&iacute;as de herramientas que sean usadas por
-                                el usuario
-                                (marcadas) sobre el total existente en la Actividad del proceso de DevOps.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
+            </div>            
           </div>
 
         </div>
