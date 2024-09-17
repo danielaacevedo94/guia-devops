@@ -31,39 +31,15 @@ on:
   push:
     branches:
       - main
-
-jobs:
-  deploy:
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-
-    - name: Deploy to EC2
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.AWS_HOST }}
-        username: ubuntu
-        key: ${{ secrets.AWS_KEY }}
-        script: |
-          cd gdevops/guia-devops/
-          sudo su
-          git pull origin main
-          . .venv/bin/activate
-          sudo pkill python
-          python3 manage.py runserver 0.0.0.0:8000 > output.txt
-
-
-
+      
 jobs:
   Deploy:
     name: Deploy to EC2
     runs-on: ubuntu-latest
     
     steps:
-      - uses: actions/checkout@v2 
-      - name: Build & Deploy
+      - uses: actions/checkout@v2
+      - name: Deploy to EC2
         env:
             PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
             HOSTNAME: ${{secrets.SSH_HOST}}
@@ -74,3 +50,9 @@ jobs:
           ssh -o StrictHostKeyChecking=no -i private_key ${USER_NAME}@${HOSTNAME} '
 
               # Now we have got the access of EC2 and we will start the deploy .
+          cd /home/ubuntu/gdevops/guia-devops/
+          sudo su
+          git pull origin main
+          . .venv/bin/activate
+          sudo pkill python
+          python3 manage.py runserver 0.0.0.0:8000 > output.txt
