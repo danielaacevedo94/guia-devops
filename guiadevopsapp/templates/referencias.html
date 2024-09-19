@@ -4,273 +4,448 @@
 <html lang="en">
 
 <head>
-  <!-- Required meta tags -->
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Referencias - DevOps</title>
-  <!-- plugins:css -->
-  <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
-  <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
-  <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
-  <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <!-- End plugin css for this page -->
-  <!-- inject:css -->
-  <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
-  <!-- endinject -->
-  <!-- Plugin css for this page -->
-  <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
-  <!-- End plugin css for this page -->
-  <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Referencias - DevOps</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+    <!-- End plugin css for this page -->
+    <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
 </head>
 
 <body>
-  <div class="container-scroller">
-    <!-- partial:../../partials/_navbar.html -->
-    <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-      <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img src="{% static 'images/logo.png' %}"
-            class="mr-2" alt="logo" /></a>
-        <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
-            src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
-      </div>
-      <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
-        <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
-          <span class="icon-menu"></span>
-        </button>
-        <ul class="navbar-nav navbar-nav-right">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'inicio' %}">
-              <i class="fa fa-home mx-0"></i>
-              <span class="count">Home</span>
-            </a>
-          </li>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo.png' %}" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inicio' %}">
+                            <i class="fa fa-home mx-0"></i>
+                            <span class="count">Home</span>
+                        </a>
+                    </li>
 
-          <li class="nav-item nav-profile dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
-            </a>
-            <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item" href="{% url 'perfilusuario' %}">
-                <i class="ti-settings text-primary"></i>
-                Editar Perfil
-              </a>
-              <a class="dropdown-item" href="{% url 'account_logout' %}">
-                <i class="ti-power-off text-primary"></i>
-                Cerrar Sesi&oacute;n
-              </a>
-            </div>
-          </li>
-        </ul>
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'perfilusuario' %}">
+                                <i class="ti-settings text-primary"></i>
+                                Editar Perfil
+                            </a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Cerrar Sesi&oacute;n
+                            </a>
+                        </div>
+                    </li>
+                </ul>
 
-      </div>
-    </nav>
-    <!-- partial -->
-    <div class="container-fluid page-body-wrapper">
-      <!-- partial:../../partials/_sidebar.html -->
-      <nav class="sidebar sidebar-offcanvas" id="sidebar">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'indexdash' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">DevOps</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'actividades' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Actividades</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Planificaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-plan">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Codificaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-codif">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Construcci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-const">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Pruebas</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-prueb">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Liberaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-lib">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Despliegue</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-desp">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operaciones</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-op">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionestareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionesherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitoreo</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-mon">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a>
-                </li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'referencias' %}">
-                  <i class="icon-grid menu-icon"></i>
-                  <span class="menu-title">Referencias</span>
-              </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- partial -->
-      <div class="main-panel">
-        <div class="content-wrapper">
-          <div class="row">
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h2>Referencias</h2>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'indexdash' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">DevOps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'actividades' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Actividades</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-plan">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-codif">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'codificacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Construcci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-const">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construcciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Pruebas</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-prueb">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-lib">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'liberacionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Despliegue</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-desp">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Operaciones</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-op">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionestareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'operacionesherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Monitoreo</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div class="collapse" id="ui-mon">
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a>
+                                </li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'referencias' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Referencias</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>Referencias</h2>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita"></h4>
+                                    <p>
+                                    <ul>
+                                        <li>para prueba</li>
+                                        <li>Akman, S., Aksuyek, E. B., & Kaynak, O. (2018). ALM Tool Infrastructure with
+                                            a Focus
+                                            on DevOps Culture. Systems, Software and Services Process Improvement,
+                                            291-303.
+                                            https://doi.org/10.1007/978-3-319-97925-0_24</li>
+                                        <li>
+                                            Amaro, R., Pereira, R., & Da Silva, M. M. (2023). Capabilities and metrics in
+                                            DevOps: A design science study. Information & Management, 60(5), 103809.
+                                            https://doi.org/10.1016/j.im.2023.103809
+                                        </li>
+                                        <li>Amrita Pathak. (2022, abril 11). Explora las 30 Mejores Herramientas de DevOps a
+                                            Tener en Cuenta en 2024. Kinsta®. https://kinsta.com/es/blog/herramientas-devops/
+                                        </li>
+                                        <li>Atlassian. (2023). ¿Qué es DevOps? Atlassian. https://www.atlassian.com/es/devops
+                                            Ayas, H. M., Leitner, P., & Hebig, R. (2023). An empirical study of the systemic and
+                                            technical migration towards microservices. Empirical Software Engineering, 28(4),
+                                            85. https://doi.org/10.1007/s10664-023-10308-9
+                                        </li>
+                                        <li>Coursera. (2023, noviembre 29). What Is Task Management? 10 Key Tools and More.
+                                            Coursera. https://www.coursera.org/articles/task-management
+                                        </li>
+                                        <li>Definicion.com. (2021). Definición de práctica. Características y su clasificación.
+                                            https://definicion.com/practica/
+                                        </li>
+                                        <li>Dynatrace. (2021). Devops for digital transformation.
+                                            Erich, F. M. A., Amrit, C., & Daneva, M. (2017). A qualitative study of DevOps usage
+                                            in practice. Journal of Software: Evolution and Process, 29(6), e1885.
+                                            https://doi.org/10.1002/smr.1885
+                                        </li>
+                                        <li>Forsgren, N., Humble, J., & Kim, G. (2018). Accelerate: The Science of Lean Software
+                                            and DevOps: Building and Scaling High Performing Technology Organizations. IT
+                                            Revolution.
+                                        </li>
+                                        <li>Gómez, J. (2022, junio 23). Devops ¿qué es? enciendelaluz.es.
+                                            https://enciendelaluz.es/devops-que-es/
+                                        </li>
+                                        <li>Guseila, L. G., Bratu, D.-V., & Moraru, S.-A. (2019). Continuous Testing in the
+                                            Development of IoT Applications. 2019 International Conference on Sensing and
+                                            Instrumentation in IoT Era (ISSI), 1-6.
+                                            https://doi.org/10.1109/ISSI47111.2019.9043692
+                                        </li>
+                                        <li>ISO Calidad 2000. (2012). Guía para definir Procesos. En ISO Calidad 2000.
+                                            https://isocalidad2000.com/2012/12/28/guia-para-definir-procesos/#:~:text=Resumiendo%2C%20tenemos%20los%20siguientes%20conceptos,las%20necesidades%20de%20los%20clientes
+                                        </li>
+                                        <li>ISO/IEC. (2011). ISO/IEC TR 29110-5-1-2 Management and engineering guide: Generic
+                                            profile group: Basic profile.
+                                        </li>
+                                        <li>Ivanov, V., & Smolander, K. (2018). Implementation of a DevOps Pipeline for
+                                            Serverless Applications. En M. Kuhrmann, K. Schneider, D. Pfahl, S. Amasaki, M.
+                                            Ciolkowski, R. Hebig, P. Tell, J. Klünder, & S. Küpper (Eds.), Product-Focused
+                                            Software Process Improvement (Vol. 11271, pp. 48-64). Springer International
+                                            Publishing. https://doi.org/10.1007/978-3-030-03673-7_4
+                                        </li>
+                                        <li>Jennings, R. A. K., & Gannod, G. (2019). DevOps—Preparing Students for Professional
+                                            Practice. 2019 IEEE Frontiers in Education Conference (FIE), 1-5.
+                                            https://doi.org/10.1109/FIE43999.2019.9028598
+                                        </li>
+                                        <li>Juan Quijano. (2018). DevOps, fases del ciclo iterativo de este nuevo marco de
+                                            desarrollo.
+                                            https://www.genbeta.com/desarrollo/el-ciclo-de-devops-una-guia-para-iniciarse-en-las-fases-que-lo-componen
+                                        </li>
+                                        <li>Kim, G., Debois, P., Willis, J., Humble, J., & Allspaw, J. (2016). The DevOps
+                                            Handbook: How to Create World-Class Agility, Reliability, and Security in Technology
+                                            Organizations.
+                                        </li>
+                                        <li>Kranio. (2020). Blog: Introducción al Ciclo de Vida de DevOps.
+                                            https://kranio.io/blog/introduccion-al-ciclo-de-vida-de-devops
+                                        </li>
+                                        <li>Luz, W. P., Pinto, G., & Bonifácio, R. (2018). Building a collaborative culture: A
+                                            grounded theory of well succeeded devops adoption in practice. Proceedings of the
+                                            12th ACM/IEEE International Symposium on Empirical Software Engineering and
+                                            Measurement, 1-10. https://doi.org/10.1145/3239235.3240299
+                                        </li>
+                                        <li>Lwakatare, L. E., Kuvaja, P., & Oivo, M. (2016). An Exploratory Study of DevOps
+                                            Extending the Dimensions of DevOps with Practices. En ICSEA 2016 the Eleventh
+                                            International Conference on Software Engineering Advances: August 21-25, 2016, Rome,
+                                            Italy (pp. 91-99). IARIA.
+                                        </li>
+                                        <li>Mascheroni, M. A., & Irrazábal, E. (2018). Continuous Testing and Solutions for
+                                            Testing Problems in Continuous Delivery: A Systematic Literature Review. Computación
+                                            y Sistemas, 22(3). https://doi.org/10.13053/cys-22-3-2794
+                                        </li>
+                                        <li>Meng, F. J., Wegman, M. N., Xu, J. M., Zhang, X., Chen, P., & Chafle, G. (2017). IT
+                                            troubleshooting with drift analysis in the DevOps era. IBM Journal of Research and
+                                            Development, 61(1), 62-73. Scopus. https://doi.org/10.1147/JRD.2016.2630478
+                                        </li>
+                                        <li>Mohan, V., Ben Othmane, L., & Kres, A. (2018). BP: Security Concerns and Best
+                                            Practices for Automation of Software Deployment Processes: An Industrial Case Study.
+                                            2018 IEEE Cybersecurity Development (SecDev), 21-28.
+                                            https://doi.org/10.1109/SecDev.2018.00011
+                                        </li>
+                                        <li>NetApp. (2023). ¿Qué es DevOps y para qué sirve? | NetApp.
+                                            https://www.netapp.com/es/devops-solutions/what-is-devops/
+                                        </li>
+                                        <li>Oracle. (2024). Gestión de artefactos de DevOps.
+                                            https://docs.oracle.com/es-ww/iaas/Content/devops/using/artifacts.htm
+                                        </li>
+                                        <li>Peerbie. (2023). Top 15 Task Management Software Tools for Work in 2023—Peerbie.
+                                            https://www.peerbie.com/blog/top-15-task-management-software-tools-for-work-in-2023
+                                        </li>
+                                        <li>Perera, P., Silva, R., & Perera, I. (2017). Improve software quality through
+                                            practicing DevOps. 2018-January, 13-18. Scopus.
+                                            https://doi.org/10.1109/ICTER.2017.8257807
+                                        </li>
+                                        <li>Qumer Gill, A., Loumish, A., Riyat, I., & Han, S. (2018). DevOps for information
+                                            management systems. VINE Journal of Information and Knowledge Management Systems,
+                                            48(1), 122-139. https://doi.org/10.1108/VJIKMS-02-2017-0007
+                                        </li>
+                                        <li>Rahman, A., Agrawal, A., Krishna, R., & Sobran, A. (2018). Characterizing the
+                                            influence of continuous integration: Empirical results from 250+ open source and
+                                            proprietary projects. Proceedings of the 4th ACM SIGSOFT International Workshop on
+                                            Software Analytics, 8-14. https://doi.org/10.1145/3278142.3278149
+                                        </li>
+                                        <li>Rodriguez, M., De Araújo, L. J. P., & Mazzara, M. (2020). Good practices for the
+                                            adoption of DataOps in the software industry. Journal of Physics: Conference Series,
+                                            1694(1), 012032. https://doi.org/10.1088/1742-6596/1694/1/012032
+                                        </li>
+                                        <li>School, E. B. (2020). ¿Sabes qué son las herramientas informáticas? | Euroinnova.
+                                            Euroinnova Business School.
+                                            https://www.euroinnova.com/blog/que-son-las-herramientas-informaticas
+                                        </li>
+                                        <li>Selgert, F. (2020). Cynefin Framework, DevOps and Secure IoT. Computer Safety,
+                                            Reliability, and Security. SAFECOMP 2020 Workshops, 255-265.
+                                            https://doi.org/10.1007/978-3-030-55583-2_19
+                                        </li>
+                                        <li>Sharma, S., & Coyne, B. (2015). DevOps para Dummies® 2o Edición Limitada IBM.</li>
+                                        <li>TimeCamp. (2024). 21 Best Task Management Tools for 2024—TimeCamp Planner.
+                                            https://www.timecamp.com/planner/blog/task-management-tools/
+                                        </li>
+                                        <li>Unity. (2024). ¿Qué es el control de versiones y cómo funciona? Unity.
+                                            https://unity.com/topics/what-is-version-control
+                                        </li>
+                                        <li>Universidad Tecmilenio. (2020). Artefactos de administración de software.
+                                            https://a14121-10875855.cluster211.canvas-user-content.com/courses/14121~5906/files/14121~10875855/course%20files/cs/cs13354/cel/tema3-1.htm
+                                        </li>
+                                        <li>Waseem, M., Liang, P., & Shahin, M. (2020). A Systematic Mapping Study on
+                                            Microservices Architecture in DevOps. Journal of Systems and Software, 170, 110798.
+                                            https://doi.org/10.1016/j.jss.2020.110798
+                                        </li>
+                                        
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
                 </div>
-              </div>
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            All rights reserved.</span>
+                        <span style="font-weight: bold;"
+                            class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
+                                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+                    </div>
+                </footer>
             </div>
-
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="negrita"></h4>
-                  <p>
-                    <ul>
-                        <li>estaba bien</li>
-                    </ul>                    
-                  </p>
-                </div>
-              </div>
-            </div>            
-          </div>
-
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <!-- partial -->
         </div>
-        <footer class="footer">
-          <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
-              All rights reserved.</span>
-            <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
-                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
-          </div>
-        </footer>
-      </div>
-      <!-- content-wrapper ends -->
-      <!-- partial:../../partials/_footer.html -->
-      <!-- partial -->
+        <!-- main-panel ends -->
     </div>
-    <!-- main-panel ends -->
-  </div>
-  <!-- page-body-wrapper ends -->
+    <!-- page-body-wrapper ends -->
 
 
-  </div>
-  <!-- container-scroller -->
-  <!-- plugins:js -->
-  <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
-  <!-- endinject -->
-  <!-- Plugin js for this page -->
-  <!-- End plugin js for this page -->
-  <!-- inject:js -->
-  <script src="{% static 'js/off-canvas.js' %}"></script>
-  <script src="{% static 'js/hoverable-collapse.js' %}"></script>
-  <script src="{% static 'js/template.js' %}"></script>
-  <script src="{% static 'js/settings.js' %}"></script>
-  <script src="{% static 'js/todolist.js' %}"></script>
-  <!-- endinject -->
-  <!-- Custom js for this page-->
-  <!-- End custom js for this page-->
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
 </body>
+
 </html>
