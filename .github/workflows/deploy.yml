@@ -60,8 +60,8 @@ jobs:
         script: |
           cd gdevops/guia-devops/
           sudo su
-          . .venv/bin/deactivate
-          git pull origin main
-          . .venv/bin/activate
+          deactivate
+          git pull
+          source venv/bin/activate
           sudo pkill python
           python3 manage.py runserver 0.0.0.0:8000 > output.txt
