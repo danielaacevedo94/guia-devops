@@ -61,4 +61,5 @@ jobs:
           cd gdevops/guia-devops/
           sudo su
           git fetch origin master
+          git stash
           git pull
