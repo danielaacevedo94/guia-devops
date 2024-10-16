@@ -1,0 +1,256 @@
+{%load static%}{%load i18n%}{% load socialaccount%}{% load mathfilters %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Construcci&oacute;n - DevOps</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
+    <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <!-- End plugin css for this page -->
+    <!-- inject:css -->
+    <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+    <!-- End plugin css for this page -->
+    <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
+</head>
+
+<body>
+    <div class="container-scroller">
+        <!-- partial:../../partials/_navbar.html -->
+        <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
+            <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo mr-5" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo.png' %}" class="mr-2" alt="logo" /></a>
+                <a class="navbar-brand brand-logo-mini" href="{% url 'indexdash' %}"><img
+                        src="{% static 'images/logo-mini.png' %}" alt="logo" /></a>
+            </div>
+            <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
+                <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
+                    <span class="icon-menu"></span>
+                </button>
+                <ul class="navbar-nav navbar-nav-right">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'inicio' %}">
+                            <i class="fa fa-home mx-0"></i>
+                            <span class="count">Home</span>
+                        </a>
+                    </li>
+
+                    <li class="nav-item nav-profile dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
+                            <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-right navbar-dropdown"
+                            aria-labelledby="profileDropdown">
+                            <a class="dropdown-item" href="{% url 'perfilusuario' %}">
+                                <i class="ti-settings text-primary"></i>
+                                Editar Perfil
+                            </a>
+                            <a class="dropdown-item" href="{% url 'account_logout' %}">
+                                <i class="ti-power-off text-primary"></i>
+                                Cerrar Sesi&oacute;n
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+        <!-- partial -->
+        <div class="container-fluid page-body-wrapper">
+            <!-- partial:../../partials/_sidebar.html -->
+            <nav class="sidebar sidebar-offcanvas" id="sidebar">
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'indexdash' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">DevOps</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'actividades' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Actividades</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Construcci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                        <div>
+                            <ul class="nav flex-column sub-menu">
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construcciontareas' %}">Tareas</a></li>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
+                                <li class="nav-item"> <a class="nav-link"
+                                        href="{% url 'construccionherramientas' %}">Herramientas</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Pruebas</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Despliegue</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false"
+                            aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Operaciones</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
+                            <i class="icon-layout menu-icon"></i>
+                            <span class="menu-title">Monitoreo</span>
+                            <i class="menu-arrow"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'referencias' %}">
+                            <i class="icon-grid menu-icon"></i>
+                            <span class="menu-title">Referencias</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- partial -->
+            <div class="main-panel">
+                <div class="content-wrapper">
+                    <div class="row">
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h2>Construcci&oacute;n</h2>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-12 grid-margin stretch-card">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h4 class="negrita">Descripción de la Actividad</h4>
+                                    <p>
+                                        En esta actividad se realiza la compilación, enlace o términos similares
+                                        referentes a crear el empaquetado de la solución. Esta actividad depende de las
+                                        instrucciones propias del lenguaje de programación y es una tarea repetitiva que
+                                        se puede automatizar. (Perera et al., 2017).
+                                        <br>
+                                        <br>
+                                        Se busca integrar y compilar los códigos realizados para garantizar que los
+                                        cambios no han impedido esta labor. (Sousa et al., 2019)
+                                        <br>
+                                        <br>
+                                        La construcción integra las nuevas funcionalidades que se codificaron y crea los
+                                        nuevos artefactos añadiendo las nuevas funcionalidades. Así como las pruebas
+                                        permiten asegurar que tanto las nuevas funcionalidades como las antiguas se
+                                        ejecutan correctamente. (Badshah et al., 2020).
+                                        <br>
+                                        <br>
+                                        <span class="negrita">Prop&oacute;sito:</span> Integrar y compilar los códigos
+                                        realizados.
+                                        <br>
+                                        <br>
+                                        <span class="negrita">Objetivos:</span>
+                                    <ul>
+                                        <li>Integrar las nuevas funcionalidades que se codificaron.</li>
+                                        <li>Crear los nuevos artefactos añadiendo las nuevas funcionalidades. </li>
+                                    </ul>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+                <footer class="footer">
+                    <div class="d-sm-flex justify-content-center justify-content-sm-between">
+                        <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+                            All rights reserved.</span>
+                        <span style="font-weight: bold;"
+                            class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
+                                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+                    </div>
+                </footer>
+            </div>
+            <!-- content-wrapper ends -->
+            <!-- partial:../../partials/_footer.html -->
+            <!-- partial -->
+        </div>
+        <!-- main-panel ends -->
+    </div>
+    <!-- page-body-wrapper ends -->
+
+
+    </div>
+    <!-- container-scroller -->
+    <!-- plugins:js -->
+    <script src="{% static 'vendors/js/vendor.bundle.base.js' %}"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page -->
+    <!-- End plugin js for this page -->
+    <!-- inject:js -->
+    <script src="{% static 'js/off-canvas.js' %}"></script>
+    <script src="{% static 'js/hoverable-collapse.js' %}"></script>
+    <script src="{% static 'js/template.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+    <script src="{% static 'js/todolist.js' %}"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <!-- End custom js for this page-->
+</body>
+
+</html>

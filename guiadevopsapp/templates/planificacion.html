@@ -7,31 +7,26 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Perfil de Usuario - DevOps</title>
+  <title>Planificaci&oacute;n - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/ti-icons/css/themify-icons.css' %}">
   <link rel="stylesheet" href="{% static 'vendors/css/vendor.bundle.base.css' %}">
+  <link rel="stylesheet" href="{% static 'scss/common/light/_typography.scss' %}">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
+   <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+  <!-- End plugin css for this page -->
   <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
 </head>
 
 <body>
-  <style>
-    .form-group label {
-      font-size: 1rem;
-    }
-
-    .form-control {
-      font-size: 1rem;
-    }
-  </style>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -58,7 +53,7 @@
               <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
                 Editar Perfil
               </a>
@@ -90,11 +85,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Planificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
+            <div >
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
@@ -146,10 +149,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'referencias' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Referencias</span>
-            </a>
+              <a class="nav-link" href="{% url 'referencias' %}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Referencias</span>
+              </a>
           </li>
         </ul>
       </nav>
@@ -160,57 +163,67 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Perfil de usuario</h2>
-
+                  <h2>Planificaci&oacute;n</h2>
                 </div>
               </div>
             </div>
-
+            
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputName1">Nombre</label>
-                    <h3> {{ user.socialaccount_set.all.0.extra_data.name}} </h3>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail3">Email</label>
-                    <h3> {{ user.socialaccount_set.all.0.extra_data.email}}</h3>
-                  </div>
-                  <form class="forms-sample" method="post">
-                    {% csrf_token %}
-
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Tipo de empresa</label>
-                      <input value="{{objetoBaseDatos.tipoEmpresa}}" type="text" class="form-control" id="tipoEmpresa"
-                        name="tipoEmpresa" placeholder="Tipo de empresa">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Número de empleados</label>
-                      <input value="{{objetoBaseDatos.numeroEmpleados}}" type="number" class="form-control"
-                        id="numeroEmpleados" name="numeroEmpleados" placeholder="Número de empleados">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Número de proyectos</label>
-                      <input value="{{objetoBaseDatos.numeroProyectos}}" type="number" class="form-control"
-                        id="numeroProyectos" name="numeroProyectos" placeholder="Número de proyectos">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mr-2">Guardar</button>
-                  </form>
+                  <h4 class="negrita">Descripción de la Actividad</h4>
+                  <p>
+                    Los equipos de DevOps se encargan de conceptualizar y diseñar el software que van a desarrollar,
+                    identificando las necesidades del cliente y proponiendo soluciones a través de la elaboración o
+                    mejora de un software. En este proceso, detallan las funcionalidades y características que tendrá el
+                    software. Además, se planifica qué herramientas utilizar para que el equipo tenga claras las tareas
+                    pendientes, el progreso realizado, y evalúen si podrán cumplir con los plazos establecidos, entre
+                    otros aspectos (Perera et al., 2017).
+                    <br>
+                    <br>
+                    (Sousa et al., 2019) menciona que el propósito de la planificación es entender qué necesidades hay
+                    que cubrir para obtener valor a partir de la información provista por todo el ciclo. Esto fomenta la
+                    mejora continua.
+                    <br>
+                    <br>
+                    Con respecto a la planificación busca establecer el conjunto mínimo de funcionalidades que aporten
+                    valor en cada iteración. Además de analizar y evaluar las métricas o datos aportados por la
+                    monitorización para establecer las mejoras en la siguiente iteración (o etapa). Así mismo, busca
+                    establecer los criterios de aceptación a cumplir y elaborar un plan para alcanzar los objetivos
+                    planteados. También, permite definir qué actividades realizará y quién las hará, además de diseñar
+                    las características a codificar (Badshah et al., 2020).
+                    <br>
+                    <br>
+                    <span class="negrita">Prop&oacute;sito:</span> Entender qué necesidades hay que cubrir para obtener
+                    valor.
+                    <br>
+                    <br>
+                    <span class="negrita">Objetivos:</span>
+                  <ul>
+                    <li>Establecer el conjunto mínimo de funcionalidades que aporten valor en cada iteración.</li>
+                    <li>Analizar, evaluar las métricas o datos aportados por la monitorización para establecer las
+                      mejoras en la siguiente iteración (o etapa).</li>
+                    <li>Establecer los criterios de aceptación a cumplir.</li>
+                    <li>Elaborar un plan para alcanzar los objetivos planteados.</li>
+                    <li>Definir qué actividades realizará cada quién.</li>
+                    <li>Diseñar las características a codificar.</li>
+                  </ul>
+                  </p>
                 </div>
               </div>
             </div>
+            
+            
           </div>
-        </div>
 
+        </div>
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
               All rights reserved.</span>
             <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
-                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
-          </div>
+              href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+          </div>            
         </footer>
       </div>
       <!-- content-wrapper ends -->
@@ -220,33 +233,6 @@
     <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
-
-  <script>
-    var diccionarioFalsos = "{{diccionarioFalsos|safe}}";
-    diccionarioFalsos = diccionarioFalsos.replaceAll('\'', '\"');
-    var diccionarioVerdaderos = "{{diccionarioVerdaderos|safe}}";
-    diccionarioVerdaderos = diccionarioVerdaderos.replaceAll('\'', '\"');
-
-    var dictFalsos = JSON.parse(diccionarioFalsos);
-    var dictVerdaderos = JSON.parse(diccionarioVerdaderos);
-
-    /* console.log(dictFalsos); */
-    /* console.log( dictVerdaderos); */
-    var count = Object.keys(dictVerdaderos).length;
-    console.log(count)
-
-
-    var llaves = Object.keys(dictVerdaderos);
-    console.log(llaves)
-
-    for (var i = 0; i < count; i++) {
-      var checkedElement = document.getElementsByName(llaves[i]);
-      checkedElement[0].checked = true;
-      console.log(checkedElement);
-
-    }
-
-  </script>
 
   </div>
   <!-- container-scroller -->
@@ -265,5 +251,7 @@
   <!-- Custom js for this page-->
   <!-- End custom js for this page-->
 </body>
+
+
 
 </html>

@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Perfil de Usuario - DevOps</title>
+  <title>Codificaci&oacute;n - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -19,19 +19,13 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
+  <!-- Plugin css for this page -->
+  <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
+  <!-- End plugin css for this page -->
   <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
 </head>
 
 <body>
-  <style>
-    .form-group label {
-      font-size: 1rem;
-    }
-
-    .form-control {
-      font-size: 1rem;
-    }
-  </style>
   <div class="container-scroller">
     <!-- partial:../../partials/_navbar.html -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
@@ -58,7 +52,7 @@
               <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
                 Editar Perfil
               </a>
@@ -97,11 +91,19 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Codificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
+            <div >
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
+                </li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
@@ -146,10 +148,10 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'referencias' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Referencias</span>
-            </a>
+              <a class="nav-link" href="{% url 'referencias' %}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Referencias</span>
+              </a>
           </li>
         </ul>
       </nav>
@@ -160,7 +162,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Perfil de usuario</h2>
+                  <h2>Codificaci&oacute;n</h2>
 
                 </div>
               </div>
@@ -169,41 +171,47 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputName1">Nombre</label>
-                    <h3> {{ user.socialaccount_set.all.0.extra_data.name}} </h3>
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail3">Email</label>
-                    <h3> {{ user.socialaccount_set.all.0.extra_data.email}}</h3>
-                  </div>
-                  <form class="forms-sample" method="post">
-                    {% csrf_token %}
-
-                    <div class="form-group">
-                      <label for="exampleInputPassword4">Tipo de empresa</label>
-                      <input value="{{objetoBaseDatos.tipoEmpresa}}" type="text" class="form-control" id="tipoEmpresa"
-                        name="tipoEmpresa" placeholder="Tipo de empresa">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Número de empleados</label>
-                      <input value="{{objetoBaseDatos.numeroEmpleados}}" type="number" class="form-control"
-                        id="numeroEmpleados" name="numeroEmpleados" placeholder="Número de empleados">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleSelectGender">Número de proyectos</label>
-                      <input value="{{objetoBaseDatos.numeroProyectos}}" type="number" class="form-control"
-                        id="numeroProyectos" name="numeroProyectos" placeholder="Número de proyectos">
-                    </div>
-
-                    <button type="submit" class="btn btn-primary mr-2">Guardar</button>
-                  </form>
+                  <h4 class="negrita">Descripción de la Actividad</h4>
+                  <p>
+                    En esta actividad se realiza el desarrollo o mejora del software a construir,
+                    teniendo en cuenta los elementos de la planeación, e implementando prácticas que
+                    garanticen la organización del código, la trazabilidad de los cambios y su alta
+                    disponibilidad para todos los integrantes del equipo en cualquier momento.
+                    (Perera et al., 2017).
+                    <br>
+                    <br>
+                    (Sousa et al., 2019) si bien está relacionado con codificar las funcionalidades
+                    planificadas, también busca que se haga de una forma controlada por una práctica
+                    que permita no solo mantener un repositorio central disponible para todos, sino
+                    que también este tenga la posibilidad de realizar la trazabilidad de cambios lo
+                    que concuerda con lo que menciona (Perera et al., 2017)
+                    <br>
+                    <br>
+                    Busca asegurar que el equipo de desarrollo sepa usar las herramientas de
+                    desarrollo, de control de versiones y de seguridad. Además de poder definir qué
+                    pruebas se harán a las funcionalidades codificadas y de ser posible construir
+                    las automatizaciones para la entrega y mantenimiento del software en operaciones
+                    (Badshah et al., 2020).
+                    <br>
+                    <br>
+                    <span class="negrita">Prop&oacute;sito:</span> Codificar las funcionalidades planificadas.
+                    <br>
+                    <br>
+                    <span class="negrita">Objetivos:</span>
+                    <ul>
+                      <li>Asegurar que el equipo de desarrollo sepa usar las herramientas de desarrollo, de control de
+                      versiones y de seguridad.</li>
+                      <li>Definir qué pruebas se harán a las funcionalidades codificadas.</li>
+                      <li>Construir las automatizaciones para la entrega y mantenimiento del software en operaciones.</li>
+                    </ul>
+                  </p>
                 </div>
               </div>
             </div>
+            
           </div>
-        </div>
 
+        </div>
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
             <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
@@ -220,33 +228,6 @@
     <!-- main-panel ends -->
   </div>
   <!-- page-body-wrapper ends -->
-
-  <script>
-    var diccionarioFalsos = "{{diccionarioFalsos|safe}}";
-    diccionarioFalsos = diccionarioFalsos.replaceAll('\'', '\"');
-    var diccionarioVerdaderos = "{{diccionarioVerdaderos|safe}}";
-    diccionarioVerdaderos = diccionarioVerdaderos.replaceAll('\'', '\"');
-
-    var dictFalsos = JSON.parse(diccionarioFalsos);
-    var dictVerdaderos = JSON.parse(diccionarioVerdaderos);
-
-    /* console.log(dictFalsos); */
-    /* console.log( dictVerdaderos); */
-    var count = Object.keys(dictVerdaderos).length;
-    console.log(count)
-
-
-    var llaves = Object.keys(dictVerdaderos);
-    console.log(llaves)
-
-    for (var i = 0; i < count; i++) {
-      var checkedElement = document.getElementsByName(llaves[i]);
-      checkedElement[0].checked = true;
-      console.log(checkedElement);
-
-    }
-
-  </script>
 
   </div>
   <!-- container-scroller -->

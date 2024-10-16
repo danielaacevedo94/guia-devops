@@ -103,123 +103,60 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Planificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-plan">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Codificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-codif">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Construcci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-const">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Pruebas</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-prueb">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Liberaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-lib">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Despliegue</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-desp">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Operaciones</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-op">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionestareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionesherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
               <span class="menu-title">Monitoreo</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="ui-mon">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a>
-                </li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'referencias' %}">
@@ -538,7 +475,7 @@
     if (event.target == modal) {
       modal.style.display = "none";
     }
-  }
+  }  
 </script>
 
 </html>

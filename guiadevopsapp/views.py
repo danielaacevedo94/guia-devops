@@ -40,6 +40,10 @@ def actividades(request):
     return render(request, 'actividades.html')
 
 @login_required(login_url="/accounts/google/login/")
+def planificacion(request):
+    return render(request, 'planificacion.html')
+
+@login_required(login_url="/accounts/google/login/")
 def planificaciontareas(request):
 
     try:
@@ -205,6 +209,9 @@ def perfilusuario(request):
     }
     return render(request, 'perfilusuario.html',context)
 
+@login_required(login_url="/accounts/google/login/")
+def codificacion(request):
+    return render(request, 'codificacion.html')
 
 @login_required(login_url="/accounts/google/login/")
 def codificaciontareas(request):
@@ -337,6 +344,10 @@ def codificacionpracticas(request):
     return render(request, 'codificacionpracticas.html')
 
 @login_required(login_url="/accounts/google/login/")
+def construccion(request):
+    return render(request, 'construccion.html')
+
+@login_required(login_url="/accounts/google/login/")
 def construcciontareas(request):
     
     try:
@@ -465,6 +476,10 @@ def construccionherramientas(request):
 @login_required(login_url="/accounts/google/login/")
 def construccionpracticas(request):
     return render(request, 'construccionpracticas.html')
+
+@login_required(login_url="/accounts/google/login/")
+def pruebas(request):
+    return render(request, 'pruebas.html')
 
 @login_required(login_url="/accounts/google/login/")
 def pruebastareas(request):
@@ -598,6 +613,10 @@ def pruebaspracticas(request):
     return render(request, 'pruebaspracticas.html')
 
 @login_required(login_url="/accounts/google/login/")
+def liberacion(request):
+    return render(request, 'liberacion.html')
+
+@login_required(login_url="/accounts/google/login/")
 def liberaciontareas(request):
 
     try:
@@ -726,6 +745,10 @@ def liberacionherramientas(request):
 @login_required(login_url="/accounts/google/login/")
 def liberacionpracticas(request):
     return render(request, 'liberacionpracticas.html')
+
+@login_required(login_url="/accounts/google/login/")
+def despliegue(request):
+    return render(request, 'despliegue.html')
 
 @login_required(login_url="/accounts/google/login/")
 def desplieguetareas(request):
@@ -858,6 +881,10 @@ def desplieguepracticas(request):
     return render(request, 'desplieguepracticas.html')
 
 @login_required(login_url="/accounts/google/login/")
+def operaciones(request):
+    return render(request, 'operaciones.html')
+
+@login_required(login_url="/accounts/google/login/")
 def operacionestareas(request):
 
     try:
@@ -986,6 +1013,10 @@ def operacionesherramientas(request):
 @login_required(login_url="/accounts/google/login/")
 def operacionespracticas(request):
     return render(request, 'operacionespracticas.html')
+
+@login_required(login_url="/accounts/google/login/")
+def monitoreo(request):
+    return render(request, 'monitoreo.html')
 
 @login_required(login_url="/accounts/google/login/")
 def monitoreotareas(request):

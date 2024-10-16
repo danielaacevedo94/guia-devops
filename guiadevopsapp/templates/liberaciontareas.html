@@ -71,142 +71,96 @@
       <!-- partial:../../partials/_sidebar.html -->
       <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'indexdash' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">DevOps</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'actividades' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Actividades</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Planificaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-plan">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Codificaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-codif">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Construcci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-const">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Pruebas</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-prueb">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Liberaci&oacute;n</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-lib">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'liberacionherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Despliegue</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-desp">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operaciones</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-op">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionestareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'operacionesherramientas' %}">Herramientas</a>
-                </li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false" aria-controls="ui-basic">
-              <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitoreo</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="ui-mon">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="{% url 'referencias' %}">
-                  <i class="icon-grid menu-icon"></i>
-                  <span class="menu-title">Referencias</span>
-              </a>
-          </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'indexdash' %}">
+                    <i class="icon-grid menu-icon"></i>
+                    <span class="menu-title">DevOps</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'actividades' %}">
+                    <i class="icon-grid menu-icon"></i>
+                    <span class="menu-title">Actividades</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+                  <i class="icon-layout menu-icon"></i>
+                  <span class="menu-title">Planificaci&oacute;n</span>
+                  <i class="menu-arrow"></i>
+                </a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Codificaci&oacute;n</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Construcci&oacute;n</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Pruebas</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'liberacion' %}" aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Liberaci&oacute;n</span>
+                    <i class="menu-arrow"></i>
+                </a>
+                <div >
+                    <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link"
+                                href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
+                        <li class="nav-item"> <a class="nav-link"
+                                href="{% url 'liberacionherramientas' %}">Herramientas</a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Despliegue</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false"
+                    aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Operaciones</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
+                    <i class="icon-layout menu-icon"></i>
+                    <span class="menu-title">Monitoreo</span>
+                    <i class="menu-arrow"></i>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'referencias' %}">
+                    <i class="icon-grid menu-icon"></i>
+                    <span class="menu-title">Referencias</span>
+                </a>
+            </li>
         </ul>
       </nav>
       <!-- partial -->
@@ -216,7 +170,7 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Liberaci&oacute;n</h2>
+                  <h2>Tareas</h2>
 
                 </div>
               </div>
@@ -225,50 +179,40 @@
             <div class="col-lg-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                <h2>Tareas</h2>
+                <h2>Liberaci&oacute;n</h2>
                 </div>
               </div>
             </div>
-
 
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Descripción de la Actividad</h4>
-                  <p>
-                    En esta actividad se automatiza los pasos anteriores encadenando varias
-                    prácticas que permite a partir de los cambios registrados en la codificación
-                    iniciar la construcción, pruebas y crear así un entregable listo para ser puesto
-                    en un servidor. (Perera et al., 2017).
-                    <br>
-                    <br>
-                    (Sousa et al., 2019) indica que la liberación intenta poner el software a
-                    disposición en un entorno sea de preproducción o producción mediante un conjunto
-                    de instrucciones que pueden llegar a automatizar los pasos anteriores.
-                    <br>
-                    <br>
-                    Tiene como objetivo indicar que la versión del software está probada. Además de
-                    ejecutar el software y revisar su comportamiento en un entorno parecido al de
-                    producción. También busca realizar pruebas que comprueben el rendimiento del
-                    software (Badshah et al., 2020).
-                    <br>
-                    <br>
-                    <span class="negrita">Prop&oacute;sito:</span> Poner el software a disposición en un entorno de preproducción. 
-                    <br>
-                    <br>
-                    <span class="negrita">Objetivos:</span>
-                    <ul>
-                      <li>Señalar que la versión del software está probada.</li>
-                      <li>Ejecutar el software y revisar su comportamiento en un entorno parecido al de producción.</li>
-                      <li>Realizar pruebas que comprueben el rendimiento del software.</li>
-                    </ul>
-                  </p>
+                  <h4 class="negrita">Reporte</h4>
+
+                  <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
+                    <div>
+                      <div>
+                        <div class="row">
+                          <div class="col-md-12  d-flex flex-column justify-content-start">
+                            <div class="ml-xl-4 ">                              
+                              <div class="col-lg-12 stretch-card">
+                                <h2 style="text-align: center;" class="col-lg-8 text-primary">{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de las
+                                  tareas en la Actividad son ejecutadas</h2>
+                                <h2 style="text-align: center;" class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
+                              </div>
+                              <p style="text-align: center;" class="mb-2 mb-xl-0">El total de n&uacute;mero de tareas que se ejecutan por el usuario
+                                (marcadas) sobre el total que inciden en la Actividad del proceso de DevOps.</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
               </div>
             </div>
-            <div class="row">
 
-            </div>
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
@@ -297,7 +241,7 @@
                           {% for field in form %}
                           <tr>
                             <td class="text-wrap">{{ field.label_tag }}</td>
-                            <td>
+                            <td style="text-align: center;">
                               {{ field }}
                               {% if field.errors %}
                               <div class="error">{{ field.errors }}</div>
@@ -315,34 +259,6 @@
               </div>
             </div>
 
-            <div class="col-lg-12 grid-margin stretch-card">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="negrita">Reporte</h4>
-
-                  <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
-                    <div>
-                      <div>
-                        <div class="row">
-                          <div class="col-md-12  d-flex flex-column justify-content-start">
-                            <div class="ml-xl-4 ">                              
-                              <div class="col-lg-12 stretch-card">
-                                <h2 class="col-lg-8 text-primary">{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de las
-                                  tareas en la Actividad son ejecutadas</h2>
-                                <h2 class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
-                              </div>
-                              <p class="mb-2 mb-xl-0">El total de n&uacute;mero de tareas que se ejecutan por el usuario
-                                (marcadas) sobre el total que inciden en la Actividad del proceso de DevOps.</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
           </div>
 
         </div>

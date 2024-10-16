@@ -53,7 +53,6 @@
                             <span class="count">Home</span>
                         </a>
                     </li>
-
                     <li class="nav-item nav-profile dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
                             {% if user.is_authenticated %}
@@ -92,174 +91,90 @@
             <!-- partial:partials/_sidebar.html -->
             <nav class="sidebar sidebar-offcanvas" id="sidebar">
                 <ul class="nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'indexdash' %}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">DevOps</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'actividades' %}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Actividades</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-plan" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Planificaci&oacute;n</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-plan">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificaciontareas' %}">Tareas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificacionherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-codif" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Codificaci&oacute;n</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-codif">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'codificaciontareas' %}">Tareas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'codificacionherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-const" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Construcci&oacute;n</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-const">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'construcciontareas' %}">Tareas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'construccionherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-prueb" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Pruebas</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-prueb">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{% url 'pruebastareas' %}">Tareas</a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'pruebaspracticas' %}">Pr&aacute;cticas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'pruebasherramientas' %}">Herramientas</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-lib" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Liberaci&oacute;n</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-lib">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{% url 'liberaciontareas' %}">Tareas</a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'liberacionpracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'liberacionherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-desp" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Despliegue</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-desp">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'despliegueherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-op" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Operaciones</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-op">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'operacionestareas' %}">Tareas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'operacionespracticas' %}">Pr&aacute;cticas</a>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'operacionesherramientas' %}">Herramientas</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" data-toggle="collapse" href="#ui-mon" aria-expanded="false"
-                            aria-controls="ui-basic">
-                            <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Monitoreo</span>
-                            <i class="menu-arrow"></i>
-                        </a>
-                        <div class="collapse" id="ui-mon">
-                            <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{% url 'monitoreotareas' %}">Tareas</a>
-                                </li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'monitoreopracticas' %}">Pr&aacute;cticas</a></li>
-                                <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'monitoreoherramientas' %}">Herramientas</a></li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'referencias' %}">
-                            <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Referencias</span>
-                        </a>
-                    </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'indexdash' %}">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">DevOps</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'actividades' %}">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Actividades</span>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Planificaci&oacute;n</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Codificaci&oacute;n</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Construcci&oacute;n</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Pruebas</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Liberaci&oacute;n</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'despliegue' %}"
+                      aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Despliegue</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                    <div>
+                      <ul class="nav flex-column sub-menu">
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                        </li>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                        </li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Operaciones</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
+                      <i class="icon-layout menu-icon"></i>
+                      <span class="menu-title">Monitoreo</span>
+                      <i class="menu-arrow"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'referencias' %}">
+                      <i class="icon-grid menu-icon"></i>
+                      <span class="menu-title">Referencias</span>
+                    </a>
+                  </li>
                 </ul>
             </nav>
             <!-- partial -->
@@ -269,52 +184,19 @@
                         <div class="col-lg-6 grid-margin stretch-card">
                             <div class="card ">
                                 <div class="card-body">
-                                    <h2>Despliegue</h2>
+                                    <h2>Pr&aacute;cticas</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="col-lg-6 grid-margin stretch-card">
                             <div class="card">
                               <div class="card-body">
-                                <h2>Pr&aacute;cticas</h2>
+                                <h2>Despliegue</h2>
                               </div>
                             </div>
                           </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-12 grid-margin stretch-card">
-                            <div class="card">
-                              <div class="card-body">
-                                <h4 class="negrita">Descripción de la Actividad</h4>
-                                <p>
-                                  En esta actividad se toma la unidad construida ya sea de forma manual o
-                                  automatizada y la pone operativa en un servidor (Perera et al., 2017).
-                                  <br>
-                                  <br>
-                                  (Sousa et al., 2019) indica que cuando esta labor de liberaci&oacute;n se
-                                  materializa en el despliegue en un servidor quedando a disposición de los
-                                  clientes, se cumple con el propósito de la actividad
-                                  <br>
-                                  <br>
-                                  Tiene como objetivo no solo configurar la infraestructura de producción, sino
-                                  también enviar el software a producción para ponerlo a disposición de quién lo
-                                  necesite utilizar (Badshah
-                                  et al., 2020).
-                                  <br>
-                                  <br>
-                                  <span class="negrita">Prop&oacute;sito:</span> Poner el software a disposición de los clientes.
-                                  <br>
-                                  <br>
-                                  <span class="negrita">Objetivos:</span>
-                                  <ul>
-                                    <li>Configurar la infraestructura de producción.</li>
-                                    <li>Enviar el software a producción.</li>
-                                  </ul>                           
-                                </p>
-                              </div>
-                            </div>
-                          </div>
-                    </div>
+                    
                     <div class="row">
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">

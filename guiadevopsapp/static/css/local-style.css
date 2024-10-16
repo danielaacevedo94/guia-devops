@@ -1,3 +1,16 @@
+.header-img {
+    margin: 1rem;
+    height: 34px;
+}
+
+#site-header {
+    height: 50px;
+}
+
+.tagline {
+    text-align: center;
+}
+
 p {
     font-size: 1rem;
     text-align: justify;
@@ -70,6 +83,13 @@ td label {
 .menu-title-sublink {
     margin-bottom: 0px;
 }
+
+.btn-success {
+    margin-top: 1rem;
+    float: right;
+}
+
+
 
 /*img {
     width: 100%;
