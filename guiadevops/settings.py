@@ -26,8 +26,8 @@ SECRET_KEY = 'django-insecure-0(@u@whn9u=lc&#h7s445!i9y$re0x7beh16)q!k2z0$!tg&9+
 DEBUG = True
 
 ALLOWED_HOSTS = ['52.89.95.129','devopsguide.lat','www.devopsguide.lat', '127.0.0.1:8000', '127.0.0.1']
-#SECURE_SSL_REDIRECT = True
-#SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 CSRF_TRUSTED_ORIGINS = ['https://devopsguide.lat', 'https://www.devopsguide.lat']
 
