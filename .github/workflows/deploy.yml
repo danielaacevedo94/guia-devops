@@ -63,4 +63,4 @@ jobs:
           git fetch origin master
           git stash
           git pull
-          init 6
+          sudo init 6
