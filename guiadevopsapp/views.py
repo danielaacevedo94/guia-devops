@@ -814,7 +814,7 @@ def desplieguetareas(request):
 
 @login_required(login_url="/accounts/google/login/")
 def despliegueherramientas(request):
-        
+
     try:
         social_account = SocialAccount.objects.get(user=request.user)
         social_user_id = social_account.uid

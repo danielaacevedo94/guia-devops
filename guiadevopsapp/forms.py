@@ -6,16 +6,10 @@ from .models import Planificacionherramientasmodel, Codificacionherramientasmode
 from .models import Liberacionherramientasmodel, Despliegueherramientasmodel, Operacionesherramientasmodel, Monitoreoherramientasmodel
 
 # pylint: disable=missing-class-docstring
-"""class Planificaciontareasform(forms.ModelForm):
-    class Meta:
-        model = Planificaciontareasmodel
-        exclude = ('fecha',)"""
-
 class Planificaciontareasform(forms.ModelForm):
     class Meta:
         model = Planificaciontareasmodel
         exclude = ('fecha','userId')
-        
 
 class Planificacionherramientasform(forms.ModelForm):
     class Meta:

@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-0(@u@whn9u=lc&#h7s445!i9y$re0x7beh16)q!k2z0$!tg&9+'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['52.89.95.129','devopsguide.lat','www.devopsguide.lat', '127.0.0.1:8000', '127.0.0.1']
 SECURE_SSL_REDIRECT = True
@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',#allauth
     'allauth.socialaccount.providers.google',#allauth
     'mathfilters',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
