@@ -63,5 +63,4 @@ jobs:
           git fetch origin master
           git stash
           git pull
-          sudo supervisorctl stop django_app
-          sudo supervisorctl start django_app
+          sudo init 6
