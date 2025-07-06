@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% trans Despliegue %}- DevOps</title>
+    <title>Despliegue - DevOps</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
     <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -66,18 +66,18 @@
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                                 <i class="ti-settings text-primary"></i>
-                                {% trans Editar Perfil %}
+                                Editar Perfil
                             </a>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'account_logout' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                {% trans Cerrar Sesi&oacute;n %}
+                                Cerrar Sesi&oacute;n
                             </a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'google_login' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                {% trans Iniciar Sesi&oacute;n %}
+                                Iniciar Sesi&oacute;n
                             </a>
                             {% endif %}
                         </div>
@@ -100,41 +100,41 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'actividades' %}">
                       <i class="icon-grid menu-icon"></i>
-                      <span class="menu-title">{% trans Actividades %}</span>
+                      <span class="menu-title">Actividades</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
+                      <span class="menu-title">Planificaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
+                      <span class="menu-title">Codificaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Construcci&oacute;n %}</span>
+                      <span class="menu-title">Construcci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Pruebas %}</span>
+                      <span class="menu-title">Pruebas</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
+                      <span class="menu-title">Liberaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
@@ -142,15 +142,15 @@
                     <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'despliegue' %}"
                       aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Despliegue %}</span>
+                      <span class="menu-title">Despliegue</span>
                       <i class="menu-arrow"></i>
                     </a>
                     <div>
                       <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">{% trans Tareas %}</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
                         </li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">{% trans Pr&aacute;cticas %}</a>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">{% trans Herramientas %}</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
                         </li>
                       </ul>
                     </div>
@@ -158,21 +158,21 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Operaciones %}</span>
+                      <span class="menu-title">Operaciones</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Monitoreo %}</span>
+                      <span class="menu-title">Monitoreo</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'referencias' %}">
                       <i class="icon-grid menu-icon"></i>
-                      <span class="menu-title">{% trans Referencias %}</span>
+                      <span class="menu-title">Referencias</span>
                     </a>
                   </li>
                 </ul>
@@ -184,7 +184,7 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card ">
                                 <div class="card-body">
-                                    <h2>{% trans Pr&aacute;cticas %}</h2>
+                                    <h2>Pr&aacute;cticas</h2>
                                 </div>
                             </div>
                         </div>
@@ -195,8 +195,8 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h5 class="card-title">{% trans Descripción %}</h5>
-                                    <p>{% blocktranslate %}
+                                    <h5 class="card-title">Descripción</h5>
+                                    <p>
                                         Las prácticas en DevOps se consideran capacidades empresariales según (Forsgren
                                         et al., 2018) y son un reflejo de la idea de automatización y mejora continuas,
                                         y muchas de ellas se centran en una o en varias fases del ciclo de vida DevOps
@@ -206,7 +206,7 @@
                                         (Amaro et al., 2023) expresa que el uso de los términos prácticas y capacidades
                                         va a depender del contexto y la perspectiva, la capacidad es la habilidad para
                                         hacer algo, acumuladas o desarrolladas por sus miembros a lo largo del tiempo y
-                                        la práctica es la acción realizada, tiene el enfoque práctico. {% endblocktranslate %}
+                                        la práctica es la acción realizada, tiene el enfoque práctico.
                                     </p>
                                 </div>
                             </div>
@@ -219,8 +219,8 @@
                                     <img class="mx-auto d-block" style="width: min-content; height: min-content;"
                                         src="{% static 'images/despliegue-practicas.jpg' %}" alt="cod_practicas">
                                     <span
-                                        class="text-muted text-center text-sm-left d-block d-sm-inline-block">{% trans Adaptaci&oacute;n
-                                        propia %}</span>
+                                        class="text-muted text-center text-sm-left d-block d-sm-inline-block">Adaptaci&oacute;n
+                                        propia</span>
                                     </p>
                                 </div>
                             </div>
@@ -230,28 +230,28 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">{% trans Pr&aacute;cticas de la Actividad %}</h4>
-                                    <p>{% blocktranslate %}En la literatura se encontraron un compendio de prácticas relacionada al ámbito
+                                    <h4 class="negrita">Pr&aacute;cticas de la Actividad</h4>
+                                    <p>En la literatura se encontraron un compendio de prácticas relacionada al ámbito
                                         DevOps. Como se puede apreciar existen muchas prácticas o capacidades y
                                         est&aacute;n
                                         categorizadas como: técnicas, culturales, de medición, de beneficios de
                                         negocio (Kim et al., 2016).
-                                        A continuaci&oacute;n, se se mostrar&aacute;n algunas de ellas:{% endblocktranslate %}</p>
+                                        A continuaci&oacute;n, se se mostrar&aacute;n algunas de ellas:</p>
                                     <div class="table-responsive col-lg-12">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        {% trans Pr&aacute;cticas %}
+                                                        Pr&aacute;cticas
                                                     </th>
                                                     <th>
-                                                        {% trans Referencias %}
+                                                        Referencias
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>{% trans Colaboraci&oacute;n %}</td>
+                                                    <td>Colaboraci&oacute;n</td>
                                                     <td class="text-wrap">
                                                         (Dynatrace, 2021; Luz et al., 2018; Mohan et al., 2018; Qumer
                                                         Gill
@@ -259,7 +259,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Comunicaci&oacute;n %}</td>
+                                                    <td>Comunicaci&oacute;n</td>
                                                     <td class="text-wrap">
                                                         (Dynatrace, 2021; Mohan et al., 2018; Qumer Gill et al., 2018;
                                                         Amaro
@@ -267,13 +267,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Automatizaci&oacute;n %}</td>
+                                                    <td>Automatizaci&oacute;n</td>
                                                     <td class="text-wrap">
                                                         (Luz et al., 2018; Mohan et al., 2018; Amaro et al., 2023)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% rans Entrega continua %}</td>
+                                                    <td>Entrega continua</td>
                                                     <td class="text-wrap">
                                                         (Da Silva et al., 2022; Dynatrace, 2021; Ferry et al., 2019;
                                                         Fitzgerald & Stol, 2017; Ivanov & Smolander, 2018; Lenhard,
@@ -283,7 +283,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Despliegue continuo %}</td>
+                                                    <td>Despliegue continuo</td>
                                                     <td class="text-wrap">
                                                         (Da Silva et al., 2022; Ferry et al., 2019;
                                                         Fitzgerald & Stol, 2017; Ivanov & Smolander, 2018; Luz et al.,
@@ -296,7 +296,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Infraestructura como c&oacute;digo %}</td>
+                                                    <td>Infraestructura como c&oacute;digo</td>
                                                     <td class="text-wrap">
                                                         (Ivanov & Smolander, 2018; Jennings &
                                                         Gannod, 2019; Luz et al., 2018; Sharma & Coyne, 2015; Siebra et
@@ -306,7 +306,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Contenedorizaci&oacute;n %}</td>
+                                                    <td>Contenedorizaci&oacute;n</td>
                                                     <td class="text-wrap">
                                                         (Ferry et al., 2019; Jennings & Gannod, 2019;
                                                         Rodriguez et al., 2020; Siebra et al., 2019; Tonello, 2022a;
@@ -315,13 +315,13 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Orquestaci&oacute;n de contenedores %}</td>
+                                                    <td>Orquestaci&oacute;n de contenedores</td>
                                                     <td class="text-wrap">
                                                         (Rocha et al., 2023; Wurster et al., 2020)
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Gesti&oacute;n de artefactos %}</td>
+                                                    <td>Gesti&oacute;n de artefactos</td>
                                                     <td class="text-wrap">
                                                         (Akman et al., 2018; Sharma & Coyne, 2015; Amaro et al., 2023)
                                                     </td>
@@ -337,18 +337,18 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">{% trans Descripci&oacute;n de las pr&aacute;cticas %}</h4>
+                                    <h4 class="negrita">Descripci&oacute;n de las pr&aacute;cticas</h4>
                                     <nav class="navbar-dropdown">
                                         <ul>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-c"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Colaboraci&oacute;n %}<i
+                                                    <h4 class="menu-title">Colaboraci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-c">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         La cultura colaborativa es fundamental para la adopción exitosa
                                                         de DevOps. Se enfoca en eliminar los silos entre los equipos de
                                                         desarrollo y operaciones, integrando tareas de operaciones como
@@ -387,7 +387,7 @@
                                                         correctamente. Sin una cultura sólida, los esfuerzos de DevOps
                                                         pueden quedar reducidos a simples automatizaciones sin lograr
                                                         sus beneficios completos.
-                                                        <br>{% endblocktranslate %}
+                                                        <br>
                                                         (Luz et al., 2018)
                                                     </p>
                                                 </div>
@@ -395,12 +395,12 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-com"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Comunicaci&oacute;n %}<i
+                                                    <h4 class="menu-title">Comunicaci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-com">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Como parte de la cultura colaborativa, la comunicación es un
                                                         aspecto fundamental de DevOps, ya que
                                                         permite a los equipos de desarrollo y operaciones trabajar
@@ -410,7 +410,7 @@
                                                         evitando sistemas de tickets que ralentizan la interacción, y
                                                         utilizando herramientas como Slack para facilitar la
                                                         comunicación.
-                                                        <br>{% endblocktranslate %}
+                                                        <br>
                                                         (Luz et al., 2018)
                                                     </p>
                                                 </div>
@@ -418,12 +418,12 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-aut"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Automatizaci&oacute;n %}<i
+                                                    <h4 class="menu-title">Automatizaci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-aut">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         La automatización es un elemento fundamental en la estrategia
                                                         DevOps de cualquier empresa. En esencia, la automatización
                                                         minimiza el trabajo manual, acelera los procesos de entrega a lo
@@ -443,7 +443,7 @@
                                                         producción y garantiza la creación de software consistente,
                                                         confiable y seguro, liberando tiempo valioso para que los
                                                         equipos de DevOps se concentren en la innovación.
-                                                        <br>{% endblocktranslate %}
+                                                        <br>
                                                         (Dynatrace, 2021)
                                                     </p>
                                                 </div>
@@ -451,12 +451,12 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-ec"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Entrega continua %}<i
+                                                    <h4 class="menu-title">Entrega continua <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-ec">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Es una práctica de desarrollo en el que el software se mantiene
                                                         en un estado listo para su implementación a lo largo de su ciclo
                                                         de vida, desde el desarrollo hasta la producción. Implica la
@@ -470,7 +470,7 @@
                                                         el sistema no es implementable, se realizan correcciones de
                                                         manera inmediata. En última instancia, el sistema puede
                                                         implementarse en producción o ante usuarios finales en cualquier
-                                                        momento, según la demanda. {% endblocktranslate %}(Forsgren et al., 2018;
+                                                        momento, según la demanda. (Forsgren et al., 2018;
                                                         Sharma & Coyne, 2015)
                                                     </p>
                                                 </div>
@@ -478,29 +478,29 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-cd"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Despliegue continuo %}<i
+                                                    <h4 class="menu-title">Despliegue continuo <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-cd">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Se refiere a la automatización del proceso de despliegue. La
                                                         automatización del despliegue se refiere al nivel en el que las
                                                         implementaciones son completamente automatizadas y no necesitan
-                                                        intervención manual. (Forsgren et al., 2018){% endblocktranslate %}
+                                                        intervención manual. (Forsgren et al., 2018)
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-iac"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Infraestructura como c&oacute;digo %}<i
+                                                    <h4 class="menu-title">Infraestructura como c&oacute;digo <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-iac">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         La infraestructura como código es una capacidad fundamental de
                                                         DevOps que posibilita a las organizaciones gestionar la escala y
                                                         velocidad de aprovisionamiento y configuración de los entornos
@@ -513,39 +513,39 @@
                                                         abarcando no solo sus configuraciones, sino también sus
                                                         definiciones, topologías, roles, relaciones, cargas de trabajo y
                                                         políticas, así como su comportamiento. (Sharma & Coyne,
-                                                        2015){% endblocktranslate %}
+                                                        2015)
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-cont"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Contenedorizaci&oacute;n %}<i
+                                                    <h4 class="menu-title">Contenedorizaci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-cont">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Los contenedores tienen como objetivo empaquetar una aplicación
                                                         junto con sus dependencias y configuraciones en una sola unidad
                                                         desplegable. La contenedorización también se refiere al proceso
                                                         de automatización del aprovisionamiento de contenedores, que es
                                                         el entorno donde se ejecutarán estos servicios autónomos.
-                                                        (Jennings & Gannod, 2019; Luz et al., 2018){% endblocktranslate %}
+                                                        (Jennings & Gannod, 2019; Luz et al., 2018)
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-ocont"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Orquestaci&oacute;n de contenedores %}<i
+                                                    <h4 class="menu-title">Orquestaci&oacute;n de contenedores <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-ocont">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Según (OVHcloud, 2023) es el proceso de automatización de la
                                                         gestión, el despliegue, la asignación de niveles, la creación de
                                                         redes y la disponibilidad de los contenedores, es decir,
@@ -556,20 +556,20 @@
                                                         emplean una solución de orquestación de contenedores, y de esos,
                                                         el 70% indican que utilizan un servicio de orquestación de
                                                         contenedores completamente gestionado en la nube dentro de su
-                                                        organización (IBM, 2024).{% endblocktranslate %}
+                                                        organización (IBM, 2024).
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-ga"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Gesti&oacute;n de artefactos %}<i
+                                                    <h4 class="menu-title">Gesti&oacute;n de artefactos <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-ga">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Los artefactos son aquellos elementos tangibles que son
                                                         producidos durante la creación de un proyecto (Universidad
                                                         Tecmilenio, 2020).
@@ -603,7 +603,7 @@
                                                             comandos y pasos personalizados que se ejecutan en un
                                                             pipeline
                                                             de despliegue.</li>
-                                                    </ul>{% endblocktranslate %}
+                                                    </ul>
                                                     </p>
                                                 </div>
                                             </li>

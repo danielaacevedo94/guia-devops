@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>{% trans Codificaci&oacute;n %} - DevOps</title>
+    <title>Codificaci&oacute;n - DevOps</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
     <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -67,18 +67,18 @@
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                                 <i class="ti-settings text-primary"></i>
-                                {% trans Editar Perfil %}
+                                Editar Perfil
                             </a>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'account_logout' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                {% trans Cerrar Sesi&oacute;n %}
+                                Cerrar Sesi&oacute;n
                             </a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'google_login' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                {% trans Iniciar Sesi&oacute;n %}
+                                Iniciar Sesi&oacute;n
                             </a>
                             {% endif %}
                         </div>
@@ -101,27 +101,27 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'actividades' %}">
                       <i class="icon-grid menu-icon"></i>
-                      <span class="menu-title">{% trans Actividades %}</span>
+                      <span class="menu-title">Actividades</span>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
+                      <span class="menu-title">Planificaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
+                      <span class="menu-title">Codificaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                     <div >
                       <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">{% trans Tareas %}</a></li>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">{% trans Pr&aacute;cticas %}</a>
-                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">{% trans Herramientas %}</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificaciontareas' %}">Tareas</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionpracticas' %}">Pr&aacute;cticas</a>
+                        <li class="nav-item"> <a class="nav-link" href="{% url 'codificacionherramientas' %}">Herramientas</a>
                         </li>
                       </ul>
                     </div>
@@ -129,49 +129,49 @@
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Construcci&oacute;n %}</span>
+                      <span class="menu-title">Construcci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Pruebas %}</span>
+                      <span class="menu-title">Pruebas</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
+                      <span class="menu-title">Liberaci&oacute;n</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Despliegue %}</span>
+                      <span class="menu-title">Despliegue</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Operaciones %}</span>
+                      <span class="menu-title">Operaciones</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
                       <i class="icon-layout menu-icon"></i>
-                      <span class="menu-title">{% trans Monitoreo %}</span>
+                      <span class="menu-title">Monitoreo</span>
                       <i class="menu-arrow"></i>
                     </a>
                   </li>
                   <li class="nav-item">
                       <a class="nav-link" href="{% url 'referencias' %}">
                           <i class="icon-grid menu-icon"></i>
-                          <span class="menu-title">{% trans Referencias %}</span>
+                          <span class="menu-title">Referencias</span>
                       </a>
                   </li>
                 </ul>
@@ -183,7 +183,7 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card ">
                                 <div class="card-body">
-                                    <h2>{% trans Pr&aacute;cticas %}</h2>
+                                    <h2>Pr&aacute;cticas</h2>
                                 </div>
                             </div>
                         </div>
@@ -194,18 +194,18 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">{% trans Descripci&oacute;n %}</h4>
-                                    <p>{% blocktranslate %}
+                                    <h4 class="negrita">Descripci&oacute;n</h4>
+                                    <p>
                                         Las prácticas en DevOps se consideran capacidades empresariales según (Forsgren
                                         et al., 2018) y son un reflejo de la idea de automatización y mejora continuas,
-                                        y muchas de ellas se centran en una o en varias fases del ciclo de vida DevOps {% endblocktranslate %}
+                                        y muchas de ellas se centran en una o en varias fases del ciclo de vida DevOps
                                         (NetApp, 2023).
                                         <br>
                                         <br>
-                                        (Amaro et al., 2023) {% blocktranslate %} expresa que el uso de los términos prácticas y capacidades
+                                        (Amaro et al., 2023) expresa que el uso de los términos prácticas y capacidades
                                         va a depender del contexto y la perspectiva, la capacidad es la habilidad para
                                         hacer algo, acumuladas o desarrolladas por sus miembros a lo largo del tiempo y
-                                        la práctica es la acción realizada, tiene el enfoque práctico.{% endblocktranslate %}
+                                        la práctica es la acción realizada, tiene el enfoque práctico.
                                     </p>
                                 </div>
                             </div>
@@ -218,8 +218,8 @@
                                     <img class="mx-auto d-block" style="width: min-content; height: min-content;"
                                         src="{% static 'images/codificacion-practicas.jpg' %}" alt="cod_practicas">
                                     <span
-                                        class="text-muted text-center text-sm-left d-block d-sm-inline-block">{% trans Adaptaci&oacute;n
-                                        propia %}</span>
+                                        class="text-muted text-center text-sm-left d-block d-sm-inline-block">Adaptaci&oacute;n
+                                        propia</span>
                                     </p>
                                 </div>
                             </div>
@@ -229,28 +229,28 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">{% trans Pr&aacute;cticas de la Actividad %}</h4>
-                                    <p>{% blocktranslate %}En la literatura se encontraron un compendio de prácticas relacionada al ámbito
+                                    <h4 class="negrita">Pr&aacute;cticas de la Actividad</h4>
+                                    <p>En la literatura se encontraron un compendio de prácticas relacionada al ámbito
                                         DevOps. Como se puede apreciar existen muchas prácticas o capacidades y
                                         est&aacute;n
                                         categorizadas como: técnicas, culturales, de medición, de beneficios de
                                         negocio (Kim et al., 2016).
-                                        A continuaci&oacute;n, se se mostrar&aacute;n algunas de ellas:{% endblocktranslate %}</p>
+                                        A continuaci&oacute;n, se se mostrar&aacute;n algunas de ellas:</p>
                                     <div class="table-responsive col-lg-12">
                                         <table class="table table-striped">
                                             <thead>
                                                 <tr>
                                                     <th>
-                                                        {% trans Pr&aacute;cticas %}
+                                                        Pr&aacute;cticas
                                                     </th>
                                                     <th>
-                                                        {% trans Referencias %}
+                                                        Referencias
                                                     </th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 <tr>
-                                                    <td>{% trans Colaboración %}</td>
+                                                    <td>Colaboración</td>
                                                     <td class="text-wrap">
                                                         (Dynatrace, 2021; Luz et al., 2018; Mohan et al., 2018; Qumer
                                                         Gill
@@ -258,7 +258,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Comunicación %}</td>
+                                                    <td>Comunicación</td>
                                                     <td class="text-wrap">
                                                         (Dynatrace, 2021; Mohan et al., 2018; Qumer Gill et al., 2018;
                                                         Amaro
@@ -266,7 +266,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Desarrollo continuo %}</td>
+                                                    <td>Desarrollo continuo</td>
                                                     <td class="text-wrap">
                                                         (Guseila et al., 2019; Mascheroni & Irrazábal, 2018; Meng et
                                                         al.,
@@ -274,7 +274,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Control de versiones %}</td>
+                                                    <td>Control de versiones</td>
                                                     <td class="text-wrap">
                                                         (Akman et al., 2018;
                                                         Ivanov & Smolander, 2018; Jennings & Gannod, 2019; Rahman et
@@ -285,7 +285,7 @@
                                                     </td>
                                                 </tr>
                                                 <tr>
-                                                    <td>{% trans Gestión de artefactos %}</td>
+                                                    <td>Gestión de artefactos</td>
                                                     <td class="text-wrap">
                                                         (Akman et al., 2018; Sharma & Coyne, 2015; Amaro et al., 2023)
                                                     </td>
@@ -301,18 +301,18 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">{% trans Descripci&oacute;n de las pr&aacute;cticas %}</h4>
+                                    <h4 class="negrita">Descripci&oacute;n de las pr&aacute;cticas</h4>
                                     <nav class="navbar-dropdown">
                                         <ul>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-c"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Colaboraci&oacute;n %}<i
+                                                    <h4 class="menu-title">Colaboraci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-c">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         La cultura colaborativa es fundamental para la adopción exitosa
                                                         de DevOps. Se enfoca en eliminar los silos entre los equipos de
                                                         desarrollo y operaciones, integrando tareas de operaciones como
@@ -351,7 +351,7 @@
                                                         correctamente. Sin una cultura sólida, los esfuerzos de DevOps
                                                         pueden quedar reducidos a simples automatizaciones sin lograr
                                                         sus beneficios completos.
-                                                        <br>{% endblocktranslate %}
+                                                        <br>
                                                         (Luz et al., 2018)
                                                     </p>
                                                 </div>
@@ -359,12 +359,12 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-com"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Comunicaci&oacute;n %}<i
+                                                    <h4 class="menu-title">Comunicaci&oacute;n <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-com">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Como parte de la cultura colaborativa, la comunicación es un
                                                         aspecto fundamental de DevOps, ya que
                                                         permite a los equipos de desarrollo y operaciones trabajar
@@ -374,7 +374,7 @@
                                                         evitando sistemas de tickets que ralentizan la interacción, y
                                                         utilizando herramientas como Slack para facilitar la
                                                         comunicación.
-                                                        <br>{% endblocktranslate %}
+                                                        <br>
                                                         (Luz et al., 2018)
                                                     </p>
                                                 </div>
@@ -382,28 +382,28 @@
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-dc"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Desarrollo continuo %}<i
+                                                    <h4 class="menu-title">Desarrollo continuo <i
                                                             class="fa fa-eye mx-0"></i></h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-dc">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Engloba las etapas de planificación y codificación dentro del
                                                         ciclo de DevOps, y puede comprender también sistemas de gestión
-                                                        de versiones. {% endblocktranslate %}(NetApp, 2023)
+                                                        de versiones. (NetApp, 2023)
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-cv"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Control de versiones %}<i
+                                                    <h4 class="menu-title">Control de versiones <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-cv">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         El control de versiones es el proceso sistemático de seguimiento
                                                         y gestión de actualizaciones del código fuente y los recursos.
                                                         Los sistemas de control de versiones son fundamentales para
@@ -413,20 +413,20 @@
                                                         base de código compartida de forma independiente. También actúan
                                                         como una red de seguridad, lo que permite «deshacer» las
                                                         actualizaciones de código si se introduce un error catastrófico
-                                                        durante el desarrollo. {% endblocktranslate %}(Forsgren et al., 2018; Unity, 2024)
+                                                        durante el desarrollo. (Forsgren et al., 2018; Unity, 2024)
                                                     </p>
                                                 </div>
                                             </li>
                                             <li class="nav-item" style="list-style: none;">
                                                 <a class="nav-link" data-toggle="collapse" href="#ui-ga"
                                                     aria-expanded="false" aria-controls="ui-basic">
-                                                    <h4 class="menu-title">{% trans Gesti&oacute;n de artefactos %}<i
+                                                    <h4 class="menu-title">Gesti&oacute;n de artefactos <i
                                                             class="fa fa-eye mx-0"></i>
                                                     </h4>
                                                     <i class="menu-arrow"></i>
                                                 </a>
                                                 <div class="collapse" id="ui-ga">
-                                                    <p>{% blocktranslate %}
+                                                    <p>
                                                         Los artefactos son aquellos elementos tangibles que son
                                                         producidos durante la creación de un proyecto (Universidad
                                                         Tecmilenio, 2020).
@@ -459,7 +459,7 @@
                                                         <li>Especificación de comando: Se refiere a un conjunto de
                                                             comandos y pasos personalizados que se ejecutan en un
                                                             pipeline
-                                                            de despliegue.</li>{% endblocktranslate %}
+                                                            de despliegue.</li>
                                                     </ul>
                                                     </p>
                                                 </div>

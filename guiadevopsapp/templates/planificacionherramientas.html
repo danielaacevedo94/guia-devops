@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Plan - DevOps</title>
+  <title>Planificaci&oacute;n - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -53,11 +53,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                Edit profile
+                Editar Perfil
               </a>
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                Log out
+                Cerrar Sesi&oacute;n
               </a>
             </div>
           </li>
@@ -79,21 +79,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Activities</span>
+              <span class="menu-title">Actividades</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'planificacion' %}"
-              aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Plan</span>
+              <span class="menu-title">Planificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div>
+            <div >
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tasks</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Practices</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Tools</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
                 </li>
               </ul>
             </div>
@@ -101,57 +100,57 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Code</span>
+              <span class="menu-title">Codificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Build</span>
+              <span class="menu-title">Construcci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Test</span>
+              <span class="menu-title">Pruebas</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Release</span>
+              <span class="menu-title">Liberaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Deploy</span>
+              <span class="menu-title">Despliegue</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operate</span>
+              <span class="menu-title">Operaciones</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitor</span>
+              <span class="menu-title">Monitoreo</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'referencias' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">References</span>
-            </a>
+              <a class="nav-link" href="{% url 'referencias' %}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Referencias</span>
+              </a>
           </li>
         </ul>
       </nav>
@@ -162,7 +161,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Tools</h2>
+                  <h2>Herramientas</h2>
                 </div>
               </div>
             </div>
@@ -170,75 +169,91 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Description of the Activity Tool Categories
+                  <h4 class="negrita">Descripci&oacute;n de las categor&iacute;as de las herramientas de la Actividad
                   </h4>
-                  <p>Project planning uses project management software that supports Agile and Scrum methodologies,
-                    which are common in DevOps. These tools allow you to organize work into sprints, track the backlog,
-                    and visualize work in progress using Kanban or Scrum boards. The following will be described:
+                  <p>En la Planificaci&oacute;n se utilizan software de gestión de proyectos que soporten metodologías
+                    ágiles y Scrum, que son
+                    comunes en DevOps. Las herramientas permiten organizar el trabajo en sprints, rastrear el backlog, y
+                    visualizar el trabajo en curso a través de tableros Kanban o Scrum. A continuación, se describirá:.
                   </p>
                   <nav class="navbar-dropdown">
                     <ul>
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-gt" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Task management <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">Gesti&oacute;n de tareas <i class="fa fa-eye mx-0"></i></h4>
                         </a>
                         <div class="collapse" id="ui-gt">
                           <p>
-                            Task management is the process of monitoring and managing individual tasks throughout the
-                            various stages of a project, from inception to completion. This process involves real-time
-                            decision-making to adapt to changes, ensuring the successful completion of tasks. It
-                            encompasses the management of aspects such as budget, time, scope, and resources. <br>
-                            Many benefits are obtained, such as:
+                            La gestión de tareas es el proceso de supervisar y administrar tareas individuales a lo
+                            largo de las distintas etapas de un proyecto, desde su inicio hasta su finalización. Este
+                            proceso implica la toma de decisiones en tiempo real para adaptarse a cambios, asegurando
+                            que las tareas se completen con éxito. Abarca la gestión de aspectos como el presupuesto, el
+                            tiempo, el alcance, y los recursos.
+                            <br>
+                            Se obtienen muchos beneficios tales como:
                           <ul>
-                            <li>Improved Efficiency: Proper allocation of resources and attention to specific tasks to
-                              maximize productivity.</li>
-                            <li>Focus on Objectives: Ensures that work is aligned with final objectives, avoiding
-                              unnecessary deviations.</li>
-                            <li>Work Organization: Facilitates the simultaneous management of multiple tasks, optimizing
-                              workflow.</li>
+                            <li>Mejora de la Eficiencia: Asignación adecuada de recursos y atención a tareas específicas
+                              para maximizar la productividad.</li>
+                            <li>Enfoque en los Objetivos: Asegura que el trabajo esté alineado con los objetivos
+                              finales,
+                              evitando desviaciones innecesarias.</li>
+                            <li>Organización del Trabajo: Facilita la gestión simultánea de múltiples tareas,
+                              optimizando
+                              el flujo de trabajo.</li>
                           </ul>
-                          Comparison of Project Management and Task Management
+                          Comparación de lo que significa Gestión de Proyectos y Gestión de Tareas
                           <ul>
-                            <li>Project Management: Involves the planning, execution, monitoring, and closure of an
-                              entire project, with a focus on achieving a specific final objective. It requires a global
-                              vision and the management of multiple tasks that contribute to the project.</li>
-                            <li>Task Management: Focuses on the management of individual tasks, from conception to
-                              completion. It's a more detailed process that's an integral part of project management.
-                            </li>
+                            <li>Gestión de Proyectos: Involucra la planificación, ejecución, monitoreo y cierre de un
+                              proyecto completo, con un enfoque en alcanzar un objetivo final específico. Requiere una
+                              visión global y la gestión de múltiples tareas que contribuyen al proyecto.</li>
+                            <li>Gestión de Tareas: Se enfoca en la administración de tareas individuales, desde su
+                              concepción hasta su finalización. Es un proceso más detallado que forma parte integral de
+                              la
+                              gestión de proyectos.</li>
                           </ul>
-                          Important steps to keep in mind
+                          Pasos importantes a tener en cuenta
                           <ul style="list-style-type: decimal;">
-                            <li>Prioritization: Establish the order of importance of tasks to ensure they are completed
-                              within planned constraints.</li>
-                            <li>Milestone Tracking: Define key milestones to measure progress and motivate the team.
+                            <li>Priorización: Establecer el orden de importancia de las tareas para garantizar que se
+                              completen dentro de las restricciones planificadas.</li>
+                            <li>Seguimiento de Hitos: Definir hitos clave para medir el progreso y motivar al equipo.
                             </li>
-                            <li>Schedule Management: Assign appropriate deadlines to ensure timely task completion.</li>
-                            <li>Resource Allocation: Optimally allocate resources according to project needs.</li>
-                            <li>Collaboration: Keep the team aligned to work productively toward common goals.</li>
+                            <li>Gestión de Programación: Asignar plazos adecuados para asegurar la finalización oportuna
+                              de las tareas.</li>
+                            <li>Asignación de Recursos: Distribuir los recursos de manera óptima según las necesidades
+                              del proyecto.</li>
+                            <li>Colaboración: Mantener al equipo sincronizado para trabajar productivamente hacia los
+                              objetivos comunes.</li>
                           </ul>
 
-                          Task management tools are essential for organizing, assigning, and monitoring the progress of
-                          both individual and team projects. These tools offer a variety of common features that make
-                          task management easier. <br>
-                          Some of the general features include:
+                          Las herramientas de gestión de tareas son fundamentales para organizar, asignar y
+                          monitorizar el progreso de proyectos tanto individuales como en equipo. Estas herramientas
+                          ofrecen una variedad de características comunes que facilitan la administración de las
+                          tareas. <br>
+                          Algunas de las características generales incluyen:
                           <ul>
-                            <li>Visual Task Boards: Many systems use Kanban boards, which allow users to visualize the
-                              status of tasks as they progress through different stages, such as "In Progress" or
-                              "Completed."</li>
-                            <li>Priority Management: These allow users to assign priority levels to tasks, helping to
-                              focus efforts on the most critical items first.</li>
-                            <li>Integrations with Other Tools: Most task management tools offer integrations with
-                              third-party applications, such as calendars, communication tools, or time-tracking
-                              software, facilitating collaboration and automation.</li>
-                            <li>Task Assignment and Tracking: Users can assign tasks to specific team members, set
-                              deadlines, and monitor progress in real time, improving productivity and accountability.
-                            </li>
-                            <li>Collaboration and Communication: These tools often include features that facilitate
-                              collaboration, such as chats, comments, and sharing. files within the same work
-                              environment.</li>
-                            <li>Time Tracking: Many tools include time tracking features, allowing teams to measure how
-                              much time is spent on each task and optimize time management.</li>
+                            <li>Tableros de Tareas Visuales: Muchos sistemas utilizan tableros Kanban, que permiten
+                              visualizar el estado de las tareas a medida que avanzan por diferentes etapas, como "En
+                              progreso" o "Completado.</li>
+                            <li>Gestión de Prioridades: Permiten a los usuarios asignar niveles de prioridad a las
+                              tareas,
+                              lo que ayuda a enfocar los esfuerzos en los elementos más críticos primero.</li>
+                            <li>Integraciones con Otras Herramientas: La mayoría de las herramientas de gestión de
+                              tareas
+                              ofrecen integraciones con aplicaciones de terceros, como calendarios, herramientas de
+                              comunicación o software de seguimiento de tiempo, lo que facilita la colaboración y la
+                              automatización.</li>
+                            <li>Asignación y Seguimiento de Tareas: Los usuarios pueden asignar tareas a miembros
+                              específicos del equipo, establecer fechas límite y monitorizar el progreso en tiempo real,
+                              lo que mejora la productividad y la responsabilidad.</li>
+                            <li>Colaboración y Comunicación: Estas herramientas suelen incluir características que
+                              facilitan la colaboración, como chats, comentarios y la posibilidad de compartir archivos
+                              dentro del mismo entorno de trabajo.</li>
+                            <li>Seguimiento del Tiempo: Muchas herramientas incluyen funciones de seguimiento del
+                              tiempo,
+                              permitiendo a los equipos medir cuánto tiempo se dedica a cada tarea y optimizar la
+                              gestión
+                              del tiempo.</li>
                           </ul>
                           (Coursera, 2023; Peerbie, 2023; TimeCamp, 2024; Zoho, 2022)
                           </p>
@@ -255,10 +270,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Tool Categories</h4>
+                  <h4 class="negrita">Categor&iacute;as de herramientas</h4>
                   <p>
-                    The tool categories, along with suggestions for some of them that impact the Activity, are as
-                    follows:
+                    Las categor&iacute;as de herramientas con las sugerencias de algunas de ellas que inciden en la
+                    Actividad son las siguientes:
                   </p>
                   <div class="table-responsive col-lg-12">
                     <form method="post">
@@ -288,7 +303,7 @@
                           {% endfor %}
                         </tbody>
                       </table>
-                      <button class="btn btn-success" type="submit">Save</button>
+                      <button class="btn btn-success" type="submit">Guardar</button>
                     </form>
                   </div>
 
@@ -299,7 +314,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Report</h4>
+                  <h4 class="negrita">Reporte</h4>
 
                   <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
                     <div>
@@ -309,13 +324,13 @@
                             <div class="ml-xl-4 ">
                               <div class="col-lg-12 stretch-card">
                                 <h2 style="text-align: center;" class="col-lg-8 text-primary">
-                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% of use of tools in the
-                                  Activity</h2>
-                                <h2 style="text-align: center;" class="col-lg-4 text-primary">
-                                  {{cantidadVerdaderos}}/{{total}}</h2>
+                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de uso
+                                  de herramientas en la Actividad</h2>
+                                <h2 style="text-align: center;" class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
                               </div>
-                              <p style="text-align: center;" class="mb-2 mb-xl-0">The total number of tool categories
-                                used by the user (checked) out of the total in the DevOps Process Activity.</p>
+                              <p style="text-align: center;" class="mb-2 mb-xl-0">El total de categor&iacute;as de herramientas que sean usadas por
+                                el usuario
+                                (marcadas) sobre el total existente en la Actividad del proceso de DevOps.</p>
                             </div>
                           </div>
                         </div>

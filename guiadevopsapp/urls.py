@@ -1,14 +1,8 @@
 """guiadevopsapp URL Configuration"""
-from django.conf.urls.i18n import i18n_patterns
 from django.urls import path, include
 from . import views
 
-"""urlpatterns = [
-    path('i18n/', include('django.conf.urls.i18n')),  # para cambio de idioma
-]"""
-
-#urlpatterns += i18n_patterns(
-urlpatterns=[
+urlpatterns = [
     path('inicio/', views.home, name='home'),
     path('accounts/', include('allauth.urls')),
     path('', views.inicio, name='inicio'),

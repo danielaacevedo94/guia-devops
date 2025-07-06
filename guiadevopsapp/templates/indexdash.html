@@ -1,6 +1,6 @@
 {% load static %}
 {% load socialaccount %}
-{% load i18n %} 
+{% load i18n %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -65,18 +65,18 @@
               {% if user.is_authenticated %}
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                {% trans Editar Perfil %}
+                Editar Perfil
               </a>
               {% endif %}
               {% if user.is_authenticated %}
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                {% trans Cerrar Sesi&oacute;n %}
+                Cerrar Sesi&oacute;n
               </a>
               {% else %}
               <a class="dropdown-item" href="{% url 'google_login' %}">
                 <i class="ti-power-off text-primary"></i>
-                {% trans Iniciar Sesi&oacute;n %}
+                Iniciar Sesi&oacute;n
               </a>
               {% endif %}
             </div>
@@ -99,69 +99,69 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">{% trans Actividades %}</span>
+              <span class="menu-title">Actividades</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
+              <span class="menu-title">Planificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
+              <span class="menu-title">Codificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Construcci&oacute;n %}</span>
+              <span class="menu-title">Construcci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Pruebas %}</span>
+              <span class="menu-title">Pruebas</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
+              <span class="menu-title">Liberaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Despliegue %}</span>
+              <span class="menu-title">Despliegue</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Operaciones %}</span>
+              <span class="menu-title">Operaciones</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">{% trans Monitoreo %}</span>
+              <span class="menu-title">Monitoreo</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'referencias' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">{% trans Referencia} %]</span>
+              <span class="menu-title">Referencias</span>
             </a>
           </li>
         </ul>
@@ -173,8 +173,8 @@
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12  mb-4 mb-xl-0"> <!--col-xl-8-->
-                  <h3 class="font-weight-bold">{% trans Bienvenido %}</h3>
-                  <p>{% blocktranslate %}
+                  <h3 class="font-weight-bold">Bienvenido</h3>
+                  <p>
                     Esta guía de implementación de entornos DevOps se enfoca en dos aspectos, el primero desde la
                     perspectiva del proceso brinda las pautas de las <span
                       class="text-primary font-weight-bold">tareas</span> que deben realizarse por cada <span
@@ -185,7 +185,7 @@
                     desde la perspectiva de automatización del proceso, brinda un conjunto de <span
                       class="text-primary font-weight-bold">herramientas</span> que pueden
                     ser implementadas por cada Actividad para ayudar en su implementación.
-                  {% endblocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
@@ -204,7 +204,7 @@
                 <div class="modal-body">
                   <font style="vertical-align: inherit;">
                     <font style="vertical-align: inherit;">
-                      <p>{% blocktranslate %}
+                      <p>
                         La Guía proporciona los procesos de Gestión de Proyecto e Implementación de Software, los
                         cuales integran prácticas basadas en la selección de elementos estándares de la ISO/IEC
                         12207:2008 – Ingeniería de Sistemas e Ingeniería de Software - Procesos del Ciclo de Vida del
@@ -228,7 +228,7 @@
                         <br>
                         <img class="mx-auto d-block" style="width: 75%; height: 75%;" src="{% static 'images/implementacion-software.jpg' %}" alt="implementacion_software">
                         <br>
-                        <br>{% blocktranslate %}
+                        <br>
                         (ISO/IEC, 2011)
                       </p>
                     </font>
@@ -253,8 +253,8 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{% trans Descripción %}</h5>
-                  <p>{% blocktranslate %}
+                  <h5 class="card-title">Descripción</h5>
+                  <p>
                     Según (Sharma & Coyne, 2015), DevOps es un proceso empresarial, es decir, un conjunto de
                     actividades
                     o tareas que producen un resultado específico (servicio o producto) para los clientes, desde el
@@ -274,7 +274,7 @@
                     software
                     y el de TI, centrándose en la comunicación y colaboración entre los equipos y la automatización de
                     la tecnología (Atlassian, 2023)
-                  {% blocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
@@ -284,10 +284,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card tale-bg">
                 <div class="card-body">
-                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">{% trans Principios de DevOps %}</h4>
-                  <p class="middlevertical middlehorizontal"> {% blocktranslate %} Los principios de DevOps forman un enfoque integral para el
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Principios de DevOps</h4>
+                  <p class="middlevertical middlehorizontal">Los principios de DevOps forman un enfoque integral para el
                     desarrollo y las operaciones de software, ayudando a orientar nuestras acciones en esa dirección y
-                    con ellos se estructuran y fundamentan las bases para la implementación. {% endblocktranslate %}
+                    con ellos se estructuran y fundamentan las bases para la implementación.
                     <br>
                     <br>
                     (Akbar et al., 2022; Krey et al., 2022; Martin Rütz & Fachhochschule Wedel, 2019; Zarour et al.,
@@ -301,47 +301,47 @@
             <div class="col-lg-3 mb-4 stretch-card transparent">
               <div class="card tale-bg">
                 <div class="card-body">
-                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">{% trans Cultura %}</h4>
-                  <p>{% blocktranslate %}Es fundamental para la adopción exitosa de DevOps. Se enfoca en eliminar los silos entre los
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Cultura</h4>
+                  <p>Es fundamental para la adopción exitosa de DevOps. Se enfoca en eliminar los silos entre los
                     equipos de desarrollo y operaciones, integrando tareas de operaciones como parte del desarrollo
                     diario incentivando la colaboración y comunicación entre ellos (Martin Rütz & Fachhochschule Wedel,
                     2019).
-                  {% blocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 mb-4 stretch-card transparent">
               <div class="card tale-bg">
                 <div class="card-body">
-                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">{% trans Tecnología %}</h4>
-                  <p>{% blocktranslate %}Esta dimensión examina las tecnologías y herramientas que apoyan el proceso DevOps en la entrega
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Tecnología</h4>
+                  <p>Esta dimensión examina las tecnologías y herramientas que apoyan el proceso DevOps en la entrega
                     continua, facilitando la colaboración entre los entornos de desarrollo y operaciones (Zarour et al.,
                     2020).
-                  {% blocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 mb-4 stretch-card transparent">
               <div class="card tale-bg ">
                 <div class="card-body">
-                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">{% trans Automatizaci&oacute;n %}</h4>
-                  <p>{% blocktranslate %} Es fundamental en la estrategia DevOps de cualquier empresa, pues minimiza el trabajo manual,
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Automatizaci&oacute;n</h4>
+                  <p>Es fundamental en la estrategia DevOps de cualquier empresa, pues minimiza el trabajo manual,
                     acelera los procesos de entrega a lo largo de todo el ciclo de vida del
                     desarrollo de software y facilita la escalabilidad de las prácticas DevOps. Se considera que es
                     una parte fundamental en operaciones y pruebas (Dynatrace, 2021; Krey et al., 2022).
-                  {% blocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
             <div class="col-lg-3 mb-4 stretch-card transparent">
               <div class="card tale-bg ">
                 <div class="card-body">
-                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">{% trans Medici&oacute;n %}</h4>
-                  <p>{% blocktranslate %}Medir cada etapa del flujo de trabajo (desde el desarrollo y las pruebas hasta la implementación y
+                  <h4 class="fs-30 mb-2 middlevertical middlehorizontal">Medici&oacute;n</h4>
+                  <p>Medir cada etapa del flujo de trabajo (desde el desarrollo y las pruebas hasta la implementación y
                     las operaciones) proporciona información clave sobre el rendimiento del software y la eficiencia del
                     proceso DevOps. Es necesario contar con datos precisos y medibles para automatizar las pruebas y los
                     despliegues (Dynatrace, 2021).
-                  {% blocktranslate %}</p>
+                  </p>
                 </div>
               </div>
             </div>
@@ -349,13 +349,13 @@
               <div class="col-md-12 grid-margin stretch-card">
                 <div class="card">
                   <div class="card-body">
-                    <p>{% blocktranslate %}
+                    <p>
                       En resumen, DevOps es un proceso con actividades y pr&aacute;cticas que lo sustentan que abarcan
                       tanto la gestión del desarrollo del software como la gestión en producción, incluyendo la
                       operatividad y monitorización de los productos o servicios de software, todo eso con la ayuda de
                       herramientas para lograr mayor eficiencia y rapidez. <br>
                       A continuaci&oacute;n, se definir&aacute;n los conceptos mencionados anteriormente:
-                    {% blocktranslate %}</p>
+                    </p>
 
                   </div>
                 </div>
@@ -367,28 +367,28 @@
                   <div class="col-md-4 mb-4 stretch-card transparent">
                     <div class="card tale-bg">
                       <div class="card-body">
-                        <p class="fs-30 mb-2">{% trans Proceso %}</p>
+                        <p class="fs-30 mb-2">Proceso</p>
                         <br>
-                        <p>{% blocktranslate %}Es un grupo de tareas y/o actividades relacionadas entre s&iacute; que persiguen cubrir las
-                          necesidades de los clientes (ISO Calidad 2000, 2012){% blocktranslate %}</p>
+                        <p>Es un grupo de tareas y/o actividades relacionadas entre s&iacute; que persiguen cubrir las
+                          necesidades de los clientes (ISO Calidad 2000, 2012)</p>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 mb-4 stretch-card transparent">
                     <div class="card tale-bg">
                       <div class="card-body">
-                        <p class="fs-30 mb-2">{% trans Actividad %}</p>
+                        <p class="fs-30 mb-2">Actividad</p>
                         <br>
-                        <p>{% blocktranslate %}Son un grupo de acciones que persiguen un mismo fin (ISO Calidad 2000, 2012){% blocktranslate %}</p>
+                        <p>Son un grupo de acciones que persiguen un mismo fin (ISO Calidad 2000, 2012)</p>
                       </div>
                     </div>
                   </div>
                   <div class="col-md-4 mb-4 stretch-card transparent">
                     <div class="card tale-bg">
                       <div class="card-body">
-                        <p class="fs-30 mb-2">{% trans Pr&aacute;ctica %}</p>
+                        <p class="fs-30 mb-2">Pr&aacute;ctica</p>
                         <br>
-                        <p>{% blocktranslate %}Es un ejercicio o realización de una acción de forma continuada y conforme a sus reglas{% blocktranslate %}
+                        <p>Es un ejercicio o realización de una acción de forma continuada y conforme a sus reglas
                           (Definicion.com, 2021)</p>
                       </div>
                     </div>
@@ -396,12 +396,12 @@
                   <div class="col-md-12 mb-4 stretch-card transparent">
                     <div class="card tale-bg">
                       <div class="card-body">
-                        <p class="fs-30 mb-2">{% trans Herramienta %}</p>
+                        <p class="fs-30 mb-2">Herramienta</p>
                         <br>
-                        <p>{% blocktranslate %}
+                        <p>
                           Son un conjunto de programas, aplicaciones o, simplemente instrucciones, que al utilizarlas
                           permitirán al usuario realizar un trabajo determinado de la mejor manera posible en algún
-                          dispositivo informático{% blocktranslate %} (School, 2020)
+                          dispositivo informático (School, 2020)
                         </p>
                       </div>
                     </div>

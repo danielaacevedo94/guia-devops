@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Plan - DevOps</title>
+  <title>Planificaci&oacute;n - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -20,7 +20,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
-  <!-- Plugin css for this page -->
+   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
   <!-- End plugin css for this page -->
   <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
@@ -55,11 +55,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                Edit profile
+                Editar Perfil
               </a>
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                Log out
+                Cerrar Sesi&oacute;n
               </a>
             </div>
           </li>
@@ -81,21 +81,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Activities</span>
+              <span class="menu-title">Actividades</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false"
-              aria-controls="ui-basic">
+            <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Plan</span>
+              <span class="menu-title">Planificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
-            <div>
+            <div >
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tasks</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Practices</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Tools</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
                 </li>
               </ul>
             </div>
@@ -103,57 +102,57 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Code</span>
+              <span class="menu-title">Codificaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Build</span>
+              <span class="menu-title">Construcci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Test</span>
+              <span class="menu-title">Pruebas</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Release</span>
+              <span class="menu-title">Liberaci&oacute;n</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Deploy</span>
+              <span class="menu-title">Despliegue</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operate</span>
+              <span class="menu-title">Operaciones</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitor</span>
+              <span class="menu-title">Monitoreo</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'referencias' %}">
-              <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">References</span>
-            </a>
+              <a class="nav-link" href="{% url 'referencias' %}">
+                  <i class="icon-grid menu-icon"></i>
+                  <span class="menu-title">Referencias</span>
+              </a>
           </li>
         </ul>
       </nav>
@@ -164,64 +163,67 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Plan</h2>
+                  <h2>Planificaci&oacute;n</h2>
                 </div>
               </div>
             </div>
-
+            
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Activity description</h4>
+                  <h4 class="negrita">Descripción de la Actividad</h4>
                   <p>
-                    DevOps teams are responsible for conceptualizing and designing the software they will develop,
-                    identifying client needs and proposing solutions through the development or improvement of the
-                    software. In this process, they detail the software's functionalities and features. They also plan
-                    which tools to use so the team understands pending tasks and progress, and assesses whether they can
-                    meet established deadlines, among other aspects (Perera et al., 2017).
+                    Los equipos de DevOps se encargan de conceptualizar y diseñar el software que van a desarrollar,
+                    identificando las necesidades del cliente y proponiendo soluciones a través de la elaboración o
+                    mejora de un software. En este proceso, detallan las funcionalidades y características que tendrá el
+                    software. Además, se planifica qué herramientas utilizar para que el equipo tenga claras las tareas
+                    pendientes, el progreso realizado, y evalúen si podrán cumplir con los plazos establecidos, entre
+                    otros aspectos (Perera et al., 2017).
                     <br>
                     <br>
-                    (Sousa et al., 2019) mentions that the purpose of planning is to understand what needs must be met
-                    to obtain value from the information provided throughout the cycle. This encourages continuous
-                    improvement.
+                    (Sousa et al., 2019) menciona que el propósito de la planificación es entender qué necesidades hay
+                    que cubrir para obtener valor a partir de la información provista por todo el ciclo. Esto fomenta la
+                    mejora continua.
                     <br>
                     <br>
-                    With regard to planning, it seeks to establish the minimum set of functionalities that add value in
-                    each iteration. It also analyzes and evaluates the metrics or data provided by monitoring to
-                    establish improvements for the next iteration (or stage). It also seeks to establish the acceptance
-                    criteria to be met and develop a plan to achieve the stated objectives. It also allows for defining
-                    what activities will be performed and by whom, in addition to designing the features to be coded
-                    (Badshah et al., 2020).
+                    Con respecto a la planificación busca establecer el conjunto mínimo de funcionalidades que aporten
+                    valor en cada iteración. Además de analizar y evaluar las métricas o datos aportados por la
+                    monitorización para establecer las mejoras en la siguiente iteración (o etapa). Así mismo, busca
+                    establecer los criterios de aceptación a cumplir y elaborar un plan para alcanzar los objetivos
+                    planteados. También, permite definir qué actividades realizará y quién las hará, además de diseñar
+                    las características a codificar (Badshah et al., 2020).
                     <br>
                     <br>
-                    <span class="negrita">Purpose:</span> Understand what needs must be met to obtain value. <br>
+                    <span class="negrita">Prop&oacute;sito:</span> Entender qué necesidades hay que cubrir para obtener
+                    valor.
                     <br>
-                    <span class="negrita">Objectives:</span>
+                    <br>
+                    <span class="negrita">Objetivos:</span>
                   <ul>
-                    <li>Establish the minimum set of functionalities that add value in each iteration.</li>
-                    <li>Analyze and evaluate the metrics or data provided by monitoring to establish improvements in the
-                      next iteration (or stage).</li>
-                    <li>Establish the acceptance criteria to be met.</li>
-                    <li>Develop a plan to achieve the stated objectives.</li>
-                    <li>Define which activities each person will perform.</li>
-                    <li>Design the features to be coded.</li>
+                    <li>Establecer el conjunto mínimo de funcionalidades que aporten valor en cada iteración.</li>
+                    <li>Analizar, evaluar las métricas o datos aportados por la monitorización para establecer las
+                      mejoras en la siguiente iteración (o etapa).</li>
+                    <li>Establecer los criterios de aceptación a cumplir.</li>
+                    <li>Elaborar un plan para alcanzar los objetivos planteados.</li>
+                    <li>Definir qué actividades realizará cada quién.</li>
+                    <li>Diseñar las características a codificar.</li>
                   </ul>
                   </p>
                 </div>
               </div>
             </div>
-
-
+            
+            
           </div>
 
         </div>
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
               All rights reserved.</span>
             <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
-                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
-          </div>
+              href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+          </div>            
         </footer>
       </div>
       <!-- content-wrapper ends -->
