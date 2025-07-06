@@ -9,7 +9,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Planificaci&oacute;n - DevOps</title>
+    <title>Plan - DevOps</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
     <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -67,18 +67,18 @@
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                                 <i class="ti-settings text-primary"></i>
-                                Editar Perfil
+                                Edit profile
                             </a>
                             {% endif %}
                             {% if user.is_authenticated %}
                             <a class="dropdown-item" href="{% url 'account_logout' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                Cerrar Sesi&oacute;n
+                                Log out
                             </a>
                             {% else %}
                             <a class="dropdown-item" href="{% url 'google_login' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                Iniciar Sesi&oacute;n
+                                Login
                             </a>
                             {% endif %}
                         </div>
@@ -101,24 +101,24 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'actividades' %}">
                             <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Actividades</span>
+                            <span class="menu-title">Activities</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'planificacion' %}"
                             aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <span class="menu-title">Plan</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div>
                             <ul class="nav flex-column sub-menu">
                                 <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificaciontareas' %}">Tareas</a></li>
+                                        href="{% url 'planificaciontareas' %}">Tasks</a></li>
                                 <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
+                                        href="{% url 'planificacionpracticas' %}">Practices</a>
                                 <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                                        href="{% url 'planificacionherramientas' %}">Tools</a>
                                 </li>
                             </ul>
                         </div>
@@ -127,7 +127,7 @@
                         <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <span class="menu-title">Code</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -135,14 +135,14 @@
                         <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Construcci&oacute;n</span>
+                            <span class="menu-title">Build</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Pruebas</span>
+                            <span class="menu-title">Test</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -150,7 +150,7 @@
                         <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <span class="menu-title">Release</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -158,7 +158,7 @@
                         <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Despliegue</span>
+                            <span class="menu-title">Deploy</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -166,21 +166,21 @@
                         <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Operaciones</span>
+                            <span class="menu-title">Operate</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Monitoreo</span>
+                            <span class="menu-title">Monitor</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'referencias' %}">
                             <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Referencias</span>
+                            <span class="menu-title">References</span>
                         </a>
                     </li>
                 </ul>
@@ -192,7 +192,7 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card ">
                                 <div class="card-body">
-                                    <h2>Pr&aacute;cticas</h2>
+                                    <h2>Practices</h2>
                                 </div>
                             </div>
                         </div>

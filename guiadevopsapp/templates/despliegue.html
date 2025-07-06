@@ -7,7 +7,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Despliegue - DevOps</title>
+    <title>{% trans Despliegue %}- DevOps</title>
     <!-- plugins:css -->
     <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
     <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -55,11 +55,11 @@
                             aria-labelledby="profileDropdown">
                             <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                                 <i class="ti-settings text-primary"></i>
-                                Editar Perfil
+                                {% trans Editar Perfil %}
                             </a>
                             <a class="dropdown-item" href="{% url 'account_logout' %}">
                                 <i class="ti-power-off text-primary"></i>
-                                Cerrar Sesi&oacute;n
+                                {% trans Cerrar Sesi&oacute;n %}
                             </a>
                         </div>
                     </li>
@@ -81,14 +81,14 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'actividades' %}">
                             <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Actividades</span>
+                            <span class="menu-title">{% trans Actividades %}</span>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Planificaci&oacute;n</span>
+                            <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -96,7 +96,7 @@
                         <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Codificaci&oacute;n</span>
+                            <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -104,14 +104,14 @@
                         <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Construcci&oacute;n</span>
+                            <span class="menu-title">{% trans Construcci&oacute;n %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Pruebas</span>
+                            <span class="menu-title">{% trans Pruebas %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -119,7 +119,7 @@
                         <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Liberaci&oacute;n</span>
+                            <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
@@ -127,17 +127,17 @@
                         <a class="nav-link" style="background: #4B49AC; color: white;" href="" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Despliegue</span>
+                            <span class="menu-title">{% trans Despliegue %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                         <div >
                             <ul class="nav flex-column sub-menu">
-                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">{% trans Tareas %}</a>
                                 </li>
                                 <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
+                                        href="{% url 'desplieguepracticas' %}">{% trans Pr&aacute;cticas %}</a>
                                 <li class="nav-item"> <a class="nav-link"
-                                        href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                                        href="{% url 'despliegueherramientas' %}">{% trans Herramientas %}</a>
                                 </li>
                             </ul>
                         </div>
@@ -146,21 +146,21 @@
                         <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false"
                             aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Operaciones</span>
+                            <span class="menu-title">{% trans Operaciones %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
                             <i class="icon-layout menu-icon"></i>
-                            <span class="menu-title">Monitoreo</span>
+                            <span class="menu-title">{% trans Monitoreo %}</span>
                             <i class="menu-arrow"></i>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{% url 'referencias' %}">
                             <i class="icon-grid menu-icon"></i>
-                            <span class="menu-title">Referencias</span>
+                            <span class="menu-title">{% trans Referencias %}</span>
                         </a>
                     </li>
                 </ul>
@@ -172,7 +172,7 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h2>Despliegue</h2>
+                                    <h2>{% trans Despliegue %}</h2>
 
                                 </div>
                             </div>
@@ -181,8 +181,8 @@
                         <div class="col-lg-12 grid-margin stretch-card">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="negrita">Descripción de la Actividad</h4>
-                                    <p>
+                                    <h4 class="negrita">{% trans Descripción de la Actividad %}</h4>
+                                    <p>{% blocktranslate %}
                                         En esta actividad se toma la unidad construida ya sea de forma manual o
                                         automatizada y la pone operativa en un servidor (Perera et al., 2017).
                                         <br>
@@ -206,7 +206,7 @@
                                     <ul>
                                         <li>Configurar la infraestructura de producción.</li>
                                         <li>Enviar el software a producción.</li>
-                                    </ul>
+                                    </ul>{% endblocktranslate %}
                                     </p>
                                 </div>
                             </div>

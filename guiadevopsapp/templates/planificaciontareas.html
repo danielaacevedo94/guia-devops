@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Planificaci&oacute;n - DevOps</title>
+  <title>Plan - DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -20,7 +20,7 @@
   <!-- inject:css -->
   <link rel="stylesheet" href="{% static 'css/vertical-layout-light/style.css' %}">
   <!-- endinject -->
-   <!-- Plugin css for this page -->
+  <!-- Plugin css for this page -->
   <link rel="stylesheet" href="{% static 'css/local-style.css' %}">
   <!-- End plugin css for this page -->
   <link rel="shortcut icon" href="{% static 'images/logo-oscuro.png' %}" />
@@ -55,11 +55,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                Editar Perfil
+                Edit profile
               </a>
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                Cerrar Sesi&oacute;n
+                Log out
               </a>
             </div>
           </li>
@@ -81,20 +81,21 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Actividades</span>
+              <span class="menu-title">Activities</span>
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
+            <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'planificacion' %}"
+              aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Planificaci&oacute;n</span>
+              <span class="menu-title">Plan</span>
               <i class="menu-arrow"></i>
             </a>
-            <div >
+            <div>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Herramientas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificaciontareas' %}">Tasks</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionpracticas' %}">Practices</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'planificacionherramientas' %}">Tools</a>
                 </li>
               </ul>
             </div>
@@ -102,57 +103,57 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Codificaci&oacute;n</span>
+              <span class="menu-title">Code</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Construcci&oacute;n</span>
+              <span class="menu-title">Build</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Pruebas</span>
+              <span class="menu-title">Test</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Liberaci&oacute;n</span>
+              <span class="menu-title">Release</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Despliegue</span>
+              <span class="menu-title">Deploy</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operaciones</span>
+              <span class="menu-title">Operate</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitoreo</span>
+              <span class="menu-title">Monitor</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="{% url 'referencias' %}">
-                  <i class="icon-grid menu-icon"></i>
-                  <span class="menu-title">Referencias</span>
-              </a>
+            <a class="nav-link" href="{% url 'referencias' %}">
+              <i class="icon-grid menu-icon"></i>
+              <span class="menu-title">Refrences</span>
+            </a>
           </li>
         </ul>
       </nav>
@@ -163,7 +164,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Tareas</h2>
+                  <h2>Tasks</h2>
                 </div>
               </div>
             </div>
@@ -171,20 +172,22 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Reporte</h4>
+                  <h4 class="negrita">Report</h4>
                   <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
                     <div>
                       <div>
                         <div class="row">
                           <div class="col-md-12  d-flex flex-column justify-content-start">
-                            <div class="ml-xl-4 ">                              
+                            <div class="ml-xl-4 ">
                               <div class="col-lg-12 stretch-card">
-                                <h2 style="text-align: center;" class="col-lg-8 text-primary">{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de las
-                                  tareas en la Actividad son ejecutadas</h2>
-                                <h2 style="text-align: center;" class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
+                                <h2 style="text-align: center;" class="col-lg-8 text-primary">
+                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% of the tasks in the Activity
+                                  are executed</h2>
+                                <h2 style="text-align: center;" class="col-lg-4 text-primary">
+                                  {{cantidadVerdaderos}}/{{total}}</h2>
                               </div>
-                              <p style="text-align: center;" class="mb-2 mb-xl-0">El total de n&uacute;mero de tareas que se ejecutan por el usuario
-                                (marcadas) sobre el total que inciden en la Actividad del proceso de DevOps.</p>
+                              <p style="text-align: center;" class="mb-2 mb-xl-0">The total number of tasks executed by
+                                the user (checked) out of the total that impact the DevOps process Activity.</p>
                             </div>
                           </div>
                         </div>
@@ -195,16 +198,15 @@
                 </div>
               </div>
             </div>
-                        
+
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Tareas esperadas en ésta Actividad</h4>
+                  <h4 class="negrita">Tasks Expected in this Activity</h4>
                   <p>
-                    Las tareas hacen referencia al estándar ISO/IEC 29110, las cuales se usaron como formalización
-                    dando un enfoque más estructurado y organizado a la Planificación como
-                    actividad del proceso. A continuación, se presentan las tareas que se deben realizar en la Actividad
-                    de DevOps:
+                    The tasks refer to the ISO/IEC 29110 standard, which was used as a formalization, giving a more
+                    structured and organized approach to Planning as a process activity. The following are the tasks to
+                    be performed in the DevOps Activity:
                   </p>
                   <div class="table-responsive col-lg-12">
                     <form method="post">
@@ -213,10 +215,10 @@
                         <thead>
                           <tr>
                             <th>
-                              Tareas
+                              Tasks
                             </th>
                             <th>
-                              Estado
+                              State
                             </th>
                           </tr>
                         </thead>
@@ -234,8 +236,8 @@
                           {% endfor %}
                         </tbody>
                       </table>
-                      <div><button class="btn btn-success" type="submit">Guardar</button></div>
-                      
+                      <div><button class="btn btn-success" type="submit">Save</button></div>
+
                     </form>
                   </div>
 
@@ -243,17 +245,17 @@
               </div>
             </div>
 
-          
+
           </div>
 
         </div>
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024. 
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2024.
               All rights reserved.</span>
             <span style="font-weight: bold;" class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center"><a
-              href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
-          </div>            
+                href="https://www.cimat.mx/" target="_blank">CIMAT</a></span>
+          </div>
         </footer>
       </div>
       <!-- content-wrapper ends -->

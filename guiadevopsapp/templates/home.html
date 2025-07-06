@@ -59,11 +59,11 @@
                                 <!--li><a href="#portfolio"><i class="fa fa-bookmark"></i> Portfolio</a></li-->
                                 <!--li><a href="#services"><i class="fa fa-bullhorn"></i> Me</a></li-->
                                 <!--li><a href="#testimonials"><i class="fa fa-thumbs-up"></i> Tetimonials</a></li-->
-                                <li><a href="#testimonials"><i class="fa fa-phone-square"></i> Nosotros</a></li>
+                                <li><a href="#testimonials"><i class="fa fa-phone-square"></i> {% trans Nosotros %}</a></li>
                                 {% if user.is_authenticated %}
-                                <li><a href="{% url 'account_logout' %}"><i class=""></i> Cerrar sesión</a></li>
+                                <li><a href="{% url 'account_logout' %}"><i class=""></i> {% trans Cerrar sesión %}</a></li>
                                 {% else %}
-                                <li><a href="{% url 'google_login' %}"><i class=""></i> Iniciar sesión</a></li>
+                                <li><a href="{% url 'google_login' %}"><i class=""></i> {% trans Iniciar sesión %}</a></li>
                                 {% endif %}
                             </ul>
                         </div> <!-- /.navbar-collapse -->
@@ -74,10 +74,10 @@
             <div class="middle text-center clearfix">
                 <div class="container">
                     <h1 class="pro-name">DevOps</h1>
-                    <p class="tagline">Guía de implementación</p>
+                    <p class="tagline">{% trans Guía de implementación %}</p>
                     
                     <a href="{% url 'indexdash' %}" target="_self"
-                        class="btn btn-lg btn-hire wow animated zoomIn">Acceder</a>
+                        class="btn btn-lg btn-hire wow animated zoomIn">{% trans Acceder %}</a>
                 </div> <!-- container -->
             </div> <!-- middle -->
 
@@ -86,7 +86,7 @@
 
     <div class="content-block" id="testimonials">
         <header class="block-heading cleafix text-center">
-            <h1>Nosotros</h1>
+            <h1>{% trans Nosotros %}</h1>
             <!-- <p>Lorem Ipsum Text</p> -->
         </header>
         <div class="block-content text-center">

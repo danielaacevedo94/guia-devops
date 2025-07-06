@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Construcci&oacute;n - DevOps</title>
+  <title>{% trans Construcci&oacute;n %}- DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -54,11 +54,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                Editar Perfil
+                {% trans Editar Perfil %}
               </a>
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                Cerrar Sesi&oacute;n
+                {% trans Cerrar Sesi&oacute;n %}
               </a>
             </div>
           </li>
@@ -80,34 +80,34 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Actividades</span>
+              <span class="menu-title">{% trans Actividades %}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Planificaci&oacute;n</span>
+              <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Codificaci&oacute;n</span>
+              <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Construcci&oacute;n</span>
+              <span class="menu-title">{% trans Construcci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
             <div >
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">Tareas</a></li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">Herramientas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construcciontareas' %}">{% trans Tareas %}</a></li>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionpracticas' %}">{% trans Pr&aacute;cticas %}</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'construccionherramientas' %}">{% trans Herramientas %}</a>
                 </li>
               </ul>
             </div>
@@ -115,42 +115,42 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Pruebas</span>
+              <span class="menu-title">{% trans Pruebas %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Liberaci&oacute;n</span>
+              <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'despliegue' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Despliegue</span>
+              <span class="menu-title">{% trans Despliegue %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operaciones</span>
+              <span class="menu-title">{% trans Operaciones %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitoreo</span>
+              <span class="menu-title">{% trans Monitoreo %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="{% url 'referencias' %}">
                   <i class="icon-grid menu-icon"></i>
-                  <span class="menu-title">Referencias</span>
+                  <span class="menu-title">{% trans Referencias %}</span>
               </a>
         </li>
         </ul>
@@ -162,7 +162,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Tareas</h2>
+                  <h2>{% trans Tareas %}</h2>
 
                 </div>
               </div>
@@ -171,7 +171,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Reporte</h4>
+                  <h4 class="card-title">{% trans Reporte %}</h4>
 
                   <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
                     <div>
@@ -180,12 +180,12 @@
                           <div class="col-md-12  d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 ">                              
                               <div class="col-lg-12 stretch-card">
-                                <h2 style="text-align: center;" class="col-lg-8 text-primary">{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de las
-                                  tareas en la Actividad son ejecutadas</h2>
+                                <h2 style="text-align: center;" class="col-lg-8 text-primary">{{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% {% trans de las
+                                  tareas en la Actividad son ejecutadas %}</h2>
                                 <h2 style="text-align: center;" class="col-lg-4 text-primary">{{cantidadVerdaderos}}/{{total}}</h2>
                               </div>
-                              <p style="text-align: center;" class="mb-2 mb-xl-0">El total de n&uacute;mero de tareas que se ejecutan por el usuario
-                                (marcadas) sobre el total que inciden en la Actividad del proceso de DevOps.</p>
+                              <p style="text-align: center;" class="mb-2 mb-xl-0">{% trans El total de n&uacute;mero de tareas que se ejecutan por el usuario
+                                (marcadas) sobre el total que inciden en la Actividad del proceso de DevOps. %}</p>
                             </div>
                           </div>
                         </div>
@@ -200,12 +200,12 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Tareas esperadas en ésta Actividad</h4>
-                  <p>
+                  <h4 class="negrita">{% trans Tareas esperadas en ésta Actividad %}</h4>
+                  <p>{% blocktranslate %}
                     Las tareas hacen referencia al estándar ISO/IEC 29110, las cuales se usaron como formalización
                     dando un enfoque más estructurado y organizado a la Construcción como
                     actividad del proceso. A continuación, se presentan las tareas que se deben realizar en la Actividad
-                    de DevOps:
+                    de DevOps:{% end blocktranslate %}
                   </p>
                   <div class="table-responsive col-lg-12">
                     <form method="post">
@@ -214,10 +214,10 @@
                         <thead>
                           <tr>
                             <th>
-                              Tareas
+                              {% trans Tareas %}
                             </th>
                             <th>
-                              Estado
+                              {% trans Estado %}
                             </th>
                           </tr>
                         </thead>
@@ -235,7 +235,7 @@
                           {% endfor %}
                         </tbody>
                       </table>
-                      <button class="btn btn-success" type="submit">Guardar</button>
+                      <button class="btn btn-success" type="submit">{% trans Guardar %}</button>
                     </form>
                   </div>
                 </div>

@@ -2,6 +2,7 @@
 from datetime import datetime
 from django.db import models
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 # pylint: disable=missing-class-docstring
@@ -16,7 +17,78 @@ class Usuariomodel(models.Model):
 
 # Modelo de la tabla Planificacion
 class Planificaciontareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(default=datetime.now)
+    task1PM11 = models.BooleanField(default=False, verbose_name="PM.1.1 Review the Statement of Work.")
+    task1PM12 = models.BooleanField(default=False, verbose_name="PM.1.2 Define with the Client the Delivery Instructions for each of the Deliverables specified in the Statement of Work.")
+    task1PM13 = models.BooleanField(default=False, verbose_name="PM.1.3 Identify the specific Tasks to be performed to produce the Deliverables and their Software Components identified in the Statement of Work. Include Tasks in the SI process along with verification, validation, and reviews with Client and Task Team Tasks to ensure the quality of the work products. Identify the Tasks to carry out the Delivery Instructions. Document the tasks.")
+    task1PM14 = models.BooleanField(default=False, verbose_name="PM.1.4 Establish the Estimated Duration to perform each task.")
+    task1PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identify and document Resources: human, materials, equipment and tools, standards, including the required training of the Work Team to carry out the project. Include in the schedule the dates by which resources and training will be needed.")
+    task1PM16 = models.BooleanField(default=False, verbose_name="PM.1.6 Establish the Composition of the Work Team by assigning roles and responsibilities according to the Resources.")
+    task1PM17 = models.BooleanField(default=False, verbose_name="PM.1.7 Assign estimated start and end dates for each of the Tasks to create the Project Task Schedule, taking into account the assigned Resources, sequence, and task dependencies.")
+    task1PM18 = models.BooleanField(default=False, verbose_name="PM.1.8 Calculate and document the estimated effort and cost of the project.")
+    task1PM19 = models.BooleanField(default=False, verbose_name="PM.1.9 Identify and document risks that may affect the project.")
+    task1PM110 = models.BooleanField(default=False, verbose_name="PM.1.10 Document the Version Control Strategy in the Project Plan.")
+    task1PM111 = models.BooleanField(default=False, verbose_name="PM.1.11 Generate the Project Plan integrating the previously identified and documented elements.")
+    task1PM112 = models.BooleanField(default=False, verbose_name="PM.1.12 Include a description of the product, scope, objectives, and deliverables in the project plan.")
+    task1PM113 = models.BooleanField(default=False, verbose_name="PM.1.13 Review and approve the Project Plan.")
+    task1PM114 = models.BooleanField(default=False, verbose_name="PM.1.14 Review and accept the Project Plan.")
+    task1PM115 = models.BooleanField(default=False, verbose_name="PM.1.15 Establish the Project Repository using the Version Control Strategy.")
+    task1PM21 = models.BooleanField(default=False, verbose_name="PM.2.1 Record actuals in the Progress Status Log.")
+    task1PM22 = models.BooleanField(default=False, verbose_name="PM.2.2 Analyze and evaluate the Change Request in terms of cost, schedule, and technical impact.")
+    task1PM23 = models.BooleanField(default=False, verbose_name="PM.2.3 Conduct review meetings with the Work Team, identify issues, review risk status, and record agreements.")
+    task1PM24 = models.BooleanField(default=False, verbose_name="PM.2.4 Conduct review meetings with the Client, record agreements.")
+    task1PM25 = models.BooleanField(default=False, verbose_name="PM.2.5 Perform backups according to the Version Control Strategy.")
+    task1PM26 = models.BooleanField(default=False, verbose_name="PM.2.6 Perform Project Repository recovery using the Project Repository Backup, if necessary.")
+    task1PM31 = models.BooleanField(default=False, verbose_name="PM.3.1 Evaluate project progress against the Project Plan, comparing: - Actual tasks with planned tasks - Actual results with established project objectives - Actual resource allocation with planned resources - Actual cost with budget estimates - Actual time with planned schedule - Actual risk with previously identified risk.")
+    task1PM32 = models.BooleanField(default=False, verbose_name="PM.3.2 Establish actions to correct deviations or issues and identified risks related to compliance with the plan, as necessary, and document them in the Correction Log.")
+    task1PM33 = models.BooleanField(default=False, verbose_name="PM.3.3 Identify changes to the requirements and/or Project Plan to address significant deviations, potential risks, or issues related to plan compliance, and document them in a Change Request.")
+    task1PM41 = models.BooleanField(default=False, verbose_name="PM.4.1 Formalize project completion in accordance with the Delivery Instructions established in the Project Plan, providing acceptance support and signing the Acceptance Certificate.")
+    task1PM42 = models.BooleanField(default=False, verbose_name="PM.4.2 Update the Project Repository.")
+    task1IS11 = models.BooleanField(default=False, verbose_name="SI.1.1 Review the current Project Plan with the Work Team members to achieve a common understanding and secure their commitment to the project.")
+    task1IS12 = models.BooleanField(default=False, verbose_name="SI.1.2 Establish or update the implementation environment.")
+    task1IS21 = models.BooleanField(default=False, verbose_name="SI.2.1 Assign tasks to Work Team members according to their role, based on the current Project Plan.")
+    task1IS22 = models.BooleanField(default=False, verbose_name="SI.2.2 Document or update the Requirements Specification.")
+    task1IS23 = models.BooleanField(default=False, verbose_name="SI.2.3 Verify and obtain approval of the Requirements Specification.")
+    task1IS24 = models.BooleanField(default=False, verbose_name="SI.2.4 Validate and obtain approval of the Requirements Specification.")
+    task1IS25 = models.BooleanField(default=False, verbose_name="SI.2.5 Document the draft version of the *Software User Documentation or update this manual, if applicable. *(Optional)")
+    task1IS26 = models.BooleanField(default=False, verbose_name="SI.2.6 Review and obtain approval of the *Software User Documentation, if applicable. *(Optional)")
+    task1IS27 = models.BooleanField(default=False, verbose_name="SI.2.7 Incorporate the Requirements Specification and *Software User Documentation into the Software Configuration in the baseline. *(Optional)")
+    task1IS31 = models.BooleanField(default=False, verbose_name="SI.3.1 Assign tasks to the Work Team members related to their role according to the current Project Plan.")
+    task1IS32 = models.BooleanField(default=False, verbose_name="SI.3.2 Understand the requirements specification.")
+    task1IS33 = models.BooleanField(default=False, verbose_name="SI.3.3 Document or update the Software Design.")
+    task1IS34 = models.BooleanField(default=False, verbose_name="SI.3.4 Verify and obtain approval of the Software Design.")
+    task1IS35 = models.BooleanField(default=False, verbose_name="SI.3.5 Establish or update Test Cases and Test Procedures for integration testing based on the Requirements Specification and the Software Design. The customer provides test data, if necessary.")
+    task1IS36 = models.BooleanField(default=False, verbose_name="SI.3.6 Verify and obtain approval of the Test Cases and Test Procedures.")
+    task1IS37 = models.BooleanField(default=False, verbose_name="SI.3.7 Update the Traceability Record incorporating the Test Cases and Test Procedures.")
+    task1IS38 = models.BooleanField(default=False, verbose_name="SI.3.8 Incorporate the Software Design and Traceability Log into the Software Configuration as part of the baseline. Incorporate Test Cases and Test Procedures into the Project Repository.")
+    task1IS41 = models.BooleanField(default=False, verbose_name="SI.4.1 Assign Tasks to Work Team members related to their role, according to the current Project Plan.")
+    task1IS42 = models.BooleanField(default=False, verbose_name="SI.4.2 Understand the software design.")
+    task1IS43 = models.BooleanField(default=False, verbose_name="SI.4.3 Build or update Software Components based on the detailed part of the Software Design.")
+    task1IS44 = models.BooleanField(default=False, verbose_name="SI.4.4 Design or update unit test cases.")
+    task1IS46 = models.BooleanField(default=False, verbose_name="SI.4.6 Update the Traceability Log by incorporating built or modified Software Components.")
+    task1IS47 = models.BooleanField(default=False, verbose_name="SI.4.7 Incorporate Software Components and Traceability Log into the Software Configuration as part of the baseline.")
+    task1IS51 = models.BooleanField(default=False, verbose_name="SI.5.1 Assign tasks to team members related to their role, according to the current Project Plan.")
+    task1IS52 = models.BooleanField(default=False, verbose_name="SI.5.2 Understand test cases and test procedures. Establish or update the test environment.")
+    task1IS53 = models.BooleanField(default=False, verbose_name="SI.5.3 Update test cases and test procedures for integration tests, as needed.")
+    task1IS56 = models.BooleanField(default=False, verbose_name="SI.5.6 Update the Traceability Log, if applicable.")
+    task1IS57 = models.BooleanField(default=False, verbose_name="SI.5.7 Document the *Product Operation Guide or update the current guide, if applicable. *(Optional)")
+    task1IS58 = models.BooleanField(default=False, verbose_name="SI.5.8 Verify and obtain approval of the *Product Operation Guide, if applicable (see SI.5.7)")
+    task1IS59 = models.BooleanField(default=False, verbose_name="SI.5.9 Document the *Software User Documentation or update the current one, if applicable. *(Optional)")
+    task1IS510 = models.BooleanField(default=False, verbose_name="SI.5.10 Verify and obtain approval of the *Software User Documentation, if applicable (see SI.5.9)")
+    task1IS511 = models.BooleanField(default=False, verbose_name="SI.5.11 Incorporate Test Cases and Test Procedures, Software, Traceability Log, Test Report, *Product Operation Guide, and *Software User Documentation into the Software Configuration as part of the baseline. *(Optional)")
+    task1IS61 = models.BooleanField(default=False, verbose_name="SI.6.1 Assign tasks to team members related to their role, according to the current Project Plan.")
+    task1IS62 = models.BooleanField(default=False, verbose_name="SI.6.2 Understand the software configuration.")
+    task1IS63 = models.BooleanField(default=False, verbose_name="SI.6.3 Document the Maintenance Documentation or update the current one.")
+    task1IS64 = models.BooleanField(default=False, verbose_name="SI.6.4 Verify and obtain approval of the Maintenance Documentation.")
+    task1IS65 = models.BooleanField(default=False, verbose_name="SI.6.5 Incorporate the Maintenance Documentation as the basis for the Software Configuration.")
+    class Meta:
+        get_latest_by = ['fecha']
+
+class PlanificaciontareasmodelTENERLO(models.Model):
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     task1PM11 = models.BooleanField(default=False, verbose_name="PM.1.1 Revisar la Declaración de Trabajo.")
     task1PM12 = models.BooleanField(default=False, verbose_name="PM.1.2 Definir con el Cliente las Instrucciones de Entrega de cada uno de los Entregables especificados en la Declaración de Trabajo.")
@@ -85,7 +157,16 @@ class Planificaciontareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Planificacionherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
+    fecha = models.DateTimeField(default=datetime.now)
+    toolGT = models.BooleanField(default=False, verbose_name="Task Management (GitLab, Jira software, ClickUP, Bitrix24, Assana, Trello)")
+    class Meta:
+        get_latest_by = ['fecha']
+
+class PlanificacionherramientasmodelTENERLO(models.Model):
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolGT = models.BooleanField(default=False, verbose_name="Gestión de Tareas (GitLab, Jira software, ClickUP, Bitrix24, Assana, Trello)")
     class Meta:
@@ -93,7 +174,8 @@ class Planificacionherramientasmodel(models.Model):
 
 
 class Codificaciontareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=timezone.now)
 
     task2PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -123,7 +205,8 @@ class Codificaciontareasmodel(models.Model):
         get_latest_by = ['fecha']
     
 class Codificacionherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolCV = models.BooleanField(default=False, verbose_name="Control de Versiones (Git, GitHub, GitLab, Mercurial, Subversion (SVN), BitBucket Atlassian)")
     toolIDE = models.BooleanField(default=False, verbose_name="Entorno de Desarrollo Integrado (IDE) (Visual Studio Code, Eclipse, NetBeans, Android Studio)")
@@ -132,7 +215,8 @@ class Codificacionherramientasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Construcciontareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task3PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -157,14 +241,16 @@ class Construcciontareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Construccionherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolCE = models.BooleanField(default=False, verbose_name="Compilación o empaquetado (Maven, Gradle, Apache Ant, Make, Webpack, CMake, MSBuild)")
     class Meta:
         get_latest_by = ['fecha']
 
 class Pruebastareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task4PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -194,7 +280,8 @@ class Pruebastareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Pruebasherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolA = models.BooleanField(default=False, verbose_name="Automatización (Selenium, Jasmine, Karma, Appium, Postman, Robot Framework)")
     toolCP = models.BooleanField(default=False, verbose_name="Creación de Pruebas (PyTest, Junit, NUnit, TestNG, Cucumber, Jasmine, Robot Framework, Appium, Postman)")
@@ -206,7 +293,8 @@ class Pruebasherramientasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Liberaciontareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task5PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -234,7 +322,8 @@ class Liberaciontareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Liberacionherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolCI = models.BooleanField(default=False, verbose_name="Integración Continua (GitLab CI/CD, GitHub Actions, BitBucket Cloud Atlassian, Puppet Pipelines for Applications, Atlassian Bamboo, CodeShip, Jenkins, CircleCI, Travis CI)")
     toolGA = models.BooleanField(default=False, verbose_name="Gestión de Artefactos (AWS CodeArtifact, Harbor, GitHub Packages, Azure Artifacts, Sonatype Nexus Repository, JFrog Artifactory)")
@@ -242,7 +331,8 @@ class Liberacionherramientasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Desplieguetareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task6PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -272,7 +362,8 @@ class Desplieguetareasmodel(models.Model):
         get_latest_by = ['fecha']
     
 class Despliegueherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolCD = models.BooleanField(default=False, verbose_name="Despliegue Continuo (GitLab CI/CD, GitHub Actions, Bitbucket Pipelines, Puppet Pipelines for Applications, Atlassian Bamboo, CodeShip, AWS Opsworks)")
     toolGC = models.BooleanField(default=False, verbose_name="Gestión de la Configuración (Ansible, Puppet, Chef, AWS Opsworks, SaltStack)")
@@ -283,7 +374,8 @@ class Despliegueherramientasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Operacionestareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task7PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -313,7 +405,8 @@ class Operacionestareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Operacionesherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolOC = models.BooleanField(default=False, verbose_name="Orquestación de Contenedores (Kubernetes, Docker Swarm, MESOSPHERE DC/OS)")
     toolGC = models.BooleanField(default=False, verbose_name="Gestión de la Configuración (Ansible, Puppet, Chef, AWS Opsworks, SaltStack)")
@@ -324,7 +417,8 @@ class Operacionesherramientasmodel(models.Model):
         get_latest_by = ['fecha']
     
 class Monitoreotareasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
 
     task8PM15 = models.BooleanField(default=False, verbose_name="PM.1.5 Identificar los Recursos: humanos, materiales, equipos y herramientas, estándares, incluyendo la capacitación requerida del Equipo de Trabajo para realizar el proyecto. Incluya en el cronograma las fechas en las que se necesitarán recursos y capacitación.")
@@ -357,7 +451,8 @@ class Monitoreotareasmodel(models.Model):
         get_latest_by = ['fecha']
 
 class Monitoreoherramientasmodel(models.Model):
-    userId = models.TextField()
+    """userId = models.TextField()"""
+    userId = models.ForeignKey(Usuariomodel, on_delete=models.CASCADE)
     fecha = models.DateTimeField(default=datetime.now)
     toolMR = models.BooleanField(default=False, verbose_name="Monitoreo de Redes (ManageEngine OpManager, Nagios, New Relic, Microsoft SCOM, Sensu, DataDog, ExtraHop, SignalFX, SumoLogic)")
     toolAD = models.BooleanField(default=False, verbose_name="Análisis de Datos (ManageEngine OpManager , Splunk, ELK Stack, New Relic, Microsoft SCOM, DataDog, SignalFX, SumoLogic)")

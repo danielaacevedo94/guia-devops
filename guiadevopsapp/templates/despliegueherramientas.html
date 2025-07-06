@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Despliegue - DevOps</title>
+  <title>{% trans Despliegue %}- DevOps</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="{% static 'vendors/feather/feather.css' %}">
   <link rel="stylesheet" href="{% static 'frente/css/font-awesome.min.css' %}">
@@ -53,11 +53,11 @@
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item" href="{% url 'perfilusuario' %}">
                 <i class="ti-settings text-primary"></i>
-                Editar Perfil
+                {% trans Editar Perfil %}
               </a>
               <a class="dropdown-item" href="{% url 'account_logout' %}">
                 <i class="ti-power-off text-primary"></i>
-                Cerrar Sesi&oacute;n
+                {% trans Cerrar Sesi&oacute;n %}
               </a>
             </div>
           </li>
@@ -79,41 +79,41 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'actividades' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Actividades</span>
+              <span class="menu-title">{% trans Actividades %}</span>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'planificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Planificaci&oacute;n</span>
+              <span class="menu-title">{% trans Planificaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'codificacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Codificaci&oacute;n</span>
+              <span class="menu-title">{% trans Codificaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'construccion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Construcci&oacute;n</span>
+              <span class="menu-title">{% trans Construcci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'pruebas' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Pruebas</span>
+              <span class="menu-title">{% trans Pruebas %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'liberacion' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Liberaci&oacute;n</span>
+              <span class="menu-title">{% trans Liberaci&oacute;n %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
@@ -121,15 +121,15 @@
             <a class="nav-link" style="background: #4B49AC; color: white;" href="{% url 'despliegue' %}"
               aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Despliegue</span>
+              <span class="menu-title">{% trans Despliegue %}</span>
               <i class="menu-arrow"></i>
             </a>
             <div>
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">Tareas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguetareas' %}">{% trans Tareas %}</a>
                 </li>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">Pr&aacute;cticas</a>
-                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">Herramientas</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'desplieguepracticas' %}">{% trans Pr&aacute;cticas %}</a>
+                <li class="nav-item"> <a class="nav-link" href="{% url 'despliegueherramientas' %}">{% trans Herramientas %}</a>
                 </li>
               </ul>
             </div>
@@ -137,21 +137,21 @@
           <li class="nav-item">
             <a class="nav-link" href="{% url 'operaciones' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Operaciones</span>
+              <span class="menu-title">{% trans Operaciones %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'monitoreo' %}" aria-expanded="false" aria-controls="ui-basic">
               <i class="icon-layout menu-icon"></i>
-              <span class="menu-title">Monitoreo</span>
+              <span class="menu-title">{% trans Monitoreo %}</span>
               <i class="menu-arrow"></i>
             </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'referencias' %}">
               <i class="icon-grid menu-icon"></i>
-              <span class="menu-title">Referencias</span>
+              <span class="menu-title">{% trans Referencias %}</span>
             </a>
           </li>
         </ul>
@@ -163,7 +163,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h2>Herramientas</h2>
+                  <h2>{% trans Herramientas %}</h2>
 
                 </div>
               </div>
@@ -172,23 +172,23 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Descripci&oacute;n de las categor&iacute;as de las herramientas de la Actividad
+                  <h4 class="negrita">{% trans Descripci&oacute;n de las categor&iacute;as de las herramientas de la Actividad %}
                   </h4>
-                  <p>En el Despliegue, se manejan herramientas avanzadas de Despliegue Continuo (CD) para automatizar el
+                  <p>{% blocktranslate %}En el Despliegue, se manejan herramientas avanzadas de Despliegue Continuo (CD) para automatizar el
                     ciclo de despliegue. Se utilizan herramientas para la gestión de la configuración, infraestructura
                     como código (IaC), contenedorización y alojamiento o servicios en la nube. Se desciben a
-                    continuaci&oacute;n:
+                    continuaci&oacute;n: {% endblocktranslate %}
                   </p>
                   <nav class="navbar-dropdown">
                     <ul>
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-cd" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Despliegue continuo <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">{% trans Despliegue continuo %}<i class="fa fa-eye mx-0"></i></h4>
 
                         </a>
                         <div class="collapse" id="ui-cd">
-                          <p>
+                          <p>{% blocktranslate %}
                             Se refiere a la automatización del proceso de despliegue. La automatización del despliegue
                             se refiere al nivel en el que las implementaciones son completamente automatizadas y no
                             necesitan intervención manual (Forsgren et al., 2018).
@@ -211,7 +211,7 @@
                             <li>Extensibilidad y Plugins: La mayoría de estas herramientas,
                               cuentan con un ecosistema robusto de plugins que permiten añadir funcionalidades
                               adicionales o integrarse con otras herramientas y plataformas​.</li>
-                          </ul>
+                          </ul>{% endblocktranslate %}
                           (Kevin Luu, 2022; nOps, 2024; Ross Clurman, 2024)
                           </p>
                         </div>
@@ -219,11 +219,11 @@
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-gc" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Gesti&oacute;n de la Configuraci&oacute;n <i
+                          <h4 class="menu-title">[% trans Gesti&oacute;n de la Configuraci&oacute;n %}<i
                               class="fa fa-eye mx-0"></i></h4>
                         </a>
                         <div class="collapse" id="ui-gc">
-                          <p>
+                          <p> {% blocktranslate %}
                             (Danby, 2023) menciona que la Gestión de la Configuración es la práctica que ayuda a unir
                             todos los procesos de la Gestión de Servicios de IT (ITSM), asegurando que los activos
                             necesarios para la prestación de servicios estén adecuadamente gestionados y que toda la
@@ -267,7 +267,7 @@
                             <li>Plan de Gestión de la Configuración (CMP): Documenta las prácticas y procedimientos de
                               CM, definiendo el alcance, actividades, roles, y herramientas utilizadas en el proceso.
                             </li>
-                          </ul>
+                          </ul>{% endblocktranslate %}
                           (Chrystal R. China & Michael Goodwin, 2024; Nguyen, 2023)
                           </p>
                         </div>
@@ -275,10 +275,10 @@
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-iac" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Infraestructura como código (IaC) <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">{% trans Infraestructura como código (IaC) %}<i class="fa fa-eye mx-0"></i></h4>
                         </a>
                         <div class="collapse" id="ui-iac">
-                          <p>
+                          <p>{% blocktranslate %}
                             Utilizar infraestructura como código (IaC) implica diseñar y gestionar una infraestructura
                             de TI, que generalmente incluye recursos computacionales y varias capas de software,
                             mediante la definición y ejecución de código escrito en lenguajes de programación
@@ -325,7 +325,7 @@
                               de nube y entornos híbridos, permitiendo a las organizaciones gestionar su infraestructura
                               en diferentes plataformas desde una única base de código, lo cual es crucial para
                               estrategias multicloud.</li>
-                          </ul>
+                          </ul>{% endblocktranslate %}
                           (April Yoho, 2022; Flavius Dinu, 2024)
                           </p>
                         </div>
@@ -333,10 +333,10 @@
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-c" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Contenedorizaci&oacute;n <i class="fa fa-eye mx-0"></i></h4>
+                          <h4 class="menu-title">{% trans Contenedorizaci&oacute;n %}<i class="fa fa-eye mx-0"></i></h4>
                         </a>
                         <div class="collapse" id="ui-c">
-                          <p>
+                          <p>{% blocktranslate %}
                             Los contenedores tienen como objetivo empaquetar una aplicación junto con sus dependencias y
                             configuraciones en una sola unidad desplegable. La contenedorización también se refiere al
                             proceso de automatización del aprovisionamiento de contenedores, que es el entorno donde se
@@ -366,7 +366,7 @@
                             <li>Seguridad: Los contenedores proporcionan aislamiento entre procesos y recursos, y las
                               herramientas de escaneo de seguridad ayudan a identificar vulnerabilidades en las
                               imágenes.</li>
-                          </ul>
+                          </ul>{% endblocktranslate %}
                           (Docker, 2024; Docker Docs, 2024)
                           </p>
                         </div>
@@ -374,11 +374,11 @@
                       <li class="nav-item" style="list-style: none;">
                         <a class="nav-link" data-toggle="collapse" href="#ui-sn" aria-expanded="false"
                           aria-controls="ui-basic">
-                          <h4 class="menu-title">Servicios en la nube (cloud computing) <i class="fa fa-eye mx-0"></i>
+                          <h4 class="menu-title">{% trans Servicios en la nube (cloud computing) %}<i class="fa fa-eye mx-0"></i>
                           </h4>
                         </a>
                         <div class="collapse" id="ui-sn">
-                          <p>
+                          <p>{% blocktranslate %}
                             Los servicios de nube comprenden todas las infraestructuras, plataformas, tecnologías y
                             sistemas de software que proveedores externos alojan y ponen a disposición a través de
                             internet y los usuarios pueden acceder a ellos sin necesidad de descargar software
@@ -393,7 +393,7 @@
                             <li>Plataforma como servicio (PaaS): Los proveedores de nube ofrecen a los desarrolladores
                               acceso a un entorno basado en la nube sobre el cual pueden crear, entregar y ejecutar
                               aplicaciones, abstrayendo la infraestructura subyacente que se necesita para que funcione
-                              la aplicación específica.
+                              la aplicación específica. {% endblocktranslate %}
                               <img src="{% static 'images/servicios_nube.jpg' %}" alt="servicios_nube">
                             </li>
                           </ul>
@@ -411,10 +411,10 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="negrita">Categor&iacute;as de herramientas</h4>
-                  <p>
+                  <h4 class="negrita">{% trans Categor&iacute;as de herramientas %}</h4>
+                  <p>{% blocktranslate %}
                     Las categor&iacute;as de herramientas con las sugerencias de algunas de ellas que inciden en la
-                    Actividad son las siguientes:
+                    Actividad son las siguientes:{% endblocktranslate %}
                   </p>
                   <div class="table-responsive col-lg-12">
                     <form method="post">
@@ -423,10 +423,10 @@
                         <thead>
                           <tr>
                             <th>
-                              Herramientas
+                              {% trans Herramientas %}
                             </th>
                             <th>
-                              Estado
+                              {% trans Estado %}
                             </th>
                           </tr>
                         </thead>
@@ -444,7 +444,7 @@
                           {% endfor %}
                         </tbody>
                       </table>
-                      <button class="btn btn-success" type="submit">Guardar</button>
+                      <button class="btn btn-success" type="submit">{% trans Guardar %}</button>
                     </form>
                   </div>
 
@@ -455,7 +455,7 @@
             <div class="col-lg-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Reporte</h4>
+                  <h4 class="card-title">{% trans Reporte%}</h4>
 
                   <div id="detailedReports" class=" slide detailed-report-carousel position-static pt-2">
                     <div>
@@ -465,15 +465,15 @@
                             <div class="ml-xl-4 ">
                               <div class="col-lg-12 stretch-card">
                                 <h2 style="text-align: center;" class="col-lg-8 text-primary">
-                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% de uso
-                                  de herramientas en la Actividad</h2>
+                                  {{cantidadVerdaderos|div:total|mul:100|floatformat:-2}}% {% trans de uso
+                                  de herramientas en la Actividad %}</h2>
                                 <h2 style="text-align: center;" class="col-lg-4 text-primary">
                                   {{cantidadVerdaderos}}/{{total}}</h2>
                               </div>
-                              <p style="text-align: center;" class="mb-2 mb-xl-0">El total de categor&iacute;as de
+                              <p style="text-align: center;" class="mb-2 mb-xl-0">{% trans El total de categor&iacute;as de
                                 herramientas que sean usadas por
                                 el usuario
-                                (marcadas) sobre el total existente en la Actividad del proceso de DevOps.</p>
+                                (marcadas) sobre el total existente en la Actividad del proceso de DevOps. %}</p>
                             </div>
                           </div>
                         </div>
